@@ -1,816 +1,1006 @@
 # Physics Without Intuition
 
-## A Complete Guide for the Non-Intuitive Thinker
+## A Mechanical System for Solving Physics Problems
 
 ---
 
-## Prologue: The Gift of Not Seeing
+## Prologue: Who This Is For
 
-Every physics textbook ever written makes the same silent assumption: when you read *"a ball rolls down an inclined plane,"* a picture forms in your mind. You feel the acceleration. You know, before any calculation, that a heavier ball does not fall faster than a light one.
+You read a physics problem. The words make sense, but they form no picture. You know formulas exist, but you cannot tell which one fits. You get an answer, but you cannot tell whether it is right.
 
-If you cannot do this -- if the words remain words, and the equations remain equations, and the connection between them feels like fog -- this article is for you.
+This document is written for you.
 
-Here is what no one tells you: **this is not a defect.** The history of physics is filled with discoveries that violated every intuition available to the human senses. Quantum mechanics. Special relativity. A magnet falling through a copper tube slowing as if sinking through honey. None of these were discovered by "feeling." They were discovered by trusting the mathematics when the intuition failed.
+It does not ask you to visualize. It does not ask you to "get a feel for it." It gives you a mechanical procedure: **extract the numbers, look up the words, pick the equation, substitute, verify.** Follow the steps. The answer comes out.
 
-You are training a skill that intuitive people never develop: **the ability to proceed correctly when the answer feels wrong.** That skill is worth more than any natural gift.
-
-But before we can apply the method, we must address a deeper problem. Most methods say: "set up a coordinate system" and "use dimensional analysis." But what if even *those* steps feel impossible? What if you do not know which direction is $+$, or what $[L][T]^{-1}$ means, or why it matters?
-
-That is where we begin.
+We begin with tools — coordinate systems, dimensional analysis, variable tables, and a vocabulary-to-law mapping. Then we solve seven problems that span mechanics, electricity, thermodynamics, and waves. Every problem uses the identical procedure.
 
 ---
 
-# Part 0: The Pre-Method -- Tools You Need Before You Start
+# Part 0: The Pre-Method
 
-This section exists because the standard advice fails you. "Choose a coordinate system" assumes you know what a coordinate system is and how to choose one. "Check the dimensions" assumes you know the dimensions of every quantity. If you do not, read this part first. It contains no physics problems. It contains only the meta-tools that make the actual method possible.
+You cannot solve a physics problem until you can answer four questions:
+
+1. Which way is positive? (coordinate system)
+2. What are the units of every quantity? (dimensional analysis)
+3. What numbers do I have, and what am I looking for? (variable table)
+4. Which equation connects them? (vocabulary-to-law mapping)
+
+This part answers each question mechanically. No physics yet — just tools.
 
 ---
 
-## 0.1 The Coordinate System: A Fill-in-the-Blanks Contract
+## §0.1 The Coordinate System
 
-### What "Setting Up a Coordinate System" Actually Means
-
-You are not doing physics when you set up a coordinate system. You are making an **agreement with yourself** about how to translate directions into signs. The agreement has exactly four parts:
-
-1. **Where is zero?** (the origin)
-2. **Which way is $+x$?** (horizontal positive direction)
-3. **Which way is $+y$?** (vertical positive direction)
-4. **When is $t=0$?** (the clock start)
-
-That is all. There is no physics content in any of these decisions. They are arbitrary. They cannot be right or wrong. They can only be **consistent or inconsistent** with the rest of your work.
-
-### The Mechanical Procedure (No Choices Required)
-
-Do not *think* about which coordinate system to use. Follow these rules:
-
-**Rule 1: The $+x$ direction.** Always set $+x$ to be the direction the object *starts* moving, or the direction it *primarily* moves. If the problem says "a car drives east," set $+x$ = east. If it says "a block slides down an incline," set $+x$ = down the incline. No exceptions.
-
-**Rule 2: The $+y$ direction.** Always set $+y$ to be upward (away from the ground) unless you are on an incline. If you are on an incline, set $+y$ to be perpendicular to the incline surface, pointing *away* from the surface. No exceptions.
-
-**Rule 3: The origin.** Always set the origin to be the starting position of the object you care about most, unless the problem explicitly defines a reference point (like "the ground"). If there are multiple objects, set the origin at the position of the first object mentioned, at $t=0$.
-
-**Rule 4: $t=0$.** Always set $t=0$ to be the instant the "action" begins -- the throw, the release, the start of motion, the collision. If multiple events occur, pick the first one.
-
-### The Fill-in-the-Blanks Template
-
-Every time you start a problem, write this exactly:
+A coordinate system is a contract with yourself. It says: "I will interpret positive and negative signs according to these four rules." The contract has four blanks:
 
 ```
-COORDINATE SYSTEM DECLARATION
-─────────────────────────────
-+x direction: _______________ (use Rule 1)
-+y direction: _______________ (use Rule 2)
-Origin:       _______________ (use Rule 3)
-t = 0 at:     _______________ (use Rule 4)
-
-Consequences:
-  g = ±____ m/s^2   (sign: opposite of +y direction)
-  v0x = ±____ m/s   (sign: + if along +x, - if opposite)
-  v0y = ±____ m/s   (sign: + if along +y, - if opposite)
-  x0 = ____ m       (initial position in this coordinate system)
-  y0 = ____ m       (initial position in this coordinate system)
++x direction: _______________  (direction of primary motion — Rule 1)
++y direction: _______________  (upward, or perpendicular away from incline — Rule 2)
+Origin:       _______________  (starting position of the object — Rule 3)
+t = 0 at:     _______________  (the instant the action begins — Rule 4)
 ```
 
-Fill the blanks. Do not second-guess. The rules tell you exactly what to write. If you follow the rules, the signs will be correct. The algebra will produce the correct physical answer.
+**Rule 1 (+x):** Set $+x$ to the direction the object primarily moves. Car drives east $\to$ $+x$ = east. Block slides down incline $\to$ $+x$ = down the incline. Never overthink this.
 
-### The One Rule That Prevents All Sign Errors
+**Rule 2 (+y):** Set $+y$ upward. On an incline, set $+y$ perpendicular to the surface, pointing away from it. This makes the normal force purely $+y$ — it decouples the equations.
 
-> **After you fill in the template, never change your coordinate system during the problem.** Even if a velocity comes out negative, even if it feels wrong. Trust the algebra. The sign of the answer tells you the direction relative to your chosen axes. A negative answer is not wrong -- it means "opposite to the $+$ direction."
+**Rule 3 (origin):** Set the origin at the object's starting position. If the problem gives a reference (like "the ground"), use that instead.
+
+**Rule 4 ($t=0$):** Set $t=0$ at the instant the action begins — the throw, the release, the collision.
+
+**The golden rule:** Once you fill the blanks, **never change the coordinate system mid-problem.** If a velocity comes out negative, it means "opposite to the + direction," not "wrong."
 
 ---
 
-## 0.2 Dimensional Analysis: The Three-Step Mechanical Recipe
+## §0.2 Dimensional Analysis
 
-### Why Dimensional Analysis Exists
+Dimensional analysis is the only verification tool that works for every physics problem. It requires zero intuition — only that you know the dimension of every quantity.
 
-Dimensional analysis is the only verification tool that works for *every* physics problem, in *every* topic, at *every* level. It requires zero intuition. It requires only that you know the dimensions of the quantities involved. This section gives you those dimensions and a mechanical recipe for using them.
+Every mechanical quantity's dimension is built from three building blocks:
 
-### Step 1: Memorize the Dimensions of the Seven Base Quantities
-
-Every quantity in Honors Physics has dimensions composed from these three building blocks:
-
-| Building block | Symbol | Examples of quantities with this dimension |
-|----------------|--------|---------------------------------------------|
-| Mass | $[M]$ | mass ($m$), density |
-| Length | $[L]$ | position ($x$), displacement ($\Delta x$), distance, height ($h$), wavelength ($\lambda$) |
-| Time | $[T]$ | time ($t$), period ($T$) |
+| Building block | Symbol | Example quantities |
+|----------------|--------|--------------------|
+| Mass | $[M]$ | $m$ (mass), density |
+| Length | $[L]$ | $x$, $\Delta x$, $h$, $\lambda$ |
+| Time | $[T]$ | $t$, $T$ (period) |
 
 Three more appear in E&M and thermodynamics:
 
-| Building block | Symbol | Examples |
-|----------------|--------|----------|
-| Temperature | $[\Theta]$ | temperature ($T$ in kelvin) |
-| Electric charge | $[Q]$ | charge ($q$, $Q$) |
-| Amount of substance | $[N]$ | moles ($n$) |
+| Building block | Symbol | Example quantities |
+|----------------|--------|--------------------|
+| Temperature | $[\Theta]$ | $T$ (kelvin) |
+| Electric charge | $[Q]$ | $q$, $Q$ |
+| Amount of substance | $[N]$ | $n$ (moles) |
 
-### Step 2: Derive the Dimensions of Any Quantity From Its Definition
+**To derive any quantity's dimension:** Write its definition equation, replace each symbol with its dimension, simplify algebraically.
 
-You do not need to memorize the dimensions of every quantity. You derive them from the defining formula. The mechanical procedure:
+| Quantity | Definition | Dimension |
+|----------|-----------|-----------|
+| Speed, $v$ | $\Delta x / \Delta t$ | $[L][T]^{-1}$ |
+| Acceleration, $a$ | $\Delta v / \Delta t$ | $[L][T]^{-2}$ |
+| Force, $F$ | $ma$ | $[M][L][T]^{-2}$ |
+| Energy, work, $E$, $K$, $U$ | $Fd$ or $\frac{1}{2}mv^2$ | $[M][L]^2[T]^{-2}$ |
+| Momentum, $p$ | $mv$ | $[M][L][T]^{-1}$ |
+| Pressure, $P$ | $F/A$ | $[M][L]^{-1}[T]^{-2}$ |
+| Frequency, $f$ | $1/T$ | $[T]^{-1}$ |
+| Spring constant, $k$ | $F/x$ | $[M][T]^{-2}$ |
+| Electric charge, $q$ | base | $[Q]$ |
+| Electric field, $E$ | $F/q$ | $[M][L][Q]^{-1}[T]^{-2}$ |
+| Voltage, $V$ | $U/q$ | $[M][L]^2[Q]^{-1}[T]^{-2}$ |
+| Magnetic field, $B$ | $F/(qv)$ | $[M][Q]^{-1}[T]^{-1}$ |
+| Resistance, $R$ | $V/I$ | $[M][L]^2[Q]^{-2}[T]^{-1}$ |
 
-1. Write the quantity's **definition equation**.
-2. Replace each symbol on the right side with its dimensions.
-3. Simplify algebraically (treat $[M]$, $[L]$, $[T]$ as algebraic symbols).
-
-**Example.** Derive the dimensions of force.
-
-Definition: $F = ma$.
-Dimensions of $m$: $[M]$.
-Dimensions of $a$: acceleration = velocity/time = $[L][T]^{-1}/[T] = [L][T]^{-2}$.
-Dimensions of $F$: $[M] \times [L][T]^{-2} = [M][L][T]^{-2}$.
-
-**Example.** Derive the dimensions of energy.
-
-Definition: $K = \frac{1}{2}mv^2$ (kinetic energy).
-Dimensions: $[M] \times ([L][T]^{-1})^2 = [M][L]^2[T]^{-2}$.
-(The factor $\frac{1}{2}$ is dimensionless and contributes nothing.)
-
-### Step 3: Use Dimensions to Verify Any Equation
-
-Given any equation you have written or derived:
-
-1. Compute the dimensions of the left side.
-2. Compute the dimensions of the right side.
-3. If they are equal, the equation is *dimensionally consistent* (it passes the test). If they differ, the equation is **certainly wrong** -- no exceptions.
-
-**Example.** A student writes $v = \frac{1}{2}at$ for final velocity. Is this dimensionally correct?
-
-Left: $v = [L][T]^{-1}$.
-Right: $\frac{1}{2}at = [L][T]^{-2} \times [T] = [L][T]^{-1}$.
-Both sides are $[L][T]^{-1}$. Pass. (The equation is actually $v = at$ without the $\frac{1}{2}$; dimensional analysis cannot catch missing dimensionless constants, but it catches unit errors.)
-
-**Example.** A student writes $v^2 = 2ax$ for a kinematics relationship. Is this dimensionally correct?
-
-Left: $v^2 = ([L][T]^{-1})^2 = [L]^2[T]^{-2}$.
-Right: $2ax = [L][T]^{-2} \times [L] = [L]^2[T]^{-2}$.
-Pass. (The equation is actually correct: $v^2 = v_0^2 + 2a\Delta x$, with $v_0=0$.)
-
-**Example.** A student writes $F = mg + v$. Is this dimensionally correct?
-
-Left: $F = [M][L][T]^{-2}$.
-Right: $mg + v = [M][L][T]^{-2} + [L][T]^{-1}$.
-These are different dimensions. They cannot be added. The equation is **certainly wrong**.
-
-### Quick-Reference Dimension Table
-
-When you cannot remember a dimension, look it up here:
-
-| Quantity | Derivation | Dimensions |
-|----------|-----------|------------|
-| Speed, velocity ($v$) | $\Delta x / \Delta t$ | $[L][T]^{-1}$ |
-| Acceleration ($a$) | $\Delta v / \Delta t$ | $[L][T]^{-2}$ |
-| Force ($F$) | $ma$ | $[M][L][T]^{-2}$ |
-| Energy, work ($E$, $W$, $K$, $U$) | $Fd$ or $\frac{1}{2}mv^2$ | $[M][L]^2[T]^{-2}$ |
-| Momentum ($p$) | $mv$ | $[M][L][T]^{-1}$ |
-| Impulse ($J$) | $F\Delta t$ | $[M][L][T]^{-1}$ |
-| Pressure ($P$) | $F/A$ | $[M][L]^{-1}[T]^{-2}$ |
-| Frequency ($f$) | $1/T$ | $[T]^{-1}$ |
-| Angular frequency ($\omega$) | $2\pi f$ | $[T]^{-1}$ |
-| Spring constant ($k$) | $F/x$ | $[M][T]^{-2}$ |
-| Electric charge ($q$) | (base quantity) | $[Q]$ |
-| Electric field ($E$) | $F/q$ | $[M][L][Q]^{-1}[T]^{-2}$ |
-| Electric potential ($V$) | $U/q$ | $[M][L]^2[Q]^{-1}[T]^{-2}$ |
-| Magnetic field ($B$) | $F/(qv)$ | $[M][Q]^{-1}[T]^{-1}$ |
-| Resistance ($R$) | $V/I$ | $[M][L]^2[Q]^{-2}[T]^{-1}$ |
-| Capacitance ($C$) | $Q/V$ | $[M]^{-1}[L]^{-2}[Q]^2[T]^2$ |
+**To verify an equation:** Compute dimensions of the left side. Compute dimensions of the right side. If they differ, the equation is certainly wrong. If they match, the equation passes (it may still have a missing factor of 2, but the units are correct).
 
 ---
 
-## 0.3 The Variable Table: Your First Action for Every Problem
+## §0.3 The Variable Table
 
-Before you think about any problem, draw this table and fill it:
+Before you think about any problem, draw this:
 
 ```
-Variable    Symbol   Value   Unit      Dimension
-──────────────────────────────────────────────────
-(1)          ___      ___     ___       ___
-(2)          ___      ___     ___       ___
-(3)          ___      ___     ___       ___
-(4)          ___      ___     ___       ___
-(5)          ___      ___     ___       ___
-...
+| Variable | Symbol | Value | Unit | Dimension | Source in problem |
+|----------|--------|-------|------|-----------|-------------------|
+| ...      | ...    | ...   | ...  | ...       | ...               |
 ```
 
-**Rules for filling the table:**
+Rules:
+1. Every number from the problem gets a row.
+2. The unknown (what the question asks for) gets `?` in its Value cell.
+3. Every row gets a Dimension — look it up in §0.2.
+4. Implied zeros get rows too: "from rest" $\to$ $v_0 = 0$, "stops" $\to$ $v = 0$.
+5. The Dimension column is your safety net. Your final answer must match the dimension in this column.
 
-1. **Read the problem and extract every number.** Each number goes in the "Value" column with its unit.
-2. **Identify what is being asked for.** Put a `?` in its Value cell.
-3. **For every row, fill in the Dimension column.** Use §0.2.
-4. **The Dimension column is your safety net.** If your final answer has dimensions different from what this column says, you made an error.
+---
+
+## §0.4 The Vocabulary-to-Law Mapping
+
+How do you know which equation to use? You match words from the problem to laws in this table. No intuition. Just pattern recognition.
+
+### The Keyword → Law Table
+
+**A. Kinematics** — words describing motion without mentioning forces.
+
+| Keywords | Primary law | Equation |
+|----------|------------|----------|
+| "accelerates," "from rest," "falls," "dropped," "thrown" | Kinematic equations ($a$ constant) | $v = v_0 + at$, $\Delta x = v_0t + \frac{1}{2}at^2$, $v^2 = v_0^2 + 2a\Delta x$ |
+| "constant velocity," "steady speed" | $a = 0$ | $\Delta x = vt$ |
+| "maximum height," "peak" | $v_y = 0$ at that instant | (vertex condition) |
+
+**B. Forces & Newton's Laws** — any mention of a specific force type.
+
+| Keywords | Law triggered | Equation |
+|----------|--------------|----------|
+| "force," "push," "pull" | Newton's 2nd Law | $\sum F = ma$ |
+| "friction," "rough," $\mu$ | Friction force | $f_k = \mu_k N$, $f_s \le \mu_s N$ |
+| "tension," "rope," "string" | Tension $T$ (along rope) | Include $T$ in FBD |
+| "spring," "$k$," "stretched" | Hooke's Law | $F_s = -kx$ |
+| "incline," "ramp," "angle $\theta$" | Resolve gravity | $mg\sin\theta$ (along), $mg\cos\theta$ (perpendicular) |
+| "frictionless," "smooth" | No friction | Omit $f$ |
+
+**C. Energy** — when the problem mentions two positions and asks for speed, but gives no time.
+
+| Keywords | Law triggered | Equation |
+|----------|--------------|----------|
+| "height," "$h$," "above ground" | Gravitational PE | $U_g = mgh$ |
+| "speed" (with height or spring) | Energy conservation | $E_i = E_f$ |
+| "work," $W$ | Work definition | $W = Fd\cos\theta$ |
+
+**D. Momentum & Collisions** — objects interacting over a short time.
+
+| Keywords | Law triggered | Equation |
+|----------|--------------|----------|
+| "collision," "collides," "hit" | Momentum conservation | $\sum p_i = \sum p_f$ |
+| "stick together," "embedded" | Perfectly inelastic | $m_1v_1 + m_2v_2 = (m_1+m_2)v_f$ |
+| "elastic," "bounces" | Elastic (KE conserved too) | $\sum p_i = \sum p_f$ and $\sum K_i = \sum K_f$ |
+| "bullet," "recoil" | Momentum conservation | $\sum p_i = \sum p_f$ |
+
+**E. Circular Motion** — anything moving in a curve.
+
+| Keywords | Law triggered | Equation |
+|----------|--------------|----------|
+| "circle," "curve," "orbit," "turn" | Centripetal acceleration | $a_c = v^2/R$, then $\sum F = ma_c$ |
+
+**F. Electricity** — charge, voltage, circuits.
+
+| Keywords | Law triggered | Equation |
+|----------|--------------|----------|
+| "charge," "$q$," "$\mu$C" | Coulomb's Law | $F = k\lvert q_1 q_2\rvert/r^2$ |
+| "electric field," $E$ | Electric force | $\vec{F} = q\vec{E}$ |
+| "voltage," "battery," $V$ | Ohm's Law | $V = IR$ |
+| "circuit," "series," "parallel" | Reduction rules | $R_s = R_1+R_2$, $1/R_p = 1/R_1+1/R_2$ |
+
+**G. Magnetism** — magnetic fields with moving charges.
+
+| Keywords | Law triggered | Equation |
+|----------|--------------|----------|
+| "magnetic field," $B$ | Lorentz force | $F = qvB\sin\theta$ |
+| "current-carrying wire" (with $B$) | Magnetic force on wire | $F = ILB\sin\theta$ |
+
+**H. Thermodynamics** — temperature, pressure, heat.
+
+| Keywords | Law triggered | Equation |
+|----------|--------------|----------|
+| "temperature," "pressure," "volume" (gas) | Ideal Gas Law | $PV = nRT$ |
+| "sealed" (with gas) | $n$ constant | $P_1V_1/T_1 = P_2V_2/T_2$ |
+| "heat engine," "efficiency" | Carnot efficiency | $\eta = 1 - T_C/T_H$ |
+
+### The 4-Pass Extraction Algorithm
+
+Do NOT try to understand the problem. Execute these passes mechanically:
+
+1. **Read once.** No writing. Gather the gist in 5 words max.
+2. **Extract numbers.** Every number with its unit $\to$ Variable Table.
+3. **Underline physics words.** Look up each in the table above. The category that appears most is your **primary law**.
+4. **Identify the unknown.** Underline the question sentence $\to$ mark `?` in the table.
+
+### Worked Extraction Example
+
+**Problem:** *"A stone is dropped from a 20 m high bridge. How long does it take to hit the water? ($g = 10\;\mathrm{m/s^2}$)"*
+
+**Pass 1:** Stone, dropped, falls, height, time, gravity.
+
+**Pass 2 — extract numbers:**
+
+| Word | Number | Unit | $\to$ Variable |
+|------|--------|------|----------------|
+| "20 m high" | 20 | m | $y_0 = 20$ |
+| $g = 10$ | 10 | $\mathrm{m/s^2}$ | $g = 10$ |
+
+**Pass 3 — physics words:**
+
+| Word | Category | Law |
+|------|----------|-----|
+| "dropped" | A: free-fall kinematics | $a = -g$ |
+| "high" / "height" | C: gravitational context | $y$-axis |
+
+$\to$ **Primary law: Kinematic equations with $a = -g$.**
+
+**Pass 4 — unknown:** "How long?" $\to$ $t = ?$
+
+Now proceed to I-SEE-R. The extraction is mechanical. You do not need to picture the stone falling.
 
 ---
 
 # Part I: Mechanics
 
-Mechanics is supposed to be easy. You can see a ball move. You can feel a push. This is precisely why it is hard for you: everyone else is using a sense you do not have. The solution is to treat mechanics as a set of algebraic rules applied to symbols. Nothing more.
+Three examples that cover kinematics, dynamics, and momentum. Every example follows the identical procedure: Scan words $\to$ Declare coordinates $\to$ Build variable table $\to$ I-SEE-R solve. But more than that — each example shows you *how to think* through a physics problem when you have no intuition to guide you.
 
 ---
 
-## 1.1 Beginner: The 1D Acceleration Problem
+## Example 1: Free Fall from a Bridge
 
-**Problem.** A car starts from rest and accelerates at $3.0\ \mathrm{m/s^2}$ for $4.0\ \mathrm{s}$. How far does it travel?
+**Problem.** A stone is dropped from a 20 m high bridge. How long does it take to hit the water? ($g = 10\;\mathrm{m/s^2}$)
 
-### Complete Thought Trace
+---
 
-**Step I -- IDENTIFY.** We build the variable table. This is the first action. There is no thinking before this:
+When I first read this problem, I notice it is short. Only two numbers appear: 20 and 10. The question is about time. There is no mention of forces — no push, no pull, no friction. That already tells me something important: this is pure kinematics. I will not need to draw a free-body diagram or sum forces. The stone simply falls.
+
+### Step 1 — Scan for Physics Words (§0.4)
+
+I go through the problem sentence by sentence, underlining anything that appears in my vocabulary table.
+
+The word **"dropped"** catches my eye first. In §0.4 Category A, "dropped" means the initial velocity is zero. The stone is not thrown — it is released. So $v_0 = 0$. This is a crucial piece of information because it eliminates one unknown from the kinematic equation set.
+
+Next I see **"high"** and **"height."** These words belong to the gravitational context — they tell me the motion is vertical. I will need a $y$-axis and the acceleration will be $g$, pointing downward.
+
+Then I see **$g = 10\;\mathrm{m/s^2}$**. The symbol $g$ confirms free-fall kinematics. The acceleration is constant, equal to $g$, and its direction is toward the ground.
+
+Finally, **"How long"** tells me the unknown is time $t$.
+
+I scan for force words — friction, tension, push, normal — and find none. This confirms my first impression: kinematics only. The primary law is the set of four kinematic equations for constant acceleration, with $a = -g$.
+
+| Word | Category | What it tells us |
+|------|----------|------------------|
+| "dropped" | A: $v_0 = 0$ | Initial velocity is zero |
+| "high" / "height" | C: gravitational context | Vertical motion, $y$-axis |
+| $g$ | A: free-fall kinematics | $a = -g$ |
+| "How long" | — | Unknown is $t$ |
+
+### Step 2 — Coordinate System (§0.1)
+
+Now I need to make a decision that will determine the sign of every number in this problem: which way is positive?
+
+I think about what happens. The stone falls *down*. If I set $+y$ upward, then the stone's displacement will be negative (it moves opposite to $+y$). That feels slightly awkward, but it is the standard convention — and more importantly, it is the convention that §0.1 Rule 2 mandates: **$+y$ is always upward.** I follow the rule.
+
+- **$+y$ = upward.** This means gravity, which pulls downward, gets a negative sign: $a_y = -g = -10\;\mathrm{m/s^2}$.
+- **Origin:** The problem mentions the water as the final destination. I set $y = 0$ at the water surface. The bridge is then at $y_0 = +20\;\mathrm{m}$.
+- **$t = 0$:** The instant the stone is released. At that moment, $v_{0y} = 0$ (it is dropped, not thrown).
 
 ```
-Variable    Symbol   Value   Unit        Dimension
-────────────────────────────────────────────────────
-Initial v    v0        0     m/s        [L][T]^{-1}
-Final v      v         ?     m/s        [L][T]^{-1}
-Accel         a       3.0    m/s^2      [L][T]^{-2}
-Time          t       4.0    s          [T]
-Displacement  Δx       ?     m          [L]
++y direction: upward
+Origin:       water surface, y = 0
+t = 0 at:     instant stone is released
+
+Consequences: g = -10 m/s², v0y = 0, y0 = +20 m, y = 0 (water)
 ```
 
-We know 3 variables ($v_0$, $a$, $t$). By the 5-variable rule, we can find the other 2.
+I have locked in the signs. I will not change them, no matter what the algebra produces.
 
-**Coordinate system:** Using the rules from §0.1: $+x$ = direction of motion. Origin = starting point. $t=0$ = start.
+### Step 3 — Variable Table (§0.3 + §0.2)
 
-**Step S -- SIMPLIFY.** Constant acceleration is stated. No friction, no air resistance. One object. Single dimension.
+I extract every number from the problem and place it in the table, along with its dimension from §0.2.
 
-**Step E -- EQUATION.** We want $\Delta x$. We know $v_0$, $a$, $t$. We do not know $v$. The equation that omits $v$ is:
+"20 m high bridge" — the initial height. This is a position: $y_0 = 20\;\mathrm{m}$. Dimension: $[L]$.
 
-$$\Delta x = v_0 t + \frac{1}{2} a t^2$$
+The water surface is at $y = 0$ because I placed the origin there. Dimension: $[L]$.
 
-*Why this equation?* The decision rule from the kinematic set: if the missing variable is $v$, use equation (2). We do not need to understand *why* the equation has this form. We apply the rule.
+"Dropped" means $v_{0y} = 0$. Speed has dimensions $[L][T]^{-1}$.
 
-**Step E -- EXECUTE.** Substitute:
+Gravity provides the acceleration: $a_y = -10\;\mathrm{m/s^2}$. The negative sign comes from my coordinate choice. Acceleration dimensions: $[L][T]^{-2}$.
+
+The question asks for time: $t = ?$. Dimension: $[T]$.
+
+| Variable | Symbol | Value | Unit | Dimension | Source |
+|----------|--------|-------|------|-----------|--------|
+| Initial position | $y_0$ | 20 | m | $[L]$ | "20 m high bridge" |
+| Final position | $y$ | 0 | m | $[L]$ | water surface = origin |
+| Initial velocity | $v_{0y}$ | 0 | m/s | $[L][T]^{-1}$ | "dropped" $\to$ from rest |
+| Acceleration | $a_y$ | $-10$ | $\mathrm{m/s^2}$ | $[L][T]^{-2}$ | $g = 10$, opposite $+y$ |
+| Time | $t$ | ? | s | $[T]$ | "How long?" |
+
+I notice that the displacement is not directly in the table, but I can compute it: $\Delta y = y - y_0 = 0 - 20 = -20\;\mathrm{m}$. The negative sign tells me the stone moves 20 meters in the $-y$ direction — downward. This matches physical reality. Already, my coordinate system is proving consistent.
+
+### Step 4 — I-SEE-R
+
+**S — Simplify.** I ask: can I ignore anything? The acceleration is a single constant number ($-10$). There is no air resistance mentioned. The stone is a point mass — I do not need to consider its shape or rotation. The motion is purely vertical, so this is a 1D problem. I do not need an FBD because the only force (gravity) is already encoded in $a_y = -g$. Simplification complete.
+
+**E — Equation.** I look at my variable table and count what I know. I have $y_0$, $y$, $v_{0y}$, and $a_y$. That is four knowns. I want $t$. I do *not* know the final velocity $v_y$, and the problem does not ask for it.
+
+Among the four kinematic equations, one of them omits $v_y$ entirely: $\Delta y = v_{0y} t + \frac{1}{2} a_y t^2$. This is exactly the equation I need. I do not have to think about which equation to pick — the missing-variable rule from the Quick-Reference Card (⑤) makes the choice mechanical: I need $t$, I am missing $v_y$, so I use $\Delta y = v_{0y}t + \frac{1}{2}a_y t^2$.
+
+I substitute the numbers from my table:
+
+$$-20 = 0 \cdot t + \frac{1}{2}(-10)t^2$$
+
+The term $0 \cdot t$ vanishes immediately — the stone had no initial velocity, so the entire first term disappears. The equation simplifies to:
+
+$$-20 = -5t^2$$
+
+**E — Execute.** I divide both sides by $-5$: $t^2 = 4$. Taking the square root gives $t = \pm 2.0$. Two mathematical solutions appear.
+
+The negative root, $t = -2.0\;\mathrm{s}$, would mean the stone hit the water 2 seconds *before* it was dropped. That is physically impossible — time cannot run backward in this problem. I discard it.
+
+The positive root remains: $t = 2.0\;\mathrm{s}$. The stone takes 2 seconds to fall.
+
+**R — Reflect.** Before I accept this answer, I verify it three ways.
+
+*First, dimensions.* The symbolic equation is $\Delta y = \frac{1}{2}a_y t^2$. Left side: $[L]$. Right side: $[L][T]^{-2} \cdot [T]^2 = [L]$. Match. If the dimensions had not matched, I would know the equation was wrong regardless of the numbers.
+
+*Second, a limiting case.* What if the bridge were twice as high, $y_0 = 40\;\mathrm{m}$? Then $\Delta y = -40$, and $t^2 = 8$, so $t = 2.83\;\mathrm{s}$. The time did not double when the height doubled — it increased by a factor of $\sqrt{2}$. This is correct: under constant acceleration from rest, distance scales as $t^2$, so time scales as $\sqrt{h}$. This non-intuitive result is a signature of constant acceleration, and my formula produces it automatically.
+
+*Third, an independent method.* I can compute the final velocity and use the average. $v_y = v_{0y} + a_y t = 0 + (-10)(2.0) = -20\;\mathrm{m/s}$. The average velocity during the fall is $\bar{v}_y = (0 + (-20))/2 = -10\;\mathrm{m/s}$. Displacement = average velocity $\times$ time: $(-10)(2.0) = -20\;\mathrm{m}$. This matches my $\Delta y$ exactly.
+
+Three independent checks all confirm $t = 2.0\;\mathrm{s}$. I am confident in this answer.
+
+**Answer: $2.0\;\mathrm{s}$.**
+
+---
+
+## Example 2: Block on an Incline with Friction
+
+**Problem.** A $5.0\;\mathrm{kg}$ block slides down a $30^\circ$ incline. Coefficient of kinetic friction $\mu_k = 0.25$. Find the acceleration. ($g = 10\;\mathrm{m/s^2}$)
+
+---
+
+When I read this problem, I immediately notice something different from Example 1: there are *forces*. The words "slides," "incline," and "friction" all point to dynamics — Newton's Second Law will be involved. The problem gives me a mass ($5.0\;\mathrm{kg}$), an angle ($30^\circ$), and a friction coefficient ($0.25$), and it asks for acceleration. This is a force-produces-motion problem. I need $\sum F = ma$.
+
+### Step 1 — Scan for Physics Words
+
+I go word by word through the problem.
+
+**"Slides down"** — the block is moving. This matters because it tells me which kind of friction to use: kinetic ($f_k = \mu_k N$), not static.
+
+**"Incline"** and **$30^\circ$** — these trigger the incline rules from §0.4 Category B. Gravity must be resolved into two components: $mg\sin\theta$ along the incline (pulling the block down) and $mg\cos\theta$ perpendicular to the incline (pushing the block into the surface).
+
+**"Friction"** and **$\mu_k$** — the coefficient of kinetic friction appears. Friction opposes motion, so it points *up* the incline (opposite to the sliding direction). Its magnitude is $f_k = \mu_k N$, but I do not know $N$ yet — I will need to find the normal force first.
+
+**"Find the acceleration"** — the unknown is $a$. Since forces produce acceleration, Newton's Second Law is the primary law.
+
+| Word | Category | What it tells us |
+|------|----------|------------------|
+| "slides down" | A: motion | Acceleration along incline |
+| "incline" / $30^\circ$ | B: resolve gravity | $mg\sin\theta$, $mg\cos\theta$ |
+| "friction" / $\mu_k$ | B: friction force | $f_k = \mu_k N$, opposes motion |
+| "Find acceleration" | B: forces $\to$ acceleration | $\sum F = ma$ is **PRIMARY LAW** |
+
+### Step 2 — Coordinate System
+
+This is the most important decision in the problem. The block moves along a slanted surface, not horizontally. If I keep the axes horizontal and vertical, I will have to resolve *three* forces (gravity, normal, friction) into components — messy. §0.1 Rule 2 for inclines gives me a better option: **tilt the axes.**
+
+I set $+x$ down the incline (the direction of motion) and $+y$ perpendicular to the surface, pointing away from it.
+
+Why does this help? Look at the forces:
+- **Normal force** $N$ is perpendicular to the surface. With my tilted axes, $N$ points purely along $+y$. No $x$-component.
+- **Friction** $f_k$ opposes motion, so it points purely along $-x$. No $y$-component.
+- **Gravity** $mg$ is the only force that needs resolution. It points straight down. I resolve it into $+mg\sin\theta$ (along $+x$, down the incline) and $-mg\cos\theta$ (along $-y$, into the surface).
+
+Two of the three forces now point purely along one axis. This decoupling is the entire reason for tilting.
+
+```
++x direction: down the incline (direction of motion)
++y direction: perpendicular to surface, away from it
+Origin:       starting position (not needed — position cancels)
+t = 0 at:     release
+
+→ +x: mg sinθ, -f_k
+→ +y: +N, -mg cosθ
+→ a_y = 0 (block stays on surface)
+```
+
+### Step 3 — Variable Table
+
+| Variable | Symbol | Value | Unit | Dimension | Source |
+|----------|--------|-------|------|-----------|--------|
+| Mass | $m$ | 5.0 | kg | $[M]$ | given |
+| Angle | $\theta$ | $30^\circ$ | — | $[1]$ | given |
+| Friction coeff | $\mu_k$ | 0.25 | — | $[1]$ | given |
+| Gravity | $g$ | 10 | $\mathrm{m/s^2}$ | $[L][T]^{-2}$ | given |
+| Acceleration | $a$ | ? | $\mathrm{m/s^2}$ | $[L][T]^{-2}$ | asked |
+
+Notice that the normal force $N$ and the friction force $f_k$ are not in the table — they are not given as numbers. I will have to express them in terms of the known quantities.
+
+### Step 4 — I-SEE-R
+
+**S — Simplify.** The word "kinetic" in "kinetic friction" tells me the block is already moving. I use $f_k = \mu_k N$, the kinetic friction formula. If the problem had said "static," I would use $f_s \le \mu_s N$ instead — a completely different equation.
+
+Only three forces act: gravity ($mg$, straight down), normal force ($N$, perpendicular to surface), and kinetic friction ($f_k$, up the incline). The block stays on the surface, so there is no acceleration perpendicular to the incline: $a_y = 0$.
+
+**E — Equation.** I write $\sum F = ma$ separately for each axis.
+
+Along $+x$ (down the incline), two forces have components: gravity contributes $+mg\sin\theta$ (pulling down), and friction contributes $-f_k$ (opposing). The normal force has no $x$-component.
+
+$$mg\sin\theta - f_k = ma$$
+
+Along $+y$ (perpendicular to the surface), the normal force points $+y$ and gravity's perpendicular component points $-y$. There is no acceleration in this direction.
+
+$$N - mg\cos\theta = 0 \;\rightarrow\; N = mg\cos\theta$$
+
+Now I know $N$ in terms of known quantities. I substitute it into the friction formula:
+
+$$f_k = \mu_k N = \mu_k mg\cos\theta$$
+
+Plugging this into the $x$-equation:
+
+$$mg\sin\theta - \mu_k mg\cos\theta = ma$$
+
+Every term contains $m$. I factor it out, and it cancels:
+
+$$a = g(\sin\theta - \mu_k\cos\theta)$$
+
+This is a remarkable result: the acceleration does not depend on the mass of the block. A $5\;\mathrm{kg}$ block and a $500\;\mathrm{kg}$ block slide down this incline with the same acceleration. I did not need to "see" this — the algebra revealed it automatically when $m$ cancelled.
+
+**E — Execute.** I substitute the numbers:
 
 $$\begin{aligned}
-\Delta x &= (0)(4.0) + \frac{1}{2}(3.0)(4.0)^2 \\[4pt]
-&= 0 + \frac{1}{2}(3.0)(16.0) \\[4pt]
-&= 24.0\ \mathrm{m}
+a &= 10(\sin 30^\circ - 0.25 \cdot \cos 30^\circ) \\
+  &= 10(0.5 - 0.25 \times 0.866) \\
+  &= 10(0.5 - 0.2165) = 10 \times 0.2835 \\
+  &= 2.84\;\mathrm{m/s^2}
 \end{aligned}$$
 
-**Step R -- REFLECT.**
+The acceleration is positive — the block accelerates down the incline, as expected. The friction reduces the acceleration from the frictionless value of $5.0\;\mathrm{m/s^2}$ to $2.84\;\mathrm{m/s^2}$.
 
-*Dimensional check (using §0.2):* The right side is $[L][T]^{-2} \times [T]^2 = [L]$. The answer $24.0\ \mathrm{m}$ has dimensions $[L]$. Pass.
+**R — Reflect.** I test the formula against extreme cases to see if it behaves physically.
 
-*Special case check:* If $a = 0$, then $\Delta x = 0$. A stationary car should not move. Pass.
+*No friction ($\mu_k = 0$):* $a = 10 \times 0.5 = 5.0\;\mathrm{m/s^2}$. This is exactly $g\sin\theta$, the standard result for a frictionless incline. ✓
 
-*Alternative method:* Average velocity $\bar{v} = \frac{0 + at}{2} = \frac{12}{2} = 6\ \mathrm{m/s}$. Distance = $\bar{v} \cdot t = 6 \times 4 = 24\ \mathrm{m}$. The two methods agree. Pass.
+*Flat surface ($\theta = 0$):* $a = 10(0 - 0.25 \times 1) = -2.5\;\mathrm{m/s^2}$. The negative sign means the block would need to be pushed to move — on a flat surface with friction, a block does not spontaneously slide. Mathematically correct. ✓
 
-**Answer: $24.0\ \mathrm{m}$.**
+*Vertical surface ($\theta = 90^\circ$):* $a = 10(1 - 0.25 \times 0) = 10\;\mathrm{m/s^2}$. At $90^\circ$, the surface is vertical — there is no normal force (nothing pressing the block against it), so friction vanishes entirely. The block is in free fall with $a = g$. ✓
 
-> **Key insight:** The variable table *is* the thinking. You do not picture the car. The table tells you which equation to pick. The Dimension column tells you whether your answer has the right units. The table is your prosthetic intuition.
+All three limits behave correctly. Dimensional check: $g$ times dimensionless = $[L][T]^{-2}$, matching the expected acceleration dimension from the variable table. ✓
+
+**Answer: $2.84\;\mathrm{m/s^2}$ down the incline.**
 
 ---
 
-## 1.2 Beginner-Advanced Bridge: Free Fall with Sign Discipline
+## Example 3: Perfectly Inelastic Collision
 
-**Problem.** A stone is thrown upward from a $45\ \mathrm{m}$ high rooftop at $10\ \mathrm{m/s}$. When does it hit the ground? ($g = 10\ \mathrm{m/s^2}$)
+**Problem.** A $1500\;\mathrm{kg}$ car traveling at $20\;\mathrm{m/s}$ east collides with a $2500\;\mathrm{kg}$ SUV at rest. They stick together. Find their velocity after the collision.
 
-*This problem destroys intuitive students because the stone goes UP first, then DOWN. The mental movie scrambles. We will not make a mental movie.*
+---
 
-### Complete Thought Trace
+This problem is fundamentally different from the first two. There is no acceleration, no incline, no friction. Two objects interact over a very short time — a collision. The forces during the collision are enormous but brief, and I do not know their magnitude. I cannot use $F = ma$ because the force is unknown. But there is another tool: momentum conservation.
 
-**Step I -- IDENTIFY.**
+### Step 1 — Scan for Physics Words
+
+**"Collides"** — this single word changes everything. In §0.4, collisions belong to Category D: momentum. When objects collide, the total momentum before equals the total momentum after, provided no external forces act during the collision. The forces between the car and SUV are internal to the system, so momentum is conserved.
+
+**"At rest"** — the SUV is stationary. Its initial velocity is zero. This simplifies the momentum equation considerably.
+
+**"Stick together"** — these two words identify the collision as *perfectly inelastic*. The objects merge into one combined mass after the collision. They share the same final velocity. Kinetic energy is NOT conserved in this type of collision — some of it is converted to heat, sound, and deformation. But momentum IS conserved, and that is all I need.
+
+**"Velocity after"** — the unknown is the final velocity $v_f$ of the merged wreckage.
+
+| Word | Category | What it tells us |
+|------|----------|------------------|
+| "collides" | D: collision | Momentum conservation |
+| "at rest" | A: $v_0 = 0$ | SUV initial velocity zero |
+| "stick together" | D: perfectly inelastic | Same final velocity, KE not conserved |
+| "velocity after" | — | Unknown is $v_f$ |
+
+### Step 2 — Coordinate System
+
+The collision is 1D — everything happens along the east-west line. I set $+x$ = east, the direction of the car's initial motion.
 
 ```
-Variable    Symbol   Value   Unit        Dimension
-────────────────────────────────────────────────────
-Initial y    y0       45     m          [L]
-Final y      y         0     m          [L]
-Initial vy   v0y      +10    m/s        [L][T]^{-1}
-ay           ay       -10    m/s^2      [L][T]^{-2}
-Time          t        ?     s          [T]
++x direction: east (direction of car's initial motion)
++y direction: upward (not used — 1D horizontal)
+Origin:       collision point (not needed)
+t = 0 at:     instant of collision
 ```
 
-**Coordinate system (using §0.1 template):**
+### Step 3 — Variable Table
+
+| Variable | Symbol | Value | Unit | Dimension | Source |
+|----------|--------|-------|------|-----------|--------|
+| Mass of car | $m_1$ | 1500 | kg | $[M]$ | given |
+| Mass of SUV | $m_2$ | 2500 | kg | $[M]$ | given |
+| Initial velocity (car) | $v_1$ | 20 | m/s | $[L][T]^{-1}$ | "traveling at 20 m/s" |
+| Initial velocity (SUV) | $v_2$ | 0 | m/s | $[L][T]^{-1}$ | "at rest" |
+| Final velocity (both) | $v_f$ | ? | m/s | $[L][T]^{-1}$ | "velocity after" |
+
+I have two masses and two initial velocities. One equation (momentum conservation) and one unknown ($v_f$). This should be solvable directly.
+
+### Step 4 — I-SEE-R
+
+**S — Simplify.** The collision is perfectly inelastic — the car and SUV become one object. This means there is only one final velocity to solve for, not two. Momentum is conserved because the forces between the vehicles are internal. Kinetic energy is NOT conserved, but I do not need it — the problem asks only for velocity, not energy.
+
+**E — Equation.** Total momentum before the collision equals total momentum after:
+
+$$m_1 v_1 + m_2 v_2 = (m_1 + m_2) v_f$$
+
+This is the defining equation for a perfectly inelastic collision. The left side is the sum of individual momenta before. The right side is the momentum of the combined wreckage after.
+
+**E — Execute.** I solve for $v_f$:
+
+$$v_f = \frac{m_1 v_1 + m_2 v_2}{m_1 + m_2} = \frac{1500 \times 20 + 2500 \times 0}{1500 + 2500} = \frac{30{,}000}{4000} = 7.5\;\mathrm{m/s}$$
+
+The SUV was stationary, so its momentum contribution is zero. The car's momentum is distributed over the combined mass, resulting in a lower speed. The numbers make intuitive sense: the car ($1500\;\mathrm{kg}$) hits a heavier SUV ($2500\;\mathrm{kg}$) and they move together at less than half the car's original speed.
+
+**R — Reflect.**
+
+*Dimensional check:* $[M][L][T]^{-1} / [M] = [L][T]^{-1}$. The units are correct for velocity. ✓
+
+*Direction:* The answer is positive — east, the same direction as the car's initial motion. The stationary SUV does not reverse the direction; it only reduces the speed. ✓
+
+*Limiting case:* If the SUV were absent ($m_2 = 0$), then $v_f = v_1 = 20\;\mathrm{m/s}$. The car just continues at its original speed. The formula handles this edge case correctly. ✓
+
+*Energy check (optional, but informative):* Initial kinetic energy = $\frac{1}{2}(1500)(20)^2 = 300{,}000\;\mathrm{J}$. Final kinetic energy = $\frac{1}{2}(4000)(7.5)^2 = 112{,}500\;\mathrm{J}$. The collision converted $187{,}500\;\mathrm{J}$ — over 60% of the initial energy — into heat, sound, and metal deformation. This is typical for perfectly inelastic collisions: they dissipate the maximum possible kinetic energy. ✓
+
+**Answer: $7.5\;\mathrm{m/s}$ east.**
+
+---
+
+# Part II: Electricity
+
+---
+
+## Example 4: Coulomb's Law
+
+**Problem.** Charges $q_1 = +3.0\;\mu\mathrm{C}$ and $q_2 = -2.0\;\mu\mathrm{C}$ are $0.10\;\mathrm{m}$ apart. Find the electrostatic force between them. ($k = 9.0 \times 10^{9}\;\mathrm{N\;m^2/C^2}$)
+
+---
+
+This problem leaves the world of masses and accelerations. Now I am dealing with electric charges. But the method does not change. I still scan words, build a table, identify the law, and solve.
+
+### Step 1 — Scan for Physics Words
+
+The unit **$\mu$C** immediately identifies this as an electricity problem. §0.4 Category F: charges and Coulomb's Law.
+
+The charges have signs: $+3.0$ and $-2.0$. They are opposite, so the force will be attractive. This tells me the direction without any calculation.
+
+**"$0.10\;\mathrm{m}$ apart"** gives the distance $r$ between the charges.
+
+No other physics words appear — no electric field, no circuit, no magnetic field. The problem is a direct application of Coulomb's Law.
+
+| Word | Category | What it tells us |
+|------|----------|------------------|
+| "charges" / "$\mu$C" | F: Coulomb's Law | $F = k\lvert q_1 q_2\rvert/r^2$ |
+| $+3.0$, $-2.0$ | F: opposite signs | Attractive force |
+| "$0.10\;\mathrm{m}$ apart" | — | Distance $r = 0.10\;\mathrm{m}$ |
+
+### Step 2 — Coordinate System
+
+The force between two point charges acts along the line connecting them. I set $+x$ along that line, from $q_1$ to $q_2$.
 
 ```
-+x direction: horizontal, doesn't matter (1D vertical problem)
-+y direction: upward  (Rule 2)
-Origin:       ground, y=0  (Rule 3 -- ground is the reference)
-t=0 at:       the instant the stone is thrown  (Rule 4)
-
-Consequences:
-  g = -10 m/s^2   (opposite of +y)
-  v0y = +10 m/s   (along +y)
-  y0 = 45 m       (starting height above ground)
++x direction: line from q1 to q2 (radial direction)
+Origin:       position of q1
+→ Force acts purely along ±x. 1D radial problem.
+→ Opposite signs → attractive → each charge pulled toward the other.
 ```
 
-**Step S -- SIMPLIFY.** Constant acceleration ($a_y = -g$). Single object. No air resistance.
+### Step 3 — Variable Table
 
-**Step E -- EQUATION.** We know $y_0$, $y$, $v_{0y}$, $a_y$. We want $t$. The displacement is:
+I convert the microcoulombs to coulombs: $\mu\mathrm{C} = 10^{-6}\;\mathrm{C}$.
 
-$$\Delta y = y - y_0 = 0 - 45 = -45\ \mathrm{m}$$
+| Variable | Symbol | Value | Unit | Dimension |
+|----------|--------|-------|------|-----------|
+| Charge 1 | $q_1$ | $+3.0\times10^{-6}$ | C | $[Q]$ |
+| Charge 2 | $q_2$ | $-2.0\times10^{-6}$ | C | $[Q]$ |
+| Distance | $r$ | $0.10$ | m | $[L]$ |
+| Coulomb constant | $k$ | $9.0\times10^9$ | $\mathrm{N\;m^2/C^2}$ | $[M][L]^3[Q]^{-2}[T]^{-2}$ |
+| Force | $F$ | ? | N | $[M][L][T]^{-2}$ |
 
-We do not know $v_y$, so we use the equation that omits $v$:
+Notice that I wrote the dimension of $k$ in the table. This is not strictly necessary for solving, but it lets me verify the dimensional analysis in the Reflection step. The dimension of $k$ comes from rearranging Coulomb's Law: $k = Fr^2/(q_1 q_2)$, so $[k] = [M][L][T]^{-2} \cdot [L]^2 / [Q]^2 = [M][L]^3[Q]^{-2}[T]^{-2}$.
 
-$$\Delta y = v_{0y} t + \frac{1}{2} a_y t^2$$
+### Step 4 — I-SEE-R
 
-**Step E -- EXECUTE.**
+**S — Simplify.** Point charges — no size, no shape. The medium is vacuum (or air, which has essentially the same $k$). No other charges are nearby. The force acts along the single line connecting the two charges — a 1D problem.
 
-$$\begin{aligned}
--45 &= 10t + \frac{1}{2}(-10)t^2 \\[4pt]
--45 &= 10t - 5t^2 \\[4pt]
-5t^2 - 10t - 45 &= 0 \\[4pt]
-t^2 - 2t - 9 &= 0
-\end{aligned}$$
+**E — Execute.** Coulomb's Law gives the magnitude directly. The absolute value ensures I get a positive magnitude; the signs determine the direction separately.
 
-$$t = \frac{2 \pm \sqrt{4 + 36}}{2} = \frac{2 \pm \sqrt{40}}{2} = \frac{2 \pm 6.32}{2}$$
+$$F = k\frac{\lvert q_1 q_2\rvert}{r^2} = 9.0\times10^9 \cdot \frac{(3.0\times10^{-6})(2.0\times10^{-6})}{(0.10)^2}$$
 
-$t = 4.16\ \mathrm{s}$ or $t = -2.16\ \mathrm{s}$. Negative time is unphysical. **$t = 4.16\ \mathrm{s}$.**
+$$= 9.0\times10^9 \cdot \frac{6.0\times10^{-12}}{0.01} = 9.0\times10^9 \cdot 6.0\times10^{-10} = 5.4\;\mathrm{N}$$
 
-**Step R -- REFLECT.**
+Direction: opposite signs $\to$ attractive. Each charge experiences a force of $5.4\;\mathrm{N}$ pulling it toward the other.
 
-*Compare with simpler cases (same method, different initial conditions):*
+**R — Reflect.**
 
-| Case | $v_{0y}$ | Equation | $t$ | Expected ordering |
-|------|----------|----------|-----|-------------------|
-| Thrown downward | $-10$ | $-45 = -10t - 5t^2$ | $2.16\ \mathrm{s}$ | Fastest ✓ |
-| Simply dropped | $0$ | $-45 = -5t^2$ | $3.0\ \mathrm{s}$ | Middle ✓ |
-| Thrown upward | $+10$ | $-45 = 10t - 5t^2$ | $4.16\ \mathrm{s}$ | Slowest ✓ |
+*Dimensional check:* $[k][q]^2/[r]^2 = [M][L]^3[Q]^{-2}[T]^{-2} \cdot [Q]^2 / [L]^2 = [M][L][T]^{-2}$. This matches the dimension of force in my variable table. The dimensional analysis not only checks my answer — it also confirms that $k$ must have those specific, strange-looking dimensions for Coulomb's Law to be dimensionally consistent. ✓
 
-*Dimensional check:* The quadratic gave $t$ in seconds ($[T]$). ✓
+*Distance scaling:* If I double the distance to $0.20\;\mathrm{m}$, the force becomes $5.4/4 = 1.35\;\mathrm{N}$. This is the inverse square law: doubling distance quarters the force. The formula captures this without any additional work. ✓
 
-*Sign discipline check:* We never changed the coordinate system mid-problem. The upward throw went up, came down, and we never adjusted our signs. The algebra handled it automatically. ✓
+*Sign reversal:* If both charges were positive ($q_2 = +2.0\;\mu\mathrm{C}$), the magnitude would still be $5.4\;\mathrm{N}$, but the direction would be repulsive. The absolute value in the formula separates magnitude from direction — a clean design. ✓
 
-**Answer: $4.16\ \mathrm{s}$.**
-
-> **Key insight:** The stone went up, stopped, and came down -- and we did not think about any of it. We wrote $\Delta y = -45\ \mathrm{m}$, plugged into the equation, and solved a quadratic. The math handled the "up then down" because $a_y$ was constant and negative throughout. This is the power of the one-time coordinate choice: you set it, forget it, and trust the algebra.
+**Answer: $5.4\;\mathrm{N}$, attractive.**
 
 ---
 
-## 1.3 Advanced: The Wedge-Block Problem
+## Example 5: Compound Circuit Reduction
 
-**Problem.** A block of mass $m$ slides down a wedge of mass $M$ resting on a frictionless horizontal surface. The wedge angle is $\theta$. No friction between block and wedge. Find the wedge's acceleration.
-
-### Complete Thought Trace
-
-**Step I -- IDENTIFY.** Two objects. Wedge accelerates horizontally. Block accelerates both down the incline and with the wedge.
-
-*Relevant laws:* Newton's Second Law per object. Constraint: block stays on the wedge surface.
-
-**Coordinate systems (both using §0.1 Rule 1 for primary motion):**
-- Wedge: $+X$ = direction wedge moves when pushed.
-- Block: $+x$ = down the incline. $+y$ = perpendicular to incline, away from surface.
-
-*Why two different coordinate systems?* Because each simplifies the $\sum F = ma$ for its object. The wedge moves only horizontally. The block moves along and perpendicular to the incline.
-
-**Step S -- SIMPLIFY.** No friction anywhere. Only external force is gravity. The contact force $N$ is an action-reaction pair.
-
-**Step E -- EQUATION.**
-
-*FBD for wedge ($M$):* Gravity cancelled by ground normal. Block pushes into the incline with $N$, whose horizontal component $-N\sin\theta$ accelerates the wedge.
-
-$$-N\sin\theta = M A \tag{1}$$
-
-*FBD for block ($m$):* Gravity resolved into components $mg\sin\theta$ (down incline) and $mg\cos\theta$ (into incline). Normal $N$ is $+y$. The block's *ground-frame* acceleration has two contributions: wedge's acceleration $A$ (horizontal) plus sliding $a_r$ (down incline). Resolving into incline coordinates:
-
-Along $+x$: $a_x = a_r - A\cos\theta$ (sliding down minus wedge carrying block up-incline).
-
-Along $+y$: $a_y = -A\sin\theta$ (wedge's horizontal motion pushes block into surface).
-
-Now $F=ma$ for the block:
-
-$$mg\sin\theta = m(a_r - A\cos\theta) \tag{2}$$
-$$N - mg\cos\theta = m(-A\sin\theta) \tag{3}$$
-
-**Step E -- EXECUTE.** Three equations, three unknowns ($A$, $a_r$, $N$).
-
-From (1): $N = MA/\sin\theta$ (taking magnitudes; direction noted separately).
-
-From (3): $\displaystyle \frac{MA}{\sin\theta} - mg\cos\theta = -mA\sin\theta$.
-
-$$\begin{aligned}
-MA - mg\sin\theta\cos\theta &= -mA\sin^2\theta \\[4pt]
-A(M + m\sin^2\theta) &= mg\sin\theta\cos\theta \\[4pt]
-A &= \frac{mg\sin\theta\cos\theta}{M + m\sin^2\theta}
-\end{aligned}$$
-
-**Step R -- REFLECT.** We cannot *feel* this answer. We use the §0.2 dimensional check and limiting cases:
-
-*Dimensional check:* Numerator $[M][L][T]^{-2}\times 1 \times 1 = [M][L][T]^{-2}$. Denominator $[M] + [M]\times 1 = [M]$. Result $[L][T]^{-2}$ = acceleration. ✓
-
-*Limiting-case verification (the non-intuitive person's replacement for intuition):*
-
-| Test | Input | Expected | Formula Result | Pass? |
-|------|-------|----------|---------------|-------|
-| Immovable wedge | $M \to \infty$ | $A \to 0$ | $A \to 0$ | Yes |
-| Flat surface | $\theta \to 0$ | $A \to 0$ | $\sin 0 = 0 \to A = 0$ | Yes |
-| Vertical wall | $\theta \to 90^\circ$ | $A \to 0$ | $\cos 90^\circ = 0 \to A = 0$ | Yes |
-| Light block | $m \to 0$ | $A \to 0$ | $A \to 0$ | Yes |
-| Light wedge | $M \to 0$ | $A \to g\cot\theta$ | $A = \frac{mg\sin\theta\cos\theta}{m\sin^2\theta} = g\cot\theta$ | Yes |
-
-*Alternative verification:* Horizontal momentum of (wedge + block) is conserved (no external horizontal forces). At any time $t$, momentum: $0 = M(-A) + m(-A + a_r t\cos\theta)$. Differentiating and substituting $A$ and $a_r$ confirms consistency.
-
-**Answer:**
-
-$$A = \frac{mg\sin\theta\cos\theta}{M + m\sin^2\theta}$$
-
-> **Key insight:** This problem tortures intuition. Two objects move in different directions simultaneously. Constraints couple them. But the **procedure** -- draw FBDs, choose coordinates per §0.1, write $F=ma$ per object, add constraints, solve, verify with §0.2 dimensions and limiting cases -- is identical to a single block on a table. Complexity requires discipline, not intuition.
+**Problem.** $R_1 = 4.0\;\Omega$, $R_2 = 12.0\;\Omega$ in parallel, with $R_3 = 6.0\;\Omega$ in series. A $24\;\mathrm{V}$ battery powers the circuit. Find the current through $R_2$ and the voltage across $R_2$.
 
 ---
 
-## 1.4 Engineering: Highway Braking Distance
+This is a circuit problem. There is no motion, no force, no energy in the mechanical sense. But the structure is the same: I have numbers (resistances, voltage), I need to find unknowns (current, voltage drop), and I have rules (Ohm's Law, series/parallel reduction) that connect them.
 
-**Problem.** A civil engineer must determine safe following distance for a highway with speed limit $100\ \mathrm{km/h}$. Driver reaction time is $0.7\ \mathrm{s}$. Maximum safe deceleration on wet asphalt is $5.0\ \mathrm{m/s^2}$. (a) Find total stopping distance on level ground. (b) How much does a $5\%$ downhill grade increase it?
+### Step 1 — Scan for Physics Words
 
-### Complete Thought Trace
+The unit **$\Omega$** tells me resistors are involved. **"Parallel"** and **"series"** tell me how they are connected. **"$24\;\mathrm{V}$ battery"** gives the total voltage.
 
-**Step I -- IDENTIFY.** Two sequential phases:
+The words point to Ohm's Law ($V = IR$) and the reduction formulas. No other electrical concepts (capacitors, magnetic fields) appear.
 
-*Phase 1 (reaction):* $v_0 = 100\ \mathrm{km/h} = 27.8\ \mathrm{m/s}$, $a = 0$, $t_1 = 0.7\ \mathrm{s}$. Want $\Delta x_1$.
+| Word | Category | What it tells us |
+|------|----------|------------------|
+| $\Omega$ / "resistor" | F: Ohm's Law | $V = IR$ |
+| "parallel" | F: parallel rule | $1/R_{\text{eq}} = 1/R_1 + 1/R_2$, same voltage |
+| "series" | F: series rule | $R_{\text{eq}} = R_a + R_b$, same current |
+| "$24\;\mathrm{V}$ battery" | F: voltage source | Total $V$ across circuit |
 
-*Phase 2 (braking, level):* $v_0 = 27.8\ \mathrm{m/s}$, $v = 0$, $a = -5.0\ \mathrm{m/s^2}$. Want $\Delta x_2$.
+### Step 2 — Coordinate System
 
-*Phase 2 (grade):* $a = -(5.0 - g\sin\theta)$ where $\sin\theta \approx \tan\theta = 0.05$.
+Not applicable. Circuits use current direction defined by battery polarity, not spatial coordinates.
 
-**Step E -- EQUATION.**
+### Step 3 — Variable Table
 
-Phase 1: $\Delta x_1 = v_0 t_1$. (Uniform motion.)
+| Variable | Symbol | Value | Unit | Dimension |
+|----------|--------|-------|------|-----------|
+| $R_1$ | $R_1$ | 4.0 | $\Omega$ | $[M][L]^2[Q]^{-2}[T]^{-1}$ |
+| $R_2$ | $R_2$ | 12.0 | $\Omega$ | same |
+| $R_3$ | $R_3$ | 6.0 | $\Omega$ | same |
+| Battery voltage | $V$ | 24 | V | $[M][L]^2[Q]^{-1}[T]^{-2}$ |
+| Current through $R_2$ | $I_2$ | ? | A | $[Q][T]^{-1}$ |
+| Voltage across $R_2$ | $V_2$ | ? | V | $[M][L]^2[Q]^{-1}[T]^{-2}$ |
 
-Phase 2: We know $v_0$, $v$, $a$. Want $\Delta x$. Missing $t$ → use $v^2 = v_0^2 + 2a\Delta x_2$.
+### Step 4 — I-SEE-R
 
-**Step E -- EXECUTE.**
+**S — Simplify.** Ideal wires (zero resistance). Ideal battery (zero internal resistance). DC steady state — no capacitors charging or discharging, no time-varying behavior. The circuit is purely resistive.
 
-**(a) Level ground.**
+**E — Equation.** The strategy for compound circuits is always the same: start from the innermost group and reduce outward.
 
-$$\begin{aligned}
-\Delta x_1 &= 27.8 \times 0.7 = 19.5\ \mathrm{m} \\[4pt]
-0 &= (27.8)^2 + 2(-5.0)\Delta x_2 \\[4pt]
-\Delta x_2 &= \frac{773}{10} = 77.3\ \mathrm{m}
-\end{aligned}$$
+I identify the innermost group: $R_1$ and $R_2$ are in parallel. I reduce them to a single equivalent resistance $R_{12}$. Then $R_{12}$ is in series with $R_3$. I add them to get the total resistance. From there, Ohm's Law gives the total current. Then I work backward, distributing current and voltage to each branch.
 
-Total: $19.5 + 77.3 = 96.8\ \mathrm{m}$.
+**E — Execute.**
 
-**(b) $5\%$ downhill grade.** Grade means $\tan\theta = 0.05$. For small angles, $\sin\theta \approx \tan\theta = 0.05$. Gravity adds $g\sin\theta = 9.8 \times 0.05 = 0.49\ \mathrm{m/s^2}$ along the motion, reducing effective deceleration:
+*Phase 1 — reduce the parallel pair:*
+$$\frac{1}{R_{12}} = \frac{1}{4.0} + \frac{1}{12.0} = \frac{3}{12} + \frac{1}{12} = \frac{4}{12}$$
+$$R_{12} = 3.0\;\Omega$$
 
-$$\begin{aligned}
-a_{\mathrm{eff}} &= -5.0 + 0.49 = -4.51\ \mathrm{m/s^2} \\[4pt]
-\Delta x_2' &= \frac{(27.8)^2}{2 \times 4.51} = \frac{773}{9.02} = 85.7\ \mathrm{m}
-\end{aligned}$$
+Notice that $R_{12} = 3.0\;\Omega$ is *smaller* than either individual resistor ($4.0$ and $12.0$). This is always true for parallel combinations: the equivalent resistance is less than the smallest branch resistance. The reason is that parallel resistors provide multiple paths for current, making it easier for charge to flow.
 
-Total on grade: $19.5 + 85.7 = 105.2\ \mathrm{m}$.
+*Phase 2 — add the series resistor:*
+$$R_{\text{total}} = R_{12} + R_3 = 3.0 + 6.0 = 9.0\;\Omega$$
 
-**Step R -- REFLECT.**
+*Phase 3 — total current from the battery:*
+$$I_{\text{total}} = \frac{V}{R_{\text{total}}} = \frac{24}{9.0} = 2.667\;\mathrm{A}$$
 
-*Dimensional check:* All distances in $\mathrm{m}$, speeds in $\mathrm{m/s}$, accelerations in $\mathrm{m/s^2}$. ✓
+*Phase 4 — distribute backward:*
+$R_3$ is in series with the parallel pair, so it carries the full total current: $I_3 = 2.667\;\mathrm{A}$.
 
-*Engineering analysis:* The grade adds $8.4\ \mathrm{m}$ -- roughly one car length. At $100\ \mathrm{km/h}$, the car covers $27.8\ \mathrm{m/s}$, so the extra distance corresponds to hitting an obstacle at about $30\ \mathrm{km/h}$ instead of stopping. **Conclusion:** Reduce speed limits or increase following distances on downhill sections.
+The voltage across $R_3$ is $V_3 = I_3 R_3 = 2.667 \times 6.0 = 16\;\mathrm{V}$.
 
-*Limiting case:* If $a \to 0$ (black ice), $\Delta x_2 \to \infty$ -- never stops. Correct. ✓
+The remaining voltage appears across the parallel pair: $V_{12} = 24 - 16 = 8\;\mathrm{V}$.
 
-> **Key insight:** Engineering problems chain together basic physics segments. Each segment uses exactly one rule. Decompose. Apply. Sum.
+In a parallel configuration, both branches have the same voltage: $V_1 = V_2 = 8\;\mathrm{V}$.
 
----
+Now I can find the current through $R_2$:
+$$I_2 = \frac{V_2}{R_2} = \frac{8}{12} = 0.667\;\mathrm{A}$$
 
-# Part II: Electricity and Magnetism
+**R — Reflect.**
 
-No one -- intuitive or not -- has ever directly perceived an electric field. E&M is the great equalizer. Everyone succeeds by trusting the mathematics.
+*Consistency check:* $I_1 = V_1/R_1 = 8/4 = 2\;\mathrm{A}$. The currents entering the parallel junction must sum to the current leaving: $I_1 + I_2 = 2 + 0.667 = 2.667 = I_{\text{total}}$. Current is conserved. ✓
 
----
+*Power check:* Total power from the battery = $VI = 24 \times 2.667 = 64\;\mathrm{W}$. Individual powers: $P_1 = 8 \times 2 = 16\;\mathrm{W}$, $P_2 = 8 \times 0.667 = 5.33\;\mathrm{W}$, $P_3 = 16 \times 2.667 = 42.67\;\mathrm{W}$. Sum = $64\;\mathrm{W}$. Energy is conserved. ✓
 
-## 2.1 Beginner: Coulomb's Law
+*Limiting case:* If $R_2$ were removed (open circuit, $R_2 \to \infty$), the parallel combination becomes just $R_1 = 4.0\;\Omega$. Then $R_{\text{total}} = 10.0\;\Omega$, $I_{\text{total}} = 2.4\;\mathrm{A}$, and $I_2 = 0$. An open branch carries no current — physically correct. ✓
 
-**Problem.** Charges $q_1 = +3.0\ \mu\mathrm{C}$ and $q_2 = -2.0\ \mu\mathrm{C}$ are $0.10\ \mathrm{m}$ apart. Find the force magnitude and direction. ($k = 9.0 \times 10^{9}\ \mathrm{N\,m^2/C^2}$)
-
-### Complete Thought Trace
-
-**Step I -- IDENTIFY.**
-
-```
-Variable    Symbol   Value                    Unit            Dimension
-──────────────────────────────────────────────────────────────────────────
-Charge 1     q1       +3.0 × 10^{-6}           C              [Q]
-Charge 2     q2       -2.0 × 10^{-6}           C              [Q]
-Distance      r        0.10                    m              [L]
-Constant      k        9.0 × 10^{9}            N·m^2/C^2      [M][L]^3[Q]^{-2}[T]^{-2}
-Force         F        ?                       N              [M][L][T]^{-2}
-```
-
-*Relevant law:* $F = k|q_1 q_2|/r^2$.
-
-**Step S -- SIMPLIFY.** Point charges. Vacuum/air medium.
-
-**Step E -- EXECUTE.**
-
-$$\begin{aligned}
-F &= (9.0 \times 10^{9}) \cdot \frac{(3.0 \times 10^{-6})(2.0 \times 10^{-6})}{(0.10)^2} \\[4pt]
-&= (9.0 \times 10^{9}) \cdot \frac{6.0 \times 10^{-12}}{0.01} \\[4pt]
-&= (9.0 \times 10^{9}) \cdot (6.0 \times 10^{-10}) = 5.4\ \mathrm{N}
-\end{aligned}$$
-
-**Direction rule (mechanical):** Opposite signs attract. Same signs repel. $q_1$ (+), $q_2$ ($-$) → **attractive.**
-
-**Step R -- REFLECT.**
-
-*Dimensional check:* $[M][L]^3[Q]^{-2}[T]^{-2} \times [Q]^2 / [L]^2 = [M][L][T]^{-2}$. ✓
-
-*Distance scaling:* Doubling $r$ → $F/4 = 1.35\ \mathrm{N}$. Inverse square. ✓
-
-*Sign reversal:* If $q_2$ were $+2.0\ \mu\mathrm{C}$, magnitude same, direction repulsive. ✓
-
-**Answer: $5.4\ \mathrm{N}$, attractive.**
-
-> **Key insight:** Coulomb's law and Newton's gravitation share the same algebraic structure: constant $\times$ property$_1$ $\times$ property$_2$ / distance$^2$. Recognize the pattern. Apply the same algebraic procedure.
-
----
-
-## 2.2 Advanced: Compound Circuit Reduction
-
-**Problem.** $R_1 = 4.0\ \Omega$ and $R_2 = 12.0\ \Omega$ in parallel, with $R_3 = 6.0\ \Omega$ in series. A $24\ \mathrm{V}$ battery powers the circuit. Find the current through $R_2$ and the voltage across it.
-
-### Complete Thought Trace
-
-**Step I -- IDENTIFY.** *Relevant laws:* $V = IR$ (Ohm). Series: $R_{\mathrm{eq}} = R_a + R_b$, current identical. Parallel: $1/R_{\mathrm{eq}} = 1/R_a + 1/R_b$, voltage identical.
-
-**Step S -- SIMPLIFY.** Ideal wires and battery.
-
-**Step E -- EXECUTE.** Reduction algorithm: innermost → outward.
-
-*Phase 1: Reduce the parallel pair.*
-
-$$\frac{1}{R_{12}} = \frac{1}{4.0} + \frac{1}{12.0} = \frac{3}{12} + \frac{1}{12} = \frac{4}{12} \quad\Rightarrow\quad R_{12} = 3.0\ \Omega$$
-
-*Phase 2: Reduce series.*
-
-$$R_{\mathrm{total}} = 3.0 + 6.0 = 9.0\ \Omega$$
-
-*Phase 3: Total current.*
-
-$$I_{\mathrm{total}} = \frac{24}{9.0} = \frac{8}{3} \approx 2.667\ \mathrm{A}$$
-
-*Phase 4: Distribute backward.*
-
-$R_3$ (series): $V_3 = \frac{8}{3} \times 6.0 = 16\ \mathrm{V}$.
-
-Parallel pair voltage: $V_{12} = 24 - 16 = 8\ \mathrm{V}$.
-
-$R_2$ (parallel): $I_2 = 8/12 = 2/3 \approx 0.667\ \mathrm{A}$. $V_2 = 8\ \mathrm{V}$.
-
-**Step R -- REFLECT.**
-
-*Consistency:* $I_1 = 8/4 = 2\ \mathrm{A}$. $I_1 + I_2 = 2.667\ \mathrm{A} = I_{\mathrm{total}}$. ✓
-
-*Power:* $P_{\mathrm{total}} = 24 \times 8/3 = 64\ \mathrm{W}$. $P_1 + P_2 + P_3 = 16 + 5.33 + 42.67 = 64\ \mathrm{W}$. ✓
-
-*Limiting case:* If $R_2 \to \infty$ (open), parallel becomes $R_1 = 4\ \Omega$, $R_{\mathrm{total}} = 10\ \Omega$, $I_2 \to 0$. Correct. ✓
-
-**Answer: $I_2 = 0.667\ \mathrm{A}$, $V_2 = 8\ \mathrm{V}$.**
-
-> **Key insight:** No mental picture of electrons. No water-pressure analogy. Two rules applied in a fixed order. Deterministic.
-
----
-
-## 2.3 Engineering: The Mass Spectrometer
-
-**Problem.** A velocity selector uses $E = 2000\ \mathrm{N/C}$ (up) and $B = 0.40\ \mathrm{T}$ (into page). Undeflected particles enter a $B$-only region where $r = mv/(qB)$. Singly ionized $^{12}$C ($m = 2.00 \times 10^{-26}\ \mathrm{kg}$, $q = 1.60 \times 10^{-19}\ \mathrm{C}$) gives $r_{12} = 0.156\ \mathrm{m}$. Find $r$ for $^{14}$C ($m = 2.34 \times 10^{-26}\ \mathrm{kg}$, same $q$).
-
-### Complete Thought Trace
-
-**Velocity selector:** $qE = qvB \Rightarrow v = E/B = 2000/0.40 = 5000\ \mathrm{m/s}$.
-
-**Mass separation:** $mv^2/r = qvB \Rightarrow r = mv/(qB)$. Since $v = E/B$ for all particles, $r \propto m$ (same $q$).
-
-$$\frac{r_{14}}{r_{12}} = \frac{m_{14}}{m_{12}} = \frac{2.34}{2.00} = 1.17$$
-
-$$r_{14} = 1.17 \times 0.156 = 0.183\ \mathrm{m}$$
-
-**Engineering significance:** A $17\%$ mass difference produces a $2.7\ \mathrm{cm}$ radius difference -- easily detectable. This enables carbon dating: measuring $^{14}$C/$^{12}$C ratios in organic samples using nothing but $F=qE$, $F=qvB$, and $F=mv^2/r$.
-
-> **Key insight:** Science-fiction-sounding device. Three equations. No visualization needed.
+**Answer: $I_2 = 0.667\;\mathrm{A}$, $V_2 = 8\;\mathrm{V}$.**
 
 ---
 
 # Part III: Thermodynamics
 
-Strip away the metaphors ("heat flows like water") and thermodynamics becomes algebra.
+---
+
+## Example 6: The Ideal Gas Law
+
+**Problem.** A sealed container holds gas at $P_1 = 2.0\;\mathrm{atm}$, $V_1 = 5.0\;\mathrm{L}$, $T_1 = 300\;\mathrm{K}$. The gas is compressed to $V_2 = 2.0\;\mathrm{L}$ while being heated to $T_2 = 450\;\mathrm{K}$. Find the new pressure $P_2$.
 
 ---
 
-## 3.1 Beginner: The Ideal Gas Law
+This problem has no coordinates, no forces, no motion. It deals with the bulk properties of a gas — pressure, volume, temperature. The tools are different, but the extraction method is identical.
 
-**Problem.** Sealed gas at $P_1 = 2.0\ \mathrm{atm}$, $V_1 = 5.0\ \mathrm{L}$, $T_1 = 300\ \mathrm{K}$ is compressed to $V_2 = 2.0\ \mathrm{L}$ while heating to $T_2 = 450\ \mathrm{K}$. Find $P_2$.
+### Step 1 — Scan for Physics Words
 
-### Complete Thought Trace
+The words **"gas," "pressure," "volume,"** and **"temperature"** together trigger the Ideal Gas Law (§0.4 Category H). The word **"sealed"** is critical — it tells me the container is closed, so the amount of gas $n$ does not change. This allows me to use the combined gas law rather than the full $PV = nRT$.
 
-**Step I -- IDENTIFY.** State variables: $P$, $V$, $T$, $n$. For sealed container, $n$ constant.
+**"Compressed"** means volume decreases. **"Heated"** means temperature increases. Both changes will affect the pressure. The question asks for the new pressure $P_2$.
 
-*Law:* $P_1 V_1 / T_1 = P_2 V_2 / T_2$ (from $PV = nRT$ with $n$, $R$ constant).
+| Word | Category | What it tells us |
+|------|----------|------------------|
+| "gas" / "pressure" / "volume" / "temperature" | H: Ideal Gas Law | $PV = nRT$ |
+| "sealed" | H: $n$ constant | $P_1V_1/T_1 = P_2V_2/T_2$ |
+| "compressed" + "heated" | — | Both $V$ and $T$ change; $P$ responds |
 
-**Step E -- EXECUTE.**
+### Step 2 — Coordinate System
 
-$$\begin{aligned}
-P_2 &= P_1 \cdot \frac{V_1}{V_2} \cdot \frac{T_2}{T_1} \\[4pt]
-&= 2.0 \cdot \frac{5.0}{2.0} \cdot \frac{450}{300} \\[4pt]
-&= 2.0 \cdot 2.5 \cdot 1.5 = 7.5\ \mathrm{atm}
-\end{aligned}$$
+Not applicable. $P$, $V$, and $T$ are scalar properties of the entire gas sample — they have no direction.
 
-**Step R -- REFLECT.**
+### Step 3 — Variable Table
 
-*Factor analysis:* Compression alone ($V$ halved) multiplies $P$ by $2.5$. Heating alone ($T$ up $50\%$) multiplies $P$ by $1.5$. Combined: $2.0 \times 2.5 \times 1.5 = 7.5$. ✓
+| Variable | Symbol | Value | Unit | Dimension | Source |
+|----------|--------|-------|------|-----------|--------|
+| Initial pressure | $P_1$ | 2.0 | atm | $[M][L]^{-1}[T]^{-2}$ | given |
+| Initial volume | $V_1$ | 5.0 | L | $[L]^3$ | given |
+| Initial temperature | $T_1$ | 300 | K | $[\Theta]$ | given |
+| Final volume | $V_2$ | 2.0 | L | $[L]^3$ | "compressed to 2.0 L" |
+| Final temperature | $T_2$ | 450 | K | $[\Theta]$ | "heated to 450 K" |
+| Final pressure | $P_2$ | ? | atm | $[M][L]^{-1}[T]^{-2}$ | "Find $P_2$" |
 
-*Isothermal limit:* If $T_2 = T_1$, $P_2 = 2.0 \times 5.0/2.0 = 5.0\ \mathrm{atm}$ (Boyle's law). ✓
+### Step 4 — I-SEE-R
 
-**Answer: $7.5\ \mathrm{atm}$.**
+**S — Simplify.** The gas is ideal — it obeys $PV = nRT$ exactly. The container is sealed, so $n$ is constant. The universal gas constant $R$ is, by definition, constant. The only variables that change are $P$, $V$, and $T$, and they are related by $PV/T = nR = \text{constant}$. Therefore $P_1V_1/T_1 = P_2V_2/T_2$.
 
-> **Key insight:** $PV/T$ is constant. Four variables, one equation. The physics is in the proportionalities.
+**E — Equation.** I rearrange the combined gas law to solve for $P_2$:
 
----
+$$P_2 = P_1 \cdot \frac{V_1}{V_2} \cdot \frac{T_2}{T_1}$$
 
-## 3.2 Advanced: Carnot Efficiency
+I write it this way deliberately. It shows $P_2$ as the initial pressure multiplied by two independent factors: a volume factor ($V_1/V_2$) and a temperature factor ($T_2/T_1$). This factorization reveals the physics: compression increases pressure (by making $V_1/V_2 > 1$), and heating also increases pressure (by making $T_2/T_1 > 1$). Both changes push $P_2$ higher than $P_1$.
 
-**Problem.** A heat engine operates between $T_H = 800\ \mathrm{K}$ and $T_C = 300\ \mathrm{K}$, extracting $Q_H = 500\ \mathrm{J}$ per cycle. Find (a) maximum work per cycle, (b) actual efficiency if real work is $200\ \mathrm{J/cycle}$.
+**E — Execute.**
 
-### Complete Thought Trace
+$$P_2 = 2.0 \cdot \frac{5.0}{2.0} \cdot \frac{450}{300} = 2.0 \cdot 2.5 \cdot 1.5 = 7.5\;\mathrm{atm}$$
 
-*Carnot efficiency:* $\eta_{\mathrm{Carnot}} = 1 - T_C/T_H$.
+**R — Reflect.**
 
-$$\begin{aligned}
-\eta_{\mathrm{Carnot}} &= 1 - \frac{300}{800} = 0.625 = 62.5\% \\[4pt]
-W_{\mathrm{max}} &= 0.625 \times 500 = 312.5\ \mathrm{J} \\[4pt]
-\eta_{\mathrm{actual}} &= \frac{200}{500} = 0.40 = 40\%
-\end{aligned}$$
+*Factor analysis:* The volume is halved ($V_2 = 2.0$, $V_1 = 5.0$, so $V_1/V_2 = 2.5$). If only the volume changed (constant temperature), Boyle's Law would give $P_2 = 2.0 \times 2.5 = 5.0\;\mathrm{atm}$. The temperature increases by 50% ($T_2/T_1 = 450/300 = 1.5$). If only the temperature changed (constant volume), Gay-Lussac's Law would give $P_2 = 2.0 \times 1.5 = 3.0\;\mathrm{atm}$. When both act simultaneously, the factors multiply: $2.0 \times 2.5 \times 1.5 = 7.5\;\mathrm{atm}$. ✓
 
-The actual engine achieves $64\%$ of the theoretical maximum.
+*Isothermal limit:* If $T_2 = T_1 = 300\;\mathrm{K}$, then $P_2 = 2.0 \times 2.5 = 5.0\;\mathrm{atm}$ — pure Boyle's Law result. ✓
 
-*Limiting cases:*
+*Isochoric limit:* If $V_2 = V_1 = 5.0\;\mathrm{L}$, then $P_2 = 2.0 \times 1.5 = 3.0\;\mathrm{atm}$ — pure Gay-Lussac result. ✓
 
-| $T_C / T_H$ | $\eta_{\mathrm{Carnot}}$ | Meaning |
-|-------------|--------------------------|---------|
-| $T_C \to 0$ | $100\%$ | All heat → work (unreachable) |
-| $T_C \to T_H$ | $0\%$ | No work possible |
-| $T_H \to \infty$ | $100\%$ | Infinite hot reservoir (unphysical) |
+The combined gas law correctly reduces to each special case. The answer is robust.
 
-*Waste heat:* $Q_C = 500 - 200 = 300\ \mathrm{J}$. Conserved but unavailable for work.
-
-> **Key insight:** Carnot efficiency depends only on $T_C/T_H$ in kelvin. Independent of substance or design. A mathematical consequence of the Second Law.
+**Answer: $7.5\;\mathrm{atm}$.**
 
 ---
 
-## 3.3 Engineering: Heat Pump Economics
-
-**Problem.** Compare resistive heating ($100\%$ efficient) with a heat pump between $T_C = 273\ \mathrm{K}$ ($0^\circ\mathrm{C}$) and $T_H = 293\ \mathrm{K}$ ($20^\circ\mathrm{C}$). Electricity costs $\$0.12/\mathrm{kWh}$. Home needs $15{,}000\ \mathrm{kWh}$ per winter. Find annual cost difference.
-
-### Complete Thought Trace
-
-Heat pump COP (heating): $\mathrm{COP} = Q_H/W$. Carnot COP: $\mathrm{COP}_{\mathrm{Carnot}} = T_H/(T_H - T_C)$.
-
-$$\begin{aligned}
-\mathrm{COP}_{\mathrm{Carnot}} &= \frac{293}{20} = 14.65 \\[4pt]
-\mathrm{COP}_{\mathrm{actual}} &\approx 0.5 \times 14.65 = 7.33 \quad\text{(real-world derating)}
-\end{aligned}$$
-
-*Resistive:* $W = Q_H = 15{,}000\ \mathrm{kWh}$. Cost = $\$1{,}800/\mathrm{yr}$.
-
-*Heat pump:* $W = 15{,}000/7.33 = 2{,}046\ \mathrm{kWh}$. Cost = $\$246/\mathrm{yr}$.
-
-*Annual savings:* $\$1{,}554$.
-
-*Economic analysis:*
-If heat pump costs $\$4{,}000$ more: payback = $4000/1554 \approx 2.6$ years.
-Over 15 years: net savings $\approx \$19{,}000$.
-
-*Cold-climate limit:* At $T_C = 253\ \mathrm{K}$ ($-20^\circ\mathrm{C}$): $\mathrm{COP} \approx 3.67$, cost $\approx \$490/\mathrm{yr}$ -- still cheaper, but margins shrink.
-
-> **Key insight:** A financial decision about home heating reduces to $\mathrm{COP} = T_H/(T_H - T_C)$. Physics as a quantitative decision tool.
+# Part IV: Waves
 
 ---
 
-# Part IV: Oscillations and Waves
+## Example 7: Standing Waves on a Guitar String
 
-A wave is a *pattern* propagating through a medium. No mass. No object. For the non-intuitive thinker, this abstraction is liberating: there is nothing to picture incorrectly.
-
----
-
-## 4.1 Beginner: Simple Harmonic Motion
-
-**Problem.** A $0.50\ \mathrm{kg}$ mass on a spring ($k = 200\ \mathrm{N/m}$) is displaced $0.10\ \mathrm{m}$ and released. Find (a) $\omega$, (b) $T$, (c) $v_{\mathrm{max}}$.
-
-### Complete Thought Trace
-
-**Step I -- IDENTIFY.** SHM definition: $a = -\omega^2 x$.
-
-**Step S -- SIMPLIFY.** $F = -kx$ (Hooke) and $F = ma$ (Newton) give $a = -(k/m)x$. Comparing: $\omega^2 = k/m$.
-
-**Step E -- EXECUTE.**
-
-$$\begin{aligned}
-\omega &= \sqrt{\frac{200}{0.50}} = \sqrt{400} = 20\ \mathrm{rad/s} \\[4pt]
-T &= \frac{2\pi}{\omega} = \frac{2\pi}{20} = 0.314\ \mathrm{s} \\[4pt]
-v_{\mathrm{max}} &= \omega A = 20 \times 0.10 = 2.0\ \mathrm{m/s}
-\end{aligned}$$
-
-**Step R -- REFLECT.** Energy check: $E = \frac{1}{2}kA^2 = \frac{1}{2}(200)(0.01) = 1.0\ \mathrm{J} = \frac{1}{2}mv_{\mathrm{max}}^2 = \frac{1}{2}(0.50)(4.0) = 1.0\ \mathrm{J}$. ✓
-
-> **Key insight:** SHM is a differential equation pattern, not a picture. When you see $F \propto -x$, the solution is sinusoidal, and $\omega$ comes from the proportionality constant.
+**Problem.** A guitar string of length $L = 0.65\;\mathrm{m}$ has linear density $\mu = 4.0\times10^{-3}\;\mathrm{kg/m}$ and is under tension $F_T = 100\;\mathrm{N}$. Find (a) the fundamental frequency $f_1$, (b) the third harmonic frequency $f_3$, and (c) the wavelength of the third harmonic $\lambda_3$.
 
 ---
 
-## 4.2 Advanced: Standing Waves on a String
+This problem looks different from everything before it. There is a string, a tension, a "linear density" — concepts from wave physics, not from mechanics or electricity. But the method still works. I scan for words, build the table, find the equations.
 
-**Problem.** Guitar string: $L = 0.65\ \mathrm{m}$, $\mu = 4.0 \times 10^{-3}\ \mathrm{kg/m}$, $F_T = 100\ \mathrm{N}$. Find (a) $f_1$, (b) $f_3$, (c) $\lambda_3$.
+### Step 1 — Scan for Physics Words
 
-### Complete Thought Trace
+**"String"** and **"tension"** together trigger the wave speed formula for a taut string: $v = \sqrt{F_T/\mu}$. The speed of a wave on a string depends only on the tension and the linear density — not on the frequency or wavelength.
 
-**Step I -- IDENTIFY.** Wave speed: $v = \sqrt{F_T/\mu}$. Standing wave (fixed ends): $L = n\lambda_n/2$.
+**"Fundamental frequency"** and **"harmonic"** tell me this is a standing wave problem. For a string fixed at both ends, the standing wave condition is geometric: an integer number of half-wavelengths must fit exactly on the string length. This gives $f_n = n v/(2L)$.
 
-**Step E -- EXECUTE.**
+**"Length $L = 0.65\;\mathrm{m}$"** — the string's length, which sets the boundary conditions. Both ends are fixed, so the displacement is zero at $x = 0$ and $x = L$.
 
-$$\begin{aligned}
-v &= \sqrt{\frac{100}{4.0 \times 10^{-3}}} = \sqrt{25{,}000} = 158.1\ \mathrm{m/s} \\[4pt]
-f_n &= n \cdot \frac{v}{2L} = n f_1 \\[4pt]
-f_1 &= \frac{158.1}{2 \times 0.65} = 121.6\ \mathrm{Hz} \\[4pt]
-f_3 &= 3 \times 121.6 = 364.8\ \mathrm{Hz} \\[4pt]
-\lambda_3 &= \frac{2L}{3} = 0.433\ \mathrm{m}
-\end{aligned}$$
+| Word | Category | What it tells us |
+|------|----------|------------------|
+| "string" / "tension" | Waves | $v = \sqrt{F_T/\mu}$ (wave speed on taut string) |
+| "fundamental frequency" / "harmonic" | Waves | $f_n = n v/(2L)$ (standing wave, fixed ends) |
+| "length" / $L = 0.65\;\mathrm{m}$ | Boundary condition | Both ends fixed |
 
-**Answer: (a) $121.6\ \mathrm{Hz}$, (b) $364.8\ \mathrm{Hz}$, (c) $0.433\ \mathrm{m}$.**
+### Step 2 — Coordinate System
 
-> **Key insight:** Physics only enters through $v = \sqrt{F_T/\mu}$. Everything else is geometry: $L = n\lambda_n/2$.
+```
++x direction: along the string, from left end to right end
++y direction: transverse displacement (direction of vibration)
+Origin:       left fixed end, x = 0
+
+→ Boundary conditions: y(0, t) = 0, y(L, t) = 0 (fixed at both ends)
+→ Standing wave: integer number of half-wavelengths fits on L.
+```
+
+### Step 3 — Variable Table
+
+| Variable | Symbol | Value | Unit | Dimension | Source |
+|----------|--------|-------|------|-----------|--------|
+| String length | $L$ | 0.65 | m | $[L]$ | given |
+| Linear density | $\mu$ | $4.0\times10^{-3}$ | kg/m | $[M][L]^{-1}$ | given |
+| Tension | $F_T$ | 100 | N | $[M][L][T]^{-2}$ | given |
+| Wave speed | $v$ | — | m/s | $[L][T]^{-1}$ | derived |
+| Fundamental freq | $f_1$ | ? | Hz | $[T]^{-1}$ | (a) |
+| Third harmonic | $f_3$ | ? | Hz | $[T]^{-1}$ | (b) |
+| Wavelength (3rd) | $\lambda_3$ | ? | m | $[L]$ | (c) |
+
+I notice that wave speed $v$ is not given — I must compute it from $F_T$ and $\mu$. This is a two-step problem: first find $v$, then find the frequencies and wavelengths.
+
+### Step 4 — I-SEE-R
+
+**S — Simplify.** The string is ideal — perfectly flexible, uniform density, constant tension along its length. Both ends are rigidly fixed, which forces nodes (zero displacement) at $x = 0$ and $x = L$ at all times. The standing wave condition follows directly from these boundary conditions.
+
+**E — Equation.** Two independent physical facts combine to give the answer.
+
+First, the wave speed. This depends only on the properties of the medium — the string itself — not on how it is vibrated: $v = \sqrt{F_T/\mu}$.
+
+Second, the standing wave condition. For a string fixed at both ends, the length must equal an integer number of half-wavelengths: $L = n\frac{\lambda_n}{2}$ for $n = 1, 2, 3, \ldots$
+
+Combining these: $f_n = v/\lambda_n = n v/(2L)$.
+
+**E — Execute.**
+
+I compute the wave speed first:
+
+$$v = \sqrt{\frac{100}{4.0\times10^{-3}}} = \sqrt{25{,}000} = 158.1\;\mathrm{m/s}$$
+
+Now the fundamental frequency ($n = 1$):
+
+$$f_1 = \frac{v}{2L} = \frac{158.1}{2 \times 0.65} = \frac{158.1}{1.30} = 121.6\;\mathrm{Hz}$$
+
+The third harmonic is simply three times the fundamental:
+
+$$f_3 = 3 f_1 = 3 \times 121.6 = 364.8\;\mathrm{Hz}$$
+
+The wavelength of the third harmonic uses the standing wave condition with $n = 3$:
+
+$$\lambda_3 = \frac{2L}{3} = \frac{2 \times 0.65}{3} = 0.433\;\mathrm{m}$$
+
+Notice that $\lambda_3$ is shorter than the string length — exactly one-third of $2L$. On the string, one and a half full wavelengths fit between the two fixed ends.
+
+**R — Reflect.**
+
+*Dimensional check:* $\sqrt{F_T/\mu} = \sqrt{[M][L][T]^{-2} / ([M][L]^{-1})} = \sqrt{[L]^2[T]^{-2}} = [L][T]^{-1}$. This is the dimension of speed. ✓ $f_n = v/(2L) = [L][T]^{-1}/[L] = [T]^{-1}$. This is the dimension of frequency (Hz). ✓
+
+*Harmonic spacing:* The frequencies are integer multiples of the fundamental: $f_n = n f_1$. This integer relationship is the defining characteristic of standing waves on a string with fixed ends. If the overtones were not exact integer multiples, the instrument would sound dissonant. ✓
+
+*Physical check:* A tighter string (larger $F_T$) produces a higher wave speed, and therefore higher frequencies — a sharper pitch. A heavier string (larger $\mu$) produces a lower wave speed, and therefore lower frequencies — a deeper pitch. This matches the behavior of every string instrument: tightening a tuning peg raises the pitch; using a thicker string lowers it. The physics is correct. ✓
+
+**Answer: (a) $f_1 = 122\;\mathrm{Hz}$, (b) $f_3 = 365\;\mathrm{Hz}$, (c) $\lambda_3 = 0.433\;\mathrm{m}$.**
+
+
+# Part V: How to Learn New Physics — The Meta-Method
+
+The seven examples taught you how to solve problems when you know which law to use. But what happens when you open a textbook to a chapter you have never seen — *magnetic flux*, *entropy*, *relativity*?
+
+This part is the meta-method: a system for absorbing new physics concepts and applying them to problems of increasing difficulty.
+
+> **Core principle:** You do not need to *understand* a concept before you can *use* it. In physics, using a concept correctly is the path to understanding — not the reverse. Textbooks are written by people who already understand. You are not them. Your advantage: you can follow rules without understanding.
+
+### §5.1 The Textbook Absorption Algorithm
+
+When you encounter a new chapter, do NOT read it front to back. Execute four passes:
+
+**Pass 1: Harvest every equation.** Flip through the chapter. Every boxed, bold, or displayed equation — copy it into a list. Do not read the surrounding text. You are building a raw inventory.
+
+**Pass 2: Identify every new variable.** For each symbol in each harvested equation, write down its name, its unit, and its dimension (derive from the equation using §0.2).
+
+**Pass 3: Classify each equation.** Every physics equation answers one of four questions:
+
+| Type | Question | Example |
+|------|----------|---------|
+| Definition | What IS this quantity? | $\vec{B} = \vec{F}/(qv\sin\theta)$ |
+| Force law | What force acts? | $\vec{F} = q\vec{v} \times \vec{B}$ |
+| Motion law | How does it move? | $r = mv/(qB)$ |
+| Conservation | What stays constant? | (magnetic force does no work) |
+
+**Pass 4: Add to your §0.4 table.** Every new physics word $\to$ one row in your personal vocabulary table. Now a future problem that says "magnetic field" will mechanically trigger the Lorentz force.
+
+### §5.2 The Problem-Difficulty Ladder
+
+Problems are not hard because you lack intuition. They are hard because they combine multiple concepts. This is a countable property:
+
+| Level | Concepts | Strategy |
+|-------|----------|----------|
+| **1. Direct substitution** | 1 equation, all variables given | Use Pass 1 of §0.4 — find the one law. |
+| **2. Two-step chain** | Equation 1's answer $\to$ Equation 2's input | Find the bridge variable (appears as both output and input). |
+| **3. Shared constraint** | Two objects/phases share a variable | Write separate equations, equate the shared variable. |
+| **4. Synthesis** | 3+ categories, must choose | Elimination protocol: list all triggered laws, eliminate those missing variables, use what remains. |
+
+### §5.3 When You Are Stuck — Four Recovery Protocols
+
+**Protocol A: Variable Shortage Check.** Count knowns. Count equations. If unknowns exceed equations, re-read for implied zeros ("from rest" $\to$ $v_0 = 0$, "stops" $\to$ $v = 0$).
+
+**Protocol B: Dimensional Back-Solve.** Write the dimension of the answer. Write dimensions of everything given. Is there only one way to combine them to get the answer's dimension? That combination IS the formula, up to a dimensionless constant.
+
+**Protocol C: Extreme-Case Test.** Set one variable to zero or infinity. Does the result make physical sense? A formula that fails any extreme case is wrong regardless of how you derived it.
+
+**Protocol D: One-Sentence Summary.** If you have stared for 5 minutes without writing, stop. Describe the problem in plain language without any physics words. "Something starts from rest, moves a distance while speeding up, I need its final speed." The physics words were the obstacle.
 
 ---
 
-## 4.3 Engineering: Resonance and Structural Safety
+# Part VI: The Universal Procedure
 
-**Problem.** A pedestrian bridge: $f_0 = 2.0\ \mathrm{Hz}$, $\zeta = 0.05$. Find (a) $f_d$, (b) $Q$ and amplification, (c) mitigation.
+Every problem in this document was solved with five identical steps:
 
-### Complete Thought Trace
-
-**(a)** $f_d = f_0\sqrt{1 - \zeta^2} \approx 1.997\ \mathrm{Hz}$ (negligible shift for $\zeta \ll 1$).
-
-**(b)** $Q = 1/(2\zeta) = 10$. At resonance, oscillations are **10$\times$** larger than static loading.
-
-**(c)** Mitigation strategies:
-
-| Strategy | Parameter | Mechanism |
-|----------|-----------|-----------|
-| Add damping | $\zeta \uparrow$, $Q \downarrow$ | Tuned mass dampers |
-| Shift frequency | Change $k$ or $m$ | Stiffen or add mass |
-| Disrupt driving | Alter walking surface | Curved path breaks stride sync |
-
-> **Engineering lesson (Tacoma Narrows, 1940):** The bridge failed from aeroelastic flutter: motion altered wind forces, amplifying motion. The principle: identify resonant frequencies, compute $Q$, and ensure energy removal exceeds energy input.
+| Step | Mechanical action | Do NOT do |
+|------|-------------------|-----------|
+| **I**dentify | Variable table + coordinate system + §0.4 law lookup | Do not "understand" — extract. |
+| **S**implify | Frictionless? massless? symmetry? conserved quantity? | Do not guess. Use §0.4 keywords. |
+| **E**quation | Write the law. Count unknowns vs. equations. | Do not substitute numbers yet. |
+| **E**xecute | Solve algebraically. Numbers last. Include units. | Do not skip steps. |
+| **R**eflect | Dimensions (§0.2) + limiting cases + independent check. | Do not ask "does it feel right?" Ask "does it pass the tests?" |
 
 ---
 
-# Part V: The Universal Procedure
+## Closing: What You Have Learned
 
-Every example follows the same five-step method:
+You have a mechanical system that solves physics problems without intuition:
 
-| Step | Action | Mechanical Rule |
-|------|--------|-----------------|
-| **I**dentify | Variable table + coordinate system + laws | Fill every cell. Use §0.1 template. Use §0.2 dimensions. |
-| **S**implify | Symmetries + approximations + conservation | Symmetry $\to$ conserved quantity. Frictionless $\to$ remove $f_k$. |
-| **E**quation | FBD → $\sum F = ma$ / conservation / kinematics | One law = one equation. Count unknowns. |
-| **E**xecute | Solve algebraically. Numbers last. | Symbols until the final line. |
-| **R**eflect | Dimensions (§0.2) + limiting cases + independent check | $[L][T]^{-1} \neq [M]$. Test $m\to 0$, $\theta\to 0$. Verify. |
+1. **Before thinking:** Extract numbers into a variable table, look up keywords to find the law, declare your coordinate system.
+2. **Solve:** I-SEE-R — Identify, Simplify, Equation, Execute, Reflect.
+3. **Verify:** Dimensional analysis, limiting cases, independent method.
 
----
-
-## Epilogue: The Algorithmic Physicist
-
-Paul Dirac trusted his equation's beauty over physical intuition. John von Neumann grounded quantum mechanics in rigorous mathematical axioms. Enrico Fermi reduced every question -- nuclear yield estimates, piano-tuner counts -- to a chain of multiplications.
-
-These physicists did not *feel* their way to truth. They trusted the procedure when intuition failed. And intuition always fails, eventually. The universe at its deepest levels -- quantum fields, curved spacetime -- is not something any human brain evolved to grasp.
-
-You, who cannot rely on intuition from day one, are not disadvantaged. You are **ahead.** You are learning the only method that works all the way down:
-
-> Trust the rules. Follow the steps. Verify with §0.2 dimensions and limiting cases. The answer is right if the procedure says it is right.
+The procedure does not change. From a falling stone (Example 1) to a guitar string (Example 7), the steps are identical. The physics content changes. The method endures.
 
 ---
 
 ## Quick-Reference Card
 
-### The Pre-Method (§0)
+### ① The 4-Pass Extraction Algorithm (§0.4)
 
-| Tool | Rule |
-|------|------|
-| Coordinate system | Use §0.1 fill-in-the-blanks template exactly |
-| Dimensional analysis | Use §0.2 three-step recipe: definition → dimensions → equality check |
-| Variable table | Draw the table first. Fill Dimension column from §0.2 reference. |
+| Pass | Action |
+|------|--------|
+| 1 | Read once. No writing. |
+| 2 | Extract every number + unit $\to$ Variable Table. |
+| 3 | Underline physics words $\to$ look up in §0.4 $\to$ primary law. |
+| 4 | Underline question $\to$ mark unknown `?` in table. |
 
-### The Five-Step Procedure
-
-```
-IDENTIFY  → Variable table (§0.3) + coordinate system (§0.1) + laws
-SIMPLIFY  → Symmetries + approximations + conserved quantities
-EQUATION  → FBD → ΣF=ma / conservation / kinematics
-EXECUTE   → Algebraic solution → numbers at the end
-REFLECT   → Dimensions (§0.2) → limiting cases → independent check
-```
-
-### Conservation Law Decision Tree
+### ② Coordinate System Template (§0.1)
 
 ```
-External forces on system?
-├── No → Conservation laws apply
-│   ├── Collision/explosion → Momentum (+ KE if elastic)
-│   └── Height/speed change → Mechanical Energy
-└── Yes → Newton's Second Law (ΣF = ma)
-    └── Multiple bodies → Center of Mass: ΣF_ext = M_total · a_CM
++x: _______________  (Rule 1: direction of primary motion)
++y: _______________  (Rule 2: upward, or ⊥ away from incline)
+Origin: _______________  (Rule 3: starting position, or given reference)
+t = 0: _______________  (Rule 4: instant action begins)
+
+→ g = ±___ m/s²  (sign: opposite of +y)
 ```
 
-### Kinematic Equation Selector (Constant $a$)
+### ③ Dimension Quick-Lookup (§0.2)
 
-5 variables: $v_0$, $v$, $a$, $t$, $\Delta x$. Know 3 → find the other 2.
+| Quantity | Dimension |
+|----------|-----------|
+| Speed, $v$ | $[L][T]^{-1}$ |
+| Acceleration, $a$ | $[L][T]^{-2}$ |
+| Force, $F$ | $[M][L][T]^{-2}$ |
+| Energy, $E$, $K$, $U$ | $[M][L]^2[T]^{-2}$ |
+| Momentum, $p$ | $[M][L][T]^{-1}$ |
+| Electric charge, $q$ | $[Q]$ |
+| Voltage, $V$ | $[M][L]^2[Q]^{-1}[T]^{-2}$ |
+| Magnetic field, $B$ | $[M][Q]^{-1}[T]^{-1}$ |
+| Resistance, $R$ | $[M][L]^2[Q]^{-2}[T]^{-1}$ |
 
-| Missing variable | Use |
-|-----------------|-----|
-| $\Delta x$ | $v = v_0 + at$ |
-| $v$ | $\Delta x = v_0t + \frac{1}{2}at^2$ |
-| $a$ | $\Delta x = \frac{1}{2}(v_0+v)t$ |
-| $t$ | $v^2 = v_0^2 + 2a\Delta x$ |
+### ④ The I-SEE-R Procedure
+
+| Step | Action |
+|------|--------|
+| **I**dentify | Table + coordinates + law |
+| **S**implify | Approximations, symmetries, conservation |
+| **E**quation | Write law. Count unknowns. No numbers yet. |
+| **E**xecute | Algebra first. Numbers last. Include units. |
+| **R**eflect | Dimensions + limiting cases + independent check |
+
+### ⑤ Kinematic Equations (constant $a$)
+
+5 variables: $v_0$, $v$, $a$, $t$, $\Delta x$. **Know 3 $\to$ find the other 2.**
+
+| You need | Missing | Use |
+|----------|---------|-----|
+| $v$ | $\Delta x$ | $v = v_0 + at$ |
+| $\Delta x$ | $v$ | $\Delta x = v_0t + \frac{1}{2}at^2$ |
+| $\Delta x$ | $a$ | $\Delta x = \frac{1}{2}(v_0+v)t$ |
+| $v$ | $t$ | $v^2 = v_0^2 + 2a\Delta x$ |
+
+### ⑥ Key Formula Cheat Sheet
+
+**Mechanics:**
+$$F=ma \qquad f_k=\mu_k N \qquad f_s\le\mu_s N \qquad F_s=-kx$$
+$$K=\tfrac12 mv^2 \qquad U_g=mgh \qquad U_s=\tfrac12 kx^2 \qquad W=Fd\cos\theta$$
+$$p=mv \qquad J=F\Delta t=\Delta p \qquad \Sigma p_i=\Sigma p_f \qquad a_c=\frac{v^2}{R}$$
+
+**E&M:**
+$$F=k\frac{\lvert q_1q_2\rvert}{r^2} \quad F=qE \quad V=IR \quad P=IV$$
+$$R_s=R_1+R_2 \quad \frac{1}{R_p}=\frac{1}{R_1}+\frac{1}{R_2} \quad Q=CV$$
+$$F=qvB\sin\theta \quad F=ILB\sin\theta \quad r=\frac{mv}{qB}$$
+
+**Thermo:**
+$$PV=nRT \quad \frac{P_1V_1}{T_1}=\frac{P_2V_2}{T_2} \quad PV^\gamma=\text{const}$$
+$$\eta_{\text{Carnot}}=1-\frac{T_C}{T_H}$$
+
+**Waves:**
+$$\omega=\sqrt{\frac{k}{m}} \quad T=\frac{2\pi}{\omega} \quad v=\sqrt{\frac{F_T}{\mu}} \quad f_n=n\frac{v}{2L}$$
