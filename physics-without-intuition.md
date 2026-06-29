@@ -901,6 +901,296 @@ Problems are not hard because you lack intuition. They are hard because they com
 
 **Protocol D: One-Sentence Summary.** If you have stared for 5 minutes without writing, stop. Describe the problem in plain language without any physics words. "Something starts from rest, moves a distance while speeding up, I need its final speed." The physics words were the obstacle.
 
+### §5.4 When the Mapping Is Not Obvious — The Variable-Group Method
+
+Every example so far had a direct mapping: a physics word triggered a law, numbers filled the variables, and one equation gave the answer. But some problems resist this. The numbers do not line up neatly. The knowns and the unknown seem to live in different parts of the motion, connected by nothing obvious.
+
+This is not because you lack intuition. It is because the problem describes a **trajectory segment** rather than a **trajectory endpoint.** The numbers belong to the middle of the motion, not the beginning or the end. Your job is to **find an anchor point** — a place on the trajectory where you know enough to solve for something, even if that something is not the final answer.
+
+The method has three stages:
+
+1. **Group the variables by context.** A "context" is a set of variables that share a common reference point in the problem. In the window problem, there are two contexts: the window traversal (variables describing motion from window bottom to window top) and the ground-to-window journey (variables describing motion from ground to window bottom). Each context gets its own mini variable table.
+2. **Identify the richest context.** Which context's table has the most KNOWN values? Solve that one first. It will produce a variable that also appears in another context's table.
+3. **Transfer the result.** The variable you just solved for is now KNOWN in all contexts where it appears. This may make another context solvable. Repeat.
+
+No drawing. No trajectory. Just tables and counting.
+
+#### Worked Example: The Window Problem (Variable-Group Method)
+
+> **Problem.** A ball is thrown straight up. It passes a $2.00\;\mathrm{m}$ high window whose bottom is $7.50\;\mathrm{m}$ above the ground. The ball takes $1.30\;\mathrm{s}$ to travel from the bottom to the top of the window — and it is still going up. What was the ball's initial velocity at ground level? ($g = 10.0\;\mathrm{m/s^2}$)
+
+**Why this problem feels different.** The numbers ($2.00\;\mathrm{m}$, $7.50\;\mathrm{m}$, $1.30\;\mathrm{s}$) all describe the window — the *middle* of the motion. The question asks about the *beginning* (initial velocity at ground level). There is no single kinematic equation that directly connects "window-passing time" to "initial velocity from the ground." The mapping is indirect. But the variable-group method handles this by splitting the problem into two independent tables.
+
+**Step 1 — Group the variables into contexts.**
+
+I identify two contexts. Context W (window): the motion from window bottom to window top. Context G (ground): the motion from ground to window bottom.
+
+| Context | Variables included | Why these belong together |
+|---------|-------------------|---------------------------|
+| Context W (window traversal) | $\Delta y_W = 2.00\;\mathrm{m}$, $t_W = 1.30\;\mathrm{s}$, $a_y = -10.0\;\mathrm{m/s^2}$, $v_{\text{bottom}}$, $v_{\text{top}}$ | All five describe the same segment of motion — the window passage. |
+| Context G (ground to window) | $\Delta y_G = 7.50\;\mathrm{m}$, $a_y = -10.0\;\mathrm{m/s^2}$, $v_{0y}$ (TARGET), $v_{\text{bottom}}$ | These describe the motion from launch to window bottom. $v_{\text{bottom}}$ is the final velocity of this context and the initial velocity of Context W — it is the **bridge variable.** |
+
+**Step 2 — Solve the richest context first.**
+
+Context W has three knowns ($\Delta y$, $t$, $a_y$). That is enough to solve for a fourth kinematic variable. Context G has only two knowns ($\Delta y$, $a_y$). Context W is richer. I solve it first.
+
+I write the five standard kinematic variables for Context W: $v_0$ (which is $v_{\text{bottom}}$), $v$ ($v_{\text{top}}$), $a = -10.0$, $t = 1.30$, $\Delta x = 2.00$.
+
+Known: $a$, $t$, $\Delta x$. Unknown: $v_0$, $v$.
+
+Among the four kinematic equations, one uses $\Delta x$, $t$, $a$, and $v_0$ without involving $v$:
+
+$$\Delta x = v_0 t + \frac{1}{2}at^2$$
+
+$$2.00 = v_{\text{bottom}}(1.30) + \frac{1}{2}(-10.0)(1.30)^2$$
+$$2.00 = 1.30\,v_{\text{bottom}} - 8.45$$
+$$v_{\text{bottom}} = 8.04\;\mathrm{m/s}$$
+
+**Step 3 — Transfer the bridge variable.**
+
+$v_{\text{bottom}} = 8.04\;\mathrm{m/s}$ is now KNOWN. It belongs to both contexts. I update Context G:
+
+Context G now has three knowns: $\Delta y_G = 7.50$, $a_y = -10.0$, and $v_{\text{bottom}} = 8.04$ (this is the final velocity of Context G). Unknowns: $v_{0y}$ (TARGET) and $t_G$ (time from ground to window — not needed).
+
+The kinematic equation that uses $v$, $v_0$, $a$, and $\Delta x$ without involving $t$:
+
+$$v^2 = v_0^2 + 2a\Delta x$$
+
+$$(8.04)^2 = v_{0y}^2 + 2(-10.0)(7.50)$$
+$$64.6 = v_{0y}^2 - 150$$
+$$v_{0y}^2 = 214.6$$
+$$v_{0y} = 14.7\;\mathrm{m/s}$$
+
+The TARGET is now KNOWN.
+
+**Step 4 — Reflect.**
+
+*Dimensional check:* All velocities $[L][T]^{-1}$, displacements $[L]$, accelerations $[L][T]^{-2}$. The equation $v^2 = v_0^2 + 2a\Delta x$ has dimensions $[L]^2[T]^{-2}$ on both sides. ✓
+
+*Plausibility check:* Initial velocity $14.7\;\mathrm{m/s}$ exceeds velocity at window bottom $8.04\;\mathrm{m/s}$. Gravity has decelerated the ball over the $7.50\;\mathrm{m}$ ascent — consistent. Maximum height: $v_{0y}^2/(2g) = 14.7^2/20 = 10.8\;\mathrm{m}$. Window top is at $9.50\;\mathrm{m}$, so the ball is indeed rising as it passes. ✓
+
+#### The Variable-Group Protocol
+
+When the problem's numbers do not directly connect to the unknown:
+
+1. **Split the problem into contexts.** A context is any set of kinematic variables ($v_0$, $v$, $a$, $t$, $\Delta x$) that describe a single segment of the motion. Each context gets its own mini variable table.
+2. **Count knowns per context.** The context with the most knowns is solved first.
+3. **Solve the richest context.** Pick the kinematic equation whose missing variable you do not need, mechanically (Quick-Reference Card ⑤). Solve it.
+4. **Identify the bridge.** The variable you just found — does it appear in another context's table? If yes, transfer it there as a KNOWN.
+5. **Repeat** until the TARGET context becomes solvable.
+
+No drawing. No spatial reasoning. The "contexts" are defined purely by which variables share a common $\Delta x$ and $t$. You identify them by reading the problem and asking: "Which numbers describe the same segment of motion?" The answer is always in the phrasing: "passes a window" → window segment; "off the ground" → ground segment.
+
+### §5.5 Two More Non-Intuitive Strategies
+
+The variable-group method works when the problem partitions cleanly into contexts. When it does not, two purely mechanical strategies — neither requiring any drawing or spatial thinking — can finish the job.
+
+#### Strategy 1: Equation Saturation — Solve Whatever Is Solvable
+
+This is the most brutally mechanical approach possible. The rule: **do not try to find a path. Just solve whatever you can, and eventually the answer will appear.**
+
+**The protocol:**
+
+1. Write down EVERY equation that could possibly apply. Be indiscriminate.
+2. For each variable, mark it as KNOWN (number given in the problem), UNKNOWN (value not yet known, but not the answer), or TARGET (the quantity the question asks for).
+3. For each equation, count how many of its variables are UNKNOWN.
+4. Find an equation with exactly ONE unknown. Solve it. That unknown becomes KNOWN.
+5. Repeat step 3–4. Every solved variable may reduce another equation's unknown count to one.
+6. Stop when the TARGET becomes KNOWN.
+
+This is identical to how Sudoku solvers work. You fill the cell that has only one possible value; the next cell becomes fillable. No foresight. No planning.
+
+**Worked example — the window problem, solved by saturation.**
+
+I write the four kinematic equations as a roster:
+
+| # | Equation | Variables it connects |
+|---|----------|----------------------|
+| (1) | $v = v_0 + at$ | $v_0, v, a, t$ |
+| (2) | $\Delta x = v_0 t + \frac{1}{2}at^2$ | $v_0, \Delta x, a, t$ |
+| (3) | $\Delta x = \frac{1}{2}(v_0 + v)t$ | $v_0, v, \Delta x, t$ |
+| (4) | $v^2 = v_0^2 + 2a\Delta x$ | $v_0, v, a, \Delta x$ |
+
+The problem gives me numbers for two separate segments. I treat each segment independently, applying the same four equations to each.
+
+**Context W (window):** Variables: $v_0 = v_{\text{bottom}}$ (UNKNOWN), $v = v_{\text{top}}$ (UNKNOWN), $a = -10.0$ (KNOWN), $t = 1.30$ (KNOWN), $\Delta x = 2.00$ (KNOWN). TARGET is not in this context — I am solving it to get the bridge variable $v_{\text{bottom}}$.
+
+I scan equations (1)–(4), counting unknowns in each for Context W:
+- (1): unknowns = $\{v_0, v\}$ → 2 unknowns. Skip.
+- (2): unknowns = $\{v_0\}$ → **1 unknown.** Solve it.
+
+$$2.00 = v_{\text{bottom}}(1.30) + \frac{1}{2}(-10.0)(1.30)^2 \;\rightarrow\; v_{\text{bottom}} = 8.04$$
+
+Now $v_{\text{bottom}}$ is KNOWN. I update Context G.
+
+**Context G (ground to window):** Variables: $v_0 = v_{0y}$ (TARGET), $v = v_{\text{bottom}} = 8.04$ (KNOWN), $a = -10.0$ (KNOWN), $\Delta x = 7.50$ (KNOWN), $t = t_G$ (UNKNOWN, not needed).
+
+I scan equations (1)–(4) for Context G:
+- (4): unknowns = $\{v_0\}$ → **1 unknown.** Solve it.
+
+$$(8.04)^2 = v_{0y}^2 + 2(-10.0)(7.50) \;\rightarrow\; v_{0y} = 14.7$$
+
+TARGET is KNOWN. Done.
+
+**Why this requires zero insight:** At no point did I ask "which equation should I use first?" I listed all four, counted unknowns, and picked whichever had exactly one. The path (2) → (4) fell out of the counting. The method works backward, forward, or sideways — direction does not matter, only the unknown count matters.
+
+#### Strategy 2: The Equation-Variable Matrix — Find the Solvable Row
+
+When the saturation method has too many variables to track mentally, use a matrix. No drawing — just a table.
+
+**The protocol:**
+
+1. Make a table. **Rows** = equations. **Columns** = variables.
+2. In each cell, put a checkmark (✓) if that variable appears in that equation. Leave it blank otherwise.
+3. Add a final column: "Unknowns remaining." This is the number of unchecked (UNKNOWN) variables in that row. (Do not count the TARGET as unknown — it IS an unknown, but it is the one you want.)
+4. Find a row where "Unknowns remaining" = 1. Solve that equation for its sole unknown. Mark that variable's column as KNOWN (change its ✓ to a K, or shade the column).
+5. Recalculate "Unknowns remaining" for all rows. Repeat.
+
+**Worked example — the window problem as a matrix.**
+
+Context W (window). Columns: $v_B$ (bottom velocity), $v_T$ (top velocity), $a$, $t$, $\Delta x$.
+
+| Equation | $v_B$ | $v_T$ | $a$ | $t$ | $\Delta x$ | Unknowns |
+|----------|-------|-------|-----|-----|-----------|----------|
+| (1) $v = v_0 + at$ | ✓ | ✓ | ✓ | ✓ | | 2 |
+| (2) $\Delta x = v_0 t + \frac{1}{2}at^2$ | ✓ | | ✓ | ✓ | ✓ | **1** ← SOLVE |
+| (3) $\Delta x = \frac{1}{2}(v_0 + v)t$ | ✓ | ✓ | | ✓ | ✓ | 2 |
+| (4) $v^2 = v_0^2 + 2a\Delta x$ | ✓ | ✓ | ✓ | | ✓ | 2 |
+
+Row (2) has exactly one unknown: $v_B$. I solve it, mark $v_B$ as KNOWN, and rebuild the matrix for Context G.
+
+Context G. Columns: $v_0$ (TARGET), $v_B$ (now KNOWN), $a$, $t_G$, $\Delta x_G$.
+
+| Equation | $v_0$ | $v_B$ | $a$ | $t_G$ | $\Delta x_G$ | Unknowns |
+|----------|-------|-------|-----|-------|-------------|----------|
+| (1) $v = v_0 + at$ | ✓ | K | ✓ | ✓ | | 1 |
+| (2) $\Delta x = v_0 t + \frac{1}{2}at^2$ | ✓ | | ✓ | ✓ | ✓ | 2 |
+| (3) $\Delta x = \frac{1}{2}(v_0 + v)t$ | ✓ | K | | ✓ | ✓ | 1 |
+| (4) $v^2 = v_0^2 + 2a\Delta x$ | ✓ | K | ✓ | | ✓ | **1** ← SOLVE |
+
+Row (4) has exactly one unknown: $v_0$ (the TARGET). I solve it. Done.
+
+**Why the matrix works:** It converts the problem into a purely mechanical search: find the row with one blank cell, fill it, recalculate, repeat. You never ask "what should I do next?" You ask "which row has a 1 in the Unknowns column?" The matrix answers that question for you.
+
+**When to use each strategy:**
+
+| Situation | Best strategy |
+|-----------|--------------|
+| Problem has clear segments described by separate sets of numbers | Variable-Group (§5.4) |
+| Variables are scattered across many equations without clear grouping | Equation Saturation (§5.5-1) |
+| More than 4 equations and 6 variables — hard to track unknowns mentally | Equation-Variable Matrix (§5.5-2) |
+
+All three strategies share one property: **they reduce physics to counting.** Count knowns. Count unknowns. Find the row with one blank. No picture. No trajectory. No intuition.
+
+### §5.6 The Same Method Across Domains — Three Proofs
+
+The variable-group method and the saturation method are not tricks for kinematics. They are general algorithms. The proof is that they solve problems in electricity, thermodynamics, and collisions with zero modification — the physics changes, the counting does not.
+
+#### Example E1: Circuit Reduction by Variable-Group
+
+> **Problem.** A $12\;\mathrm{V}$ battery connects to three resistors: $R_1 = 6.0\;\Omega$ and $R_2 = 3.0\;\Omega$ in parallel, with $R_3 = 4.0\;\Omega$ in series after the parallel pair. Find the current through $R_2$.
+
+**Why the mapping is not obvious.** The numbers describe the whole circuit, but the answer lives in one branch. You cannot write a single equation that takes $12\;\mathrm{V}$, $6.0\;\Omega$, $3.0\;\Omega$, $4.0\;\Omega$ and directly outputs $I_2$. The circuit must be reduced stepwise.
+
+**Variable-Group approach.** Group the variables by what they describe.
+
+| Context | Variables | Known? |
+|---------|-----------|--------|
+| Parallel pair ($R_1 \parallel R_2$) | $R_1 = 6.0$, $R_2 = 3.0$, $R_{12}$ (equivalent), $V_{12}$, $I_1$, $I_2$ | $R_1$, $R_2$ known |
+| Series combination | $R_{12}$, $R_3 = 4.0$, $R_{\text{total}}$, $I_{\text{total}}$ | $R_3$ known, $R_{12}$ from context above |
+| Battery | $V = 12$, $I_{\text{total}}$, $R_{\text{total}}$ | $V$ known, $R_{\text{total}}$ from context above |
+
+**Richest context first:** The parallel pair has two knowns ($R_1$, $R_2$). Equation: $\frac{1}{R_{12}} = \frac{1}{R_1} + \frac{1}{R_2} = \frac{1}{6.0} + \frac{1}{3.0} = \frac{1}{2}$. So $R_{12} = 2.0\;\Omega$.
+
+**Transfer:** $R_{12} = 2.0\;\Omega$ becomes KNOWN in the Series context.
+
+Series context now: $R_{12} = 2.0$, $R_3 = 4.0$ → $R_{\text{total}} = 2.0 + 4.0 = 6.0\;\Omega$.
+
+**Transfer:** $R_{\text{total}} = 6.0\;\Omega$ becomes KNOWN in the Battery context.
+
+Battery context: $V = 12$, $R_{\text{total}} = 6.0$ → $I_{\text{total}} = 12/6.0 = 2.0\;\mathrm{A}$.
+
+**Transfer backward:** $I_{\text{total}} = 2.0\;\mathrm{A}$ flows through $R_3$ (series). $V_3 = 2.0 \times 4.0 = 8.0\;\mathrm{V}$. Remaining voltage across parallel pair: $V_{12} = 12 - 8.0 = 4.0\;\mathrm{V}$.
+
+$I_2 = V_{12}/R_2 = 4.0/3.0 = 1.33\;\mathrm{A}$. TARGET reached.
+
+No diagram. No "current flow visualization." Just groups, knowns, equations, transfers.
+
+#### Example E2: Thermodynamic Process by Equation Saturation
+
+> **Problem.** $0.50\;\mathrm{mol}$ of an ideal gas at $P_1 = 4.0\;\mathrm{atm}$, $V_1 = 3.0\;\mathrm{L}$ expands isothermally to $V_2 = 9.0\;\mathrm{L}$. Then it is compressed adiabatically back to $V_3 = 3.0\;\mathrm{L}$. ($\gamma = 1.4$). Find the final pressure $P_3$.
+
+**Why the mapping is not obvious.** Two different processes with different equations. Isothermal uses $PV = \text{constant}$. Adiabatic uses $PV^\gamma = \text{constant}$. The final state of process 1 is the initial state of process 2. The variables form a chain.
+
+**Equation Saturation approach.** List every relevant equation. Mark knowns and unknowns after each solve.
+
+**Context 1 (isothermal expansion, $1 \to 2$):**
+
+Variables: $P_1 = 4.0$ (KNOWN), $V_1 = 3.0$ (KNOWN), $V_2 = 9.0$ (KNOWN), $P_2$ (UNKNOWN), $T$ (UNKNOWN but constant — will cancel).
+
+Equations available for isothermal:
+- (I1) $P_1 V_1 = P_2 V_2$ — unknowns: $\{P_2\}$ → **1 unknown. SOLVE.**
+
+$P_2 = P_1 \cdot V_1/V_2 = 4.0 \times 3.0/9.0 = 1.33\;\mathrm{atm}$. $P_2$ now KNOWN.
+
+**Context 2 (adiabatic compression, $2 \to 3$):**
+
+Variables: $P_2 = 1.33$ (KNOWN), $V_2 = 9.0$ (KNOWN), $V_3 = 3.0$ (KNOWN), $P_3$ (TARGET), $\gamma = 1.4$ (KNOWN).
+
+Equations available for adiabatic:
+- (A1) $P_2 V_2^\gamma = P_3 V_3^\gamma$ — unknowns: $\{P_3\}$ → **1 unknown. SOLVE.**
+
+$P_3 = P_2 \cdot (V_2/V_3)^\gamma = 1.33 \times (9.0/3.0)^{1.4} = 1.33 \times 3^{1.4}$.
+
+$3^{1.4} = 3^{7/5} = (3^7)^{1/5}$. Approximate: $3^{1.4} \approx 4.66$. $P_3 = 1.33 \times 4.66 = 6.20\;\mathrm{atm}$.
+
+TARGET reached. Two equations. Two solves. No process visualization needed — only the mechanical rule: isothermal → $PV$ constant, adiabatic → $PV^\gamma$ constant. The word "isothermal" triggers one equation; "adiabatic" triggers the other. The bridge variable $P_2$ transfers between them.
+
+#### Example E3: Collision-to-Spring by Variable-Group
+
+> **Problem.** A $0.050\;\mathrm{kg}$ bullet traveling at $300\;\mathrm{m/s}$ embeds in a $2.0\;\mathrm{kg}$ block resting on a frictionless surface. The block is attached to a spring ($k = 800\;\mathrm{N/m}$). Find the maximum compression of the spring.
+
+**Why the mapping is not obvious.** Two completely different physics domains in sequence: first a collision (momentum conservation), then spring compression (energy conservation). The bullet embeds — perfectly inelastic collision. The block+bullet then compresses the spring. The final velocity from the collision becomes the initial velocity for the compression. Two contexts, one bridge.
+
+**Variable-Group approach.**
+
+| Context | Variables | Physics domain |
+|---------|-----------|----------------|
+| Collision | $m_b = 0.050$, $v_b = 300$, $m_w = 2.0$, $v_w = 0$, $v_f$ (final velocity of block+bullet) | Momentum |
+| Spring compression | $M = m_b + m_w = 2.05$, $v_f$, $k = 800$, $x_{\max}$ (TARGET) | Energy |
+
+**Richest context first:** Collision has four knowns ($m_b$, $v_b$, $m_w$, $v_w = 0$). One equation applies (perfectly inelastic collision):
+
+$$m_b v_b + m_w \cdot 0 = (m_b + m_w)v_f$$
+$$v_f = \frac{0.050 \times 300}{2.05} = 7.32\;\mathrm{m/s}$$
+
+**Transfer:** $v_f = 7.32\;\mathrm{m/s}$ becomes KNOWN in the Spring context.
+
+**Spring context:** Kinetic energy of block+bullet converts entirely to spring potential energy (frictionless surface, no energy loss after collision).
+
+$$\frac{1}{2}M v_f^2 = \frac{1}{2}k x_{\max}^2$$
+
+Cancel $\frac{1}{2}$, solve for $x_{\max}$:
+
+$$x_{\max} = v_f \sqrt{\frac{M}{k}} = 7.32 \times \sqrt{\frac{2.05}{800}} = 7.32 \times \sqrt{0.00256} = 7.32 \times 0.0506 = 0.370\;\mathrm{m}$$
+
+**Reflect:**
+- Dimensional check: $\mathrm{m/s} \times \sqrt{\mathrm{kg} / (\mathrm{N/m})} = \mathrm{m/s} \times \sqrt{\mathrm{kg} / (\mathrm{kg/s^2})} = \mathrm{m/s} \times \mathrm{s} = \mathrm{m}$. ✓
+- The bullet's kinetic energy: $\frac{1}{2}(0.050)(300)^2 = 2250\;\mathrm{J}$. Spring energy at max compression: $\frac{1}{2}(800)(0.370)^2 = 54.8\;\mathrm{J}$. The collision converted 97.6% of the bullet's energy to heat and deformation — only the block+bullet's kinetic energy after collision ($55.0\;\mathrm{J}$) transferred to the spring. ✓
+
+**What this teaches:** Two domains that seem unrelated — momentum and energy — connect through a single bridge variable ($v_f$). The variable-group method does not care that the physics changes from momentum to energy. It only cares that a variable appears in both contexts. Find it. Solve the richer context. Transfer. Repeat.
+
+#### The Universal Pattern
+
+Every example above — kinematics (window), circuits, thermodynamics, collision-spring — follows the identical pattern:
+
+1. **Identify contexts** by reading for grouped numbers.
+2. **Count knowns per context.** Solve the richest context.
+3. **Find the bridge** — the variable that appears in multiple contexts.
+4. **Transfer and repeat** until the TARGET context is solved.
+
+The physics content changes. The pattern does not.
+
 ---
 
 # Part VI: The Universal Procedure
