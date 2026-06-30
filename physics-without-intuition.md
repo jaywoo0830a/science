@@ -915,6 +915,183 @@ The method has three stages:
 
 No drawing. No trajectory. Just tables and counting.
 
+#### The Variable-Grouping Thought Process — How to Think, Step by Step
+
+The three-stage summary above tells you *what* to do. This section tells you *how to think* while doing it. It is a cognitive protocol — a sequence of questions you ask yourself, in order, each with a mechanical answer. You do not need to see the problem's structure. You ask the questions, and the answers construct the structure for you.
+
+---
+
+**Phase 0: Recognize That You Need Grouping**
+
+Before you group anything, you must recognize that grouping is necessary. Ask yourself this question:
+
+> *Can I write a single equation that contains both the numbers I am given AND the quantity the problem asks for?*
+
+Try it. Write the most general equation from the domain (e.g., $\Delta x = v_0 t + \frac{1}{2}at^2$ for kinematics). Can you plug in a number from the problem for every variable except the unknown? If yes, the problem has a direct mapping — you do not need grouping. Solve it with standard I-SEE-R.
+
+If no — if at least two variables in the equation are unknown AND not directly given — then the problem's numbers and its target live in different parts of the system. The mapping is indirect. Grouping is required.
+
+**Concrete test (kinematics):** The five-variable set is $\{v_0, v, a, t, \Delta x\}$. If the problem's given numbers fill at most two of these for any single segment, and the target is not among them, you need grouping.
+
+**Concrete test (circuits):** If the circuit has multiple branches and the target is a current or voltage in one branch while the given numbers are resistances and a battery voltage, you almost certainly need grouping.
+
+**Concrete test (energy/momentum):** If the problem describes two different physical processes (e.g., "a bullet embeds, then the block compresses a spring"), you need grouping — each process is its own context with its own conservation law.
+
+---
+
+**Phase 1: Partition the Problem into Contexts**
+
+A context is a self-contained mini-problem. It has its own set of variables, its own coordinate reference, and — crucially — its own version of the five kinematic variables (or the equivalent variable set for the domain). The question you ask is:
+
+> *Which numbers in the problem describe the same thing?*
+
+This is not a physics question. It is a reading-comprehension question. You are looking for numbers that share a common noun phrase — a common "about what."
+
+**Heuristic 1: The "About What" Test.** Read each number in the problem and ask: "This number is about _____?" Fill in the blank with the shortest possible phrase. Numbers that share the same blank belong to the same context.
+
+| Number in problem | "This number is about..." | Context label |
+|-------------------|--------------------------|---------------|
+| "$2.00\;\mathrm{m}$ high window" | ...the window's height | Window |
+| "$7.50\;\mathrm{m}$ above the ground" | ...where the window is | Ground-to-window |
+| "$1.30\;\mathrm{s}$ to travel bottom to top" | ...motion through the window | Window |
+| "initial velocity at ground level" (target) | ...launch from ground | Ground-to-window |
+
+The window height ($2.00\;\mathrm{m}$) and the window-crossing time ($1.30\;\mathrm{s}$) are both "about the window." They go together. The window's position above ground ($7.50\;\mathrm{m}$) and the launch velocity are both "about the ground-to-window journey." They go together.
+
+**Heuristic 2: The Time-Interval Test.** In kinematics, every context has its own clock. Ask: "Does this number describe what happens *during* the same time interval as that number?" If two numbers refer to the same $\Delta t$, they belong to the same context. If they refer to different time intervals, they belong to different contexts.
+
+In the window problem: the $1.30\;\mathrm{s}$ is the time to cross the window — that is $\Delta t_W$. The time from ground to window bottom is a *different* $\Delta t$ — call it $\Delta t_G$. They are different clocks. Different contexts.
+
+**Heuristic 3: The Spatial-Interval Test.** Same logic for displacement. Ask: "Does this number describe a distance measured over the same $\Delta x$ as that number?" The $2.00\;\mathrm{m}$ window height is $\Delta x_W$. The $7.50\;\mathrm{m}$ ground-to-window-bottom is $\Delta x_G$. Different displacements. Different contexts.
+
+**Heuristic 4: The Conservation-Law Test (for non-kinematics problems).** Ask: "Does this part of the problem obey the same conservation law as that part?" A collision obeys momentum conservation. A spring compression obeys energy conservation. Different laws → different contexts. This is the most reliable partitioning heuristic for multi-domain problems.
+
+**After partitioning:** Draw a line across your scratch paper. Each side is one context. You now have two (or more) independent mini-problems. You will solve them one at a time. The only connection between them will be the bridge variable.
+
+---
+
+**Phase 2: Build a Mini Variable Table for Each Context**
+
+Each context gets its own table. The tables are structurally identical to the standard variable table from §0.3, but they are scoped to their context. This is mechanical — you are not thinking about physics yet, only transcribing numbers into the correct boxes.
+
+**For kinematics contexts:** Every context gets the five standard columns: $v_0$, $v$, $a$, $t$, $\Delta x$. Fill in what you know from the problem for that context. Leave unknowns blank (or mark them `?`). The coordinate system ($+y$ direction, origin, $t=0$) applies to ALL contexts — do not change it between contexts.
+
+**For circuit contexts:** Every context gets columns for the relevant electrical variables: $R$, $V$, $I$ for that subcircuit, plus any equivalent resistances.
+
+**For thermodynamic contexts:** Every context gets columns for $P$, $V$, $T$ at the state points that define the process, plus any process-specific constants ($\gamma$, $n$, $R$).
+
+**The critical rule:** If a variable appears in more than one context's table, give it the EXACT SAME SYMBOL in all tables. This is how you will later recognize it as a bridge variable. In the window problem, $v_{\text{bottom}}$ appears in both Context W (as $v_0$, the initial velocity for the window crossing) and Context G (as $v$, the final velocity for the ground-to-window journey). It is the same physical quantity — the ball's velocity at the instant it reaches the window bottom. Same symbol, both tables.
+
+---
+
+**Phase 3: Count Knowns — Find the Richest Context**
+
+Now you have two or more tables. Each table has some cells filled (KNOWN) and some empty (UNKNOWN). Count the KNOWN cells in each table. Do not count cells you merely suspect — only cells with a number directly from the problem, from your coordinate system (like $a = -g$), or from an implied condition (like $v_0 = 0$ for "from rest").
+
+The table with the most KNOWN cells is the **richest context.** You will solve it first.
+
+**Tie-breaking rule:** If two contexts have the same number of knowns, pick the one that contains a variable also present in the other context. This maximizes the chance that solving the first context unlocks the second.
+
+**What if no context has enough knowns to solve?** This is rare but possible. If every context has fewer than 3 knowns (in kinematics, where 3 knowns are needed to solve for a 4th), the problem may require:
+- A constraint equation that links variables across contexts (e.g., $t_1 + t_2 = t_{\text{total}}$)
+- An implicit known you missed (e.g., "stops" → $v = 0$, "maximum height" → $v = 0$, "returns to starting point" → $\Delta x = 0$)
+- The equation saturation method from §5.5 instead
+
+Go back and re-read the problem for implicit knowns before concluding that grouping alone is insufficient.
+
+---
+
+**Phase 4: Solve the Richest Context — The Missing-Variable Rule**
+
+You have a context with the most knowns. Now you solve it exactly as you would solve a standalone problem, using the mechanical equation-selection rule: **pick the equation whose missing variable you do not need.**
+
+In kinematics, the rule is:
+
+| You need... | And you are missing... | Use equation... |
+|-------------|----------------------|-----------------|
+| $v$ | $t$ | $v^2 = v_0^2 + 2a\Delta x$ |
+| $v$ | $\Delta x$ | $v = v_0 + at$ |
+| $\Delta x$ | $v$ | $\Delta x = v_0 t + \frac{1}{2}at^2$ |
+| $\Delta x$ | $a$ | $\Delta x = \frac{1}{2}(v_0 + v)t$ |
+| $t$ | $v$ | $\Delta x = v_0 t + \frac{1}{2}at^2$ |
+| $t$ | $\Delta x$ | $v = v_0 + at$ |
+| $v_0$ | $v$ | $\Delta x = vt - \frac{1}{2}at^2$ |
+| $v_0$ | $t$ | $v^2 = v_0^2 + 2a\Delta x$ |
+| $a$ | $v$ | $\Delta x = v_0 t + \frac{1}{2}at^2$ |
+| $a$ | $t$ | $v^2 = v_0^2 + 2a\Delta x$ |
+
+This table eliminates choice. You do not ask "which equation fits?" You look up the row that matches your situation. No judgment. No spatial reasoning.
+
+Solve the equation algebraically before substituting numbers. This keeps the bridge variable in symbolic form — you will need it in that form when you transfer it to the next context.
+
+---
+
+**Phase 5: Identify and Transfer the Bridge Variable**
+
+After solving the richest context, you have produced at least one new KNOWN. Look at this new value and ask:
+
+> *Does this variable's symbol appear in any other context's table?*
+
+If yes, that variable is a **bridge.** Copy its value into every other context's table where it appears. Mark it as KNOWN in those tables.
+
+**If multiple new variables were produced,** check each one. A variable is a bridge if it appears in at least two contexts. Transfer all bridges.
+
+**If no variable is a bridge,** you may have partitioned the contexts incorrectly. Re-examine: do the contexts truly describe connected parts of the same physical situation? They should share a boundary — a point in time (kinematics), a node in the circuit (electricity), a state point (thermodynamics), or an object's velocity after an event (collision problems). If there is no shared boundary, the contexts may be truly independent, and the problem may be asking about them separately — or you may have misread the problem.
+
+**After transfer, recount knowns** in the remaining unsolved contexts. One of them may now have enough knowns to solve. If so, that context becomes the new richest context. Go back to Phase 4.
+
+---
+
+**Phase 6: Repeat Until the Target Is Known**
+
+The cycle is:
+
+```
+Richest context → Solve → Find bridge → Transfer → Recount → Richest context → ...
+```
+
+The cycle terminates when the TARGET variable — the quantity the problem asks for — becomes KNOWN. At that point, you stop. You do not need to solve all contexts. You only need to solve enough contexts to reach the target.
+
+**Worked cognitive trace — the window problem:**
+
+*Phase 0 (recognition):* I try to write a single equation connecting the window numbers ($2.00\;\mathrm{m}$, $1.30\;\mathrm{s}$) to the initial velocity at ground level. I cannot — the window numbers describe a segment far from launch. The $\Delta x$ in the equation would be ambiguous: is it $2.00\;\mathrm{m}$ or $7.50\;\mathrm{m}$ or $9.50\;\mathrm{m}$? The problem has multiple displacements. I need grouping.
+
+*Phase 1 (partition):* I apply the "About What" test. "$2.00\;\mathrm{m}$" is about the window. "$1.30\;\mathrm{s}$" is about the window crossing. "$7.50\;\mathrm{m}$" is about the window's position from ground — not the window itself, but where it sits. The target "initial velocity" is about the launch from ground. I form two contexts: Context W (window traversal) and Context G (ground to window bottom).
+
+*Phase 2 (mini tables):* Context W has its own $\{v_0, v, a, t, \Delta x\}$. I label $v_0$ as $v_{\text{bottom}}$ (velocity at window bottom) and $v$ as $v_{\text{top}}$. Known: $a = -10.0$, $t = 1.30$, $\Delta x = 2.00$. Unknown: $v_{\text{bottom}}$, $v_{\text{top}}$. Context G has its own set. Known: $a = -10.0$, $\Delta x = 7.50$. Unknown: $v_{0y}$ (TARGET), $v_{\text{bottom}}$ (final velocity of this segment), $t_G$. I note that $v_{\text{bottom}}$ appears in both tables — it is the bridge.
+
+*Phase 3 (count knowns):* Context W: 3 knowns. Context G: 2 knowns. Context W is richest.
+
+*Phase 4 (solve richest):* I need any variable from Context W. I don't need $v_{\text{top}}$, so I pick the equation that omits $v$: $\Delta x = v_0 t + \frac{1}{2}at^2$. Solve: $v_{\text{bottom}} = 8.04\;\mathrm{m/s}$.
+
+*Phase 5 (transfer):* $v_{\text{bottom}} = 8.04$ now appears as KNOWN in Context G. Context G now has 3 knowns: $a$, $\Delta x$, $v$ (which is $v_{\text{bottom}}$).
+
+*Phase 4 again (solve new richest):* Context G is now the only remaining context. I need $v_{0y}$ (TARGET). I don't need $t_G$, so I pick the equation that omits $t$: $v^2 = v_0^2 + 2a\Delta x$. Solve: $v_{0y} = 14.7\;\mathrm{m/s}$.
+
+*Phase 6 (termination):* TARGET is KNOWN. $v_{0y} = 14.7\;\mathrm{m/s}$. Stop.
+
+---
+
+**Why This Thought Process Works Without Intuition**
+
+At every phase, the next action is determined by a mechanical question, not by insight:
+
+| Phase | Mechanical question |
+|-------|-------------------|
+| 0 | Can I fill all but one variable in a single equation? |
+| 1 | Which numbers share the same "about what"? |
+| 2 | Have I put every number into exactly one context's table? |
+| 3 | Which table has the most filled cells? |
+| 4 | Which equation has exactly one unknown in this context? |
+| 5 | Does the variable I just found appear in any other table? |
+| 6 | Is the TARGET now KNOWN? |
+
+When the answer to Phase 6 is "yes," you are done. When the answer to any intermediate question is unclear, go back one phase and re-examine. The process is self-correcting — a wrong partition will fail at Phase 5 (no bridge found), and you will backtrack.
+
+The variable-grouping thought process does not ask you to understand the physics. It asks you to read carefully, sort numbers into boxes, count filled cells, and pick equations by elimination. That is all. The physics takes care of itself.
+
+---
+
 #### Worked Example: The Window Problem (Variable-Group Method)
 
 > **Problem.** A ball is thrown straight up. It passes a $2.00\;\mathrm{m}$ high window whose bottom is $7.50\;\mathrm{m}$ above the ground. The ball takes $1.30\;\mathrm{s}$ to travel from the bottom to the top of the window — and it is still going up. What was the ball's initial velocity at ground level? ($g = 10.0\;\mathrm{m/s^2}$)
