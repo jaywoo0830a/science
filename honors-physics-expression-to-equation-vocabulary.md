@@ -63,7 +63,7 @@
 |---|---------------|------------------|-----------|
 | 12 ⚡ | "projectile", "launched at angle $\theta$", "fired at an angle" | $v_{0x} = v_0\cos\theta$, $v_{0y} = v_0\sin\theta$ | Split into independent $x$ and $y$ motions. $a_x = 0$, $a_y = -g$. |
 | 13 ⚡ | "maximum height", "peak", "highest point", "top of trajectory" | $v_y = 0$ at that instant | The vertical velocity passes through zero at the apex. Use this as a KNOWN. |
-| 14 ⚡ | "horizontal range", "range", "how far does it land?" | $R = \frac{v_0^2\sin 2\theta}{g}$ | Only valid when launch and landing are at the same height. |
+| 14 ⚡ | "horizontal range", "range", "how far does it land?" | $R = \frac{v_0^2\sin 2\theta}{g}$ | ⚠️ **Level ground only.** If launched from a cliff/tower/table (landing height ≠ launch height), DO NOT use this. Use two-step: $t_{\text{fall}} = \sqrt{2h/g}$ or $\Delta y = v_{0y}t - \frac{1}{2}gt^2$, then $R = v_x t$. |
 | 15 🔥 | "time of flight" (projectile, level ground) | $t_{\text{flight}} = \frac{2v_{0y}}{g} = \frac{2v_0\sin\theta}{g}$ | Twice the time to reach maximum height. |
 | 16 | "thrown vertically upward", "launched straight up" | $a_y = -g$, $v_{0y} > 0$ (if $+y$ up) | 1D kinematics. $v_y = 0$ at the top. |
 | 17 | "thrown downward", "projected downward" | $a_y = -g$, $v_{0y} < 0$ | Initial velocity and acceleration are in the same direction. |
@@ -350,13 +350,13 @@
 
 | # | Trigger Phrase | Instant Equation | Exam Note |
 |---|---------------|------------------|-----------|
-| 144 🔥 | "Doppler effect", "moving source", "moving observer", "pitch change" | $f' = f\frac{v \pm v_o}{v \mp v_s}$ | Top sign: observer moves toward source (+) or source moves toward observer (− in denominator). |
+| 144 🔥 | "Doppler effect", "moving source", "moving observer", "pitch change" | $f' = f\frac{v \pm v_o}{v \mp v_s}$ | **Sign rule by scenario:** (1) Observer → source: $f' = f\frac{v+v_o}{v}$ (2) Observer ← source: $f' = f\frac{v-v_o}{v}$ (3) Source → observer: $f' = f\frac{v}{v-v_s}$ (4) Source ← observer: $f' = f\frac{v}{v+v_s}$. Frequency rises when distance shrinks, falls when distance grows. |
 | 145 🔥 | "source moving toward stationary observer" | $f' = f\frac{v}{v - v_s}$ | Frequency INCREASES (higher pitch). |
 | 146 🔥 | "source moving away from stationary observer" | $f' = f\frac{v}{v + v_s}$ | Frequency DECREASES (lower pitch). |
 | 147 ⚡ | "beat frequency", "beats", "wobbling sound" | $f_{\text{beat}} = |f_1 - f_2|$ | Two slightly different frequencies produce a pulsating loudness. |
 | 148 🔥 | "sound level", "decibel", "dB" | $\beta = 10\log_{10}\frac{I}{I_0}$, $I_0 = 10^{-12}\;\mathrm{W/m^2}$ | Every +10 dB = 10× intensity. Every +20 dB = 100× intensity. |
 | 149 | "sound intensity $I$" (point source) | $I = \frac{P}{4\pi r^2}$ | Inverse square law. Double distance → quarter intensity. |
-| 150 🧠 | "speed of sound in air" | $v \approx 343\;\mathrm{m/s}$ at $20^\circ\mathrm{C}$; $v = 331\sqrt{1 + T_C/273}$ | Increases with temperature. |
+| 150 🧠 | "speed of sound in air" | $v \approx 343\;\mathrm{m/s}$ at $20^\circ\mathrm{C}$; $v = 331\sqrt{1 + T_C/273}$ | Increases with temperature. For the exact derivation from first principles, see Card 354 ($v = \sqrt{\gamma RT/M}$). |
 | 151 | "sonic boom", "Mach cone", "supersonic" | $\sin\theta = \frac{v_{\text{sound}}}{v_{\text{source}}}$, Mach number = $\frac{v_s}{v}$ | When source speed exceeds wave speed. |
 | 152 | "interference" (waves): constructive | Path difference $\Delta L = m\lambda$, $m = 0,1,2,\ldots$ | Crest meets crest. |
 | 153 | "interference" (waves): destructive | Path difference $\Delta L = (m + \frac{1}{2})\lambda$ | Crest meets trough. |
@@ -773,7 +773,7 @@
 | 351 🔥 | Gas in cylinder: piston held by spring | $P = F_s/A = kx/A$ (at equilibrium) | $x$ (spring compression) | $PV = nRT$ → $T = \frac{P V}{nR} = \frac{kx(Ax + V_0)}{nRA}$ | Doubly coupled. Spring force determines pressure. Pressure + volume determine temperature. Olympiad: find $T$ as a function of $x$, then maximize. |
 | 352 🔥 | Adiabatic compression heats gas → gas pushes piston | $T_1 V_1^{\gamma-1} = T_2 V_2^{\gamma-1}$ | $T_2$ | $\Delta U = nC_V\Delta T = -W$ (work done BY gas is negative for compression) | No heat exchange. Work done ON the gas increases its internal energy. The gas heats up, increasing pressure beyond what Boyle's Law would predict. |
 | 353 | Carnot engine: gas cycle driving a piston | $Q_H$ absorbed from hot reservoir | $W = Q_H - Q_C$ | $W = \oint P\,dV$ (area of cycle) | The mechanical work output equals the area enclosed by the cycle on a $P$-$V$ diagram. Every thermodynamic cycle is a bridge between heat and work. |
-| 354 🔥 | Sound wave: compression/rarefaction of gas | $B = -V\frac{dP}{dV}$ (bulk modulus) | Adiabatic: $PV^\gamma = \text{const}$ | $v_{\text{sound}} = \sqrt{\frac{B}{\rho}} = \sqrt{\frac{\gamma RT}{M}}$ | Two derivations of sound speed. The adiabatic (Laplace) correction gives $v = \sqrt{\gamma P/\rho}$, which Newton got wrong by assuming isothermal conditions. |
+| 354 🔥 | Sound wave: compression/rarefaction of gas | $B = -V\frac{dP}{dV}$ (bulk modulus) | Adiabatic: $PV^\gamma = \text{const}$ | $v_{\text{sound}} = \sqrt{\frac{B}{\rho}} = \sqrt{\frac{\gamma RT}{M}}$ | Two derivations of sound speed. The adiabatic (Laplace) correction gives $v = \sqrt{\gamma P/\rho}$, which Newton got wrong by assuming isothermal conditions. For a quick numerical shortcut, see Card 150 ($v \approx 331\sqrt{1 + T_C/273}$). |
 
 ### 17.7 Fluids + Mechanics / Energy Bridges
 
