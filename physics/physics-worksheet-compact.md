@@ -1,10 +1,11 @@
 # Physics — Compact I-SEE-R Worksheet
 
-> Copy one block per problem. Cards: `honors-physics-expression-to-equation-vocabulary.md`
+> 3 problems per A4 page. Photocopy or duplicate in VS Code. Fill every cell — the protocol catches your errors.
+> Reference: `honors-physics-expression-to-equation-vocabulary.md` &nbsp;|&nbsp; Method: `physics-without-intuition.md`
 
 ---
 
-### P___ &nbsp;&nbsp;|&nbsp;&nbsp; Domain: ______________ &nbsp;&nbsp;|&nbsp;&nbsp; Cards fired: ___ &nbsp;&nbsp;|&nbsp;&nbsp; ⏱ ___
+### P___ &nbsp;&nbsp;|&nbsp;&nbsp; Domain: ______________ &nbsp;&nbsp;|&nbsp;&nbsp; Cards: ___ &nbsp;&nbsp;|&nbsp;&nbsp; Level: ___ &nbsp;&nbsp;|&nbsp;&nbsp; Time: ___
 
 | +x | +y | Origin | t=0 |
 |----|----|--------|-----|
@@ -15,7 +16,9 @@
 | 1 | | | | | | |
 | 2 | | | | | | |
 | 3 | | | | | | |
-| 🎯 | | | **?** | | | TGT |
+| T | | | **?** | | | TGT |
+
+**Implied zeros found:** ________________________________
 
 | Trigger Phrase | Card# | Instant Equation |
 |---------------|-------|------------------|
@@ -23,37 +26,22 @@
 | | | |
 | | | |
 
-**Simplify:** &nbsp; ________________________________________
+**Simplify:** ________________________________________
 
-**Equation set:**
+| Step | Card# | Equation | Calc | Result |
+|------|-------|----------|------|--------|
+| 1 | | | | |
+| 2 | | | | |
+| 3 | | | | |
+| 4 | | | | |
 
-| Step | Card# | Equation |
-|------|-------|----------|
-| 1 | | |
-| 2 | | |
-| 3 | | |
-| 4 | | |
+**Unit trace:** ____ $\rightarrow$ ____ $\rightarrow$ ____ $\rightarrow$ **TARGET**
 
-**Execute:**
-
-| Step | Card# | Calc | Result |
-|------|-------|------|--------|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-
-**Unit trace:** &nbsp; ____ → ____ → ____ → ____ → **TARGET**
-
-**Answer:** &nbsp; ______________
-
-| Dim ✓ | Extreme ✓ | Sign ✓ |
-|--------|----------|--------|
-| | | |
+**Answer:** ______________ &nbsp;&nbsp;|&nbsp;&nbsp; Dim: [ ] &nbsp; Extreme: [ ] &nbsp; Sign: [ ]
 
 ---
 
-### P___ &nbsp;&nbsp;|&nbsp;&nbsp; Domain: ______________ &nbsp;&nbsp;|&nbsp;&nbsp; Cards fired: ___ &nbsp;&nbsp;|&nbsp;&nbsp; ⏱ ___
+### P___ &nbsp;&nbsp;|&nbsp;&nbsp; Domain: ______________ &nbsp;&nbsp;|&nbsp;&nbsp; Cards: ___ &nbsp;&nbsp;|&nbsp;&nbsp; Level: ___ &nbsp;&nbsp;|&nbsp;&nbsp; Time: ___
 
 | +x | +y | Origin | t=0 |
 |----|----|--------|-----|
@@ -64,7 +52,9 @@
 | 1 | | | | | | |
 | 2 | | | | | | |
 | 3 | | | | | | |
-| 🎯 | | | **?** | | | TGT |
+| T | | | **?** | | | TGT |
+
+**Implied zeros found:** ________________________________
 
 | Trigger Phrase | Card# | Instant Equation |
 |---------------|-------|------------------|
@@ -72,37 +62,22 @@
 | | | |
 | | | |
 
-**Simplify:** &nbsp; ________________________________________
+**Simplify:** ________________________________________
 
-**Equation set:**
+| Step | Card# | Equation | Calc | Result |
+|------|-------|----------|------|--------|
+| 1 | | | | |
+| 2 | | | | |
+| 3 | | | | |
+| 4 | | | | |
 
-| Step | Card# | Equation |
-|------|-------|----------|
-| 1 | | |
-| 2 | | |
-| 3 | | |
-| 4 | | |
+**Unit trace:** ____ $\rightarrow$ ____ $\rightarrow$ ____ $\rightarrow$ **TARGET**
 
-**Execute:**
-
-| Step | Card# | Calc | Result |
-|------|-------|------|--------|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-
-**Unit trace:** &nbsp; ____ → ____ → ____ → ____ → **TARGET**
-
-**Answer:** &nbsp; ______________
-
-| Dim ✓ | Extreme ✓ | Sign ✓ |
-|--------|----------|--------|
-| | | |
+**Answer:** ______________ &nbsp;&nbsp;|&nbsp;&nbsp; Dim: [ ] &nbsp; Extreme: [ ] &nbsp; Sign: [ ]
 
 ---
 
-### P___ &nbsp;&nbsp;|&nbsp;&nbsp; Domain: ______________ &nbsp;&nbsp;|&nbsp;&nbsp; Cards fired: ___ &nbsp;&nbsp;|&nbsp;&nbsp; ⏱ ___
+### P___ &nbsp;&nbsp;|&nbsp;&nbsp; Domain: ______________ &nbsp;&nbsp;|&nbsp;&nbsp; Cards: ___ &nbsp;&nbsp;|&nbsp;&nbsp; Level: ___ &nbsp;&nbsp;|&nbsp;&nbsp; Time: ___
 
 | +x | +y | Origin | t=0 |
 |----|----|--------|-----|
@@ -113,7 +88,9 @@
 | 1 | | | | | | |
 | 2 | | | | | | |
 | 3 | | | | | | |
-| 🎯 | | | **?** | | | TGT |
+| T | | | **?** | | | TGT |
+
+**Implied zeros found:** ________________________________
 
 | Trigger Phrase | Card# | Instant Equation |
 |---------------|-------|------------------|
@@ -121,35 +98,21 @@
 | | | |
 | | | |
 
-**Simplify:** &nbsp; ________________________________________
+**Simplify:** ________________________________________
 
-**Equation set:**
+| Step | Card# | Equation | Calc | Result |
+|------|-------|----------|------|--------|
+| 1 | | | | |
+| 2 | | | | |
+| 3 | | | | |
+| 4 | | | | |
 
-| Step | Card# | Equation |
-|------|-------|----------|
-| 1 | | |
-| 2 | | |
-| 3 | | |
-| 4 | | |
+**Unit trace:** ____ $\rightarrow$ ____ $\rightarrow$ ____ $\rightarrow$ **TARGET**
 
-**Execute:**
-
-| Step | Card# | Calc | Result |
-|------|-------|------|--------|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-
-**Unit trace:** &nbsp; ____ → ____ → ____ → ____ → **TARGET**
-
-**Answer:** &nbsp; ______________
-
-| Dim ✓ | Extreme ✓ | Sign ✓ |
-|--------|----------|--------|
-| | | |
+**Answer:** ______________ &nbsp;&nbsp;|&nbsp;&nbsp; Dim: [ ] &nbsp; Extreme: [ ] &nbsp; Sign: [ ]
 
 ---
 
-> **A4 1장에 3문제.** 프린트하거나 VS Code에서 복사해 쓰세요.
-> Quick ref: `physics-worksheet-template.md` (풀버전), `physics-questions.md` (150제)
+> **3 problems per page.** Print or copy-paste in VS Code. For the full protocol with error log and quick-reference panel, use `physics-worksheet-template.md`.
+>
+> **Difficulty = number of cards fired.** Level 1: 1–3 cards. Level 2: 4–5. Level 3: 6–8. Level 4: 9+.

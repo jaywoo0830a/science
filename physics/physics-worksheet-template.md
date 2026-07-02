@@ -2,46 +2,54 @@
 
 > **Identify → Simplify → Equation → Execute → Reflect**
 >
-> Copy this template for every problem. Fill every blank — the protocol does the thinking.
+> This worksheet is a mechanical procedure. It does the thinking so you do not have to.
+> Fill every blank in order. Do not skip steps. The protocol catches your errors before you box the answer.
 >
-> Cards: `honors-physics-expression-to-equation-vocabulary.md` &nbsp;|&nbsp; Method: `physics-without-intuition.md`
+> Reference: `honors-physics-expression-to-equation-vocabulary.md` (430 cards)
+> Method: `physics-without-intuition.md`
 
 ---
 
-| Problem ID | Level | Domain | Time |
-|-----------|-------|--------|------|
-| | | | |
+| Problem ID | Difficulty Level | Domain(s) | Time Spent |
+|-----------|-----------------|-----------|------------|
+| | Level 1 / 2 / 3 / 4 | | _____ min |
+
+**Level guide:** Level 1 = 1–3 cards (direct substitution). Level 2 = 2–5 cards (one bridge variable). Level 3 = 3–8 cards (multi-context or variable grouping required). Level 4 = 5–15 cards (3+ domain synthesis).
 
 ---
 
 # PRE-METHOD — The Four Contracts
 
 > *"Establish these before touching a single equation. Never change them mid-problem."*
+>
+> *Physics Without Intuition, §0.1*
 
 ---
 
 ### Coordinate System
 
-| Axis | Direction | Rationale |
-|------|-----------|-----------|
-| $+x$ | | direction of primary motion |
-| $+y$ | | upward, or ⟂ away from incline surface |
-| **Origin** | | object's starting position, or problem reference |
-| **$t = 0$ at** | | instant action begins (release, throw, collision) |
+| Axis | Direction | Why This Direction? |
+|------|-----------|---------------------|
+| $+x$ | | Direction of primary motion |
+| $+y$ | | Upward, or perpendicular away from incline surface |
+| **Origin** | | Object's starting position, or problem's reference point |
+| **$t = 0$ at** | | Instant action begins: release / throw / collision |
 
-> **Golden rule:** Once written, never change. A negative answer = "opposite the + direction," not "wrong."
+**Golden Rule:** Once written, never change. A negative answer means "opposite the + direction." It does not mean "wrong."
 
 ---
 
 # STEP I — IDENTIFY
 
-> *"Which cards fire? What is given?"*
+> *"Which cards fire? What is given? What is hidden?"*
+>
+> *Physics Without Intuition, §0.4 — The 4-Pass Extraction*
 
 ---
 
-### Pass 1 — Gist (≤ 5 words, pencil down)
+### Pass 1 — Five-Word Gist (pencil down)
 
-> &nbsp;
+> Read once. No writing. State the core of the problem in five words or fewer.
 >
 > &nbsp;
 >
@@ -51,7 +59,7 @@
 
 ### Pass 2 — Variable Table
 
-*Extract every number with its unit. Implied zeros MUST get their own rows.*
+*Extract every number with its unit. Implied zeros are not optional — they get their own rows. If you miss one, you have too many unknowns and cannot solve. Count knowns vs. unknowns after completing the table.*
 
 | # | Variable Name | Symbol | Value | Unit | Dimension | Source |
 |---|---------------|--------|-------|------|-----------|--------|
@@ -63,24 +71,38 @@
 | 6 | | | | | | |
 | 7 | | | | | | |
 | 8 | | | | | | |
-| 🎯 | | | **?** | | | **TARGET** |
+| TARGET | | | **?** | | | |
 
-> ⚠️ **Implied zeros to watch for:**
->
-> - "from rest" / "dropped" / "released" → $v_0 = 0$
-> - "stops" / "comes to rest" → $v = 0$
-> - "maximum height" / "peak" → $v_y = 0$
-> - "frictionless" / "smooth" / "ice" → $f = 0$
-> - "just loses contact" / "barely makes it" → $N = 0$
-> - "constant velocity" / "steady speed" → $a = 0$
-> - "free fall" → $a_y = -g$
-> - "equilibrium" (with forces) → $\sum F = 0$
+**Knowns: ___** &nbsp;&nbsp;|&nbsp;&nbsp; **Unknowns: ___** &nbsp;&nbsp;|&nbsp;&nbsp; *(Must have: unknowns ≤ knowns + equations from cards)*
+
+---
+
+### Implied Zero Scan
+
+> *Protocol A from Physics Without Intuition, Part VIII. Check every box below BEFORE moving to Pass 3.*
+
+| If the problem says… | Then… | Card | Found? | Added to table? |
+|---------------------|--------|------|--------|-----------------|
+| "from rest" / "dropped" / "released" | $v_0 = 0$ | 1, 308 | [ ] | [ ] |
+| "stops" / "comes to rest" / "brakes" | $v = 0$ | 2, 309 | [ ] | [ ] |
+| "maximum height" / "peak" / "top" / "apex" | $v_y = 0$ | 13, 310 | [ ] | [ ] |
+| "frictionless" / "smooth" / "ice" | $f = 0$ | 31, 311 | [ ] | [ ] |
+| "constant velocity" / "steady speed" / "coasting" | $a = 0$ | 3, 318 | [ ] | [ ] |
+| "free fall" / "falling freely" | $a_y = -g$ | 6 | [ ] | [ ] |
+| "just loses contact" / "leaves surface" | $N = 0$ | 93, 316 | [ ] | [ ] |
+| "massless rope" / "ideal string" | $T$ uniform | 34, 312 | [ ] | [ ] |
+| "equilibrium" / "at rest" (with forces) | $\sum F = 0$ | 25, 319 | [ ] | [ ] |
+| "level ground" (projectile) | $\Delta y = 0$ | 18, 314 | [ ] | [ ] |
+| "terminal velocity" | $\sum F = 0$ | 47, 320 | [ ] | [ ] |
+| "elastic collision" | $K_i = K_f$ | 74 | [ ] | [ ] |
+| "stick together" / "embedded" | One shared $v_f$ | 73 | [ ] | [ ] |
+| "rolling without slipping" | $v = \omega R$ | 113 | [ ] | [ ] |
 
 ---
 
 ### Pass 3 — Trigger Trace
 
-*Trigger phrase → Card # → instant equation.*
+*Underline every physics trigger phrase in the problem statement. For each one, write the card number and the instant equation that card demands. The cards choose — you transcribe. If the problem crosses domains, the order of cards tells you the solution architecture.*
 
 | Order | Trigger Phrase in Problem | Card # | Instant Equation |
 |-------|--------------------------|--------|------------------|
@@ -95,35 +117,59 @@
 | 9 | | | |
 | 10 | | | |
 
-**Cards fired:** _____ &nbsp;&nbsp;|&nbsp;&nbsp; **Domain chain:** ________________________________
+**Cards fired: ___** &nbsp;&nbsp;|&nbsp;&nbsp; **Domain chain:** ________________________________
+
+**Difficulty:** 1–3 cards = Level 1. 4–5 = Level 2. 6–8 = Level 3. 9+ = Level 4.
 
 ---
 
 ### Pass 4 — Unknown
 
-| What am I solving for? | Symbol | Unit | Dimension |
-|------------------------|--------|------|-----------|
+| What am I solving for? | Symbol | Unit | Target Dimension |
+|------------------------|--------|------|------------------|
 | | | | |
+
+---
+
+### Bridge Recognition
+
+> *Physics Without Intuition, Part V. Two or more distinct events separated in time?*
+
+Does this problem chain multiple domains? [ ] Yes &nbsp;&nbsp; [ ] No
+
+If YES — what does the first event produce that the second event needs?
+
+| First event involves… | Bridge domain | Output | Bridge card |
+|----------------------|---------------|--------|-------------|
+| [ ] Collision / explosion / recoil | Momentum | $v_f$ | 321–327 |
+| [ ] Charged particle + voltage / E-field | Energy ($\frac{1}{2}mv^2 = qV$) | $v$ | 338–344 |
+| [ ] Falling / sliding / spring | Energy conservation | $v$ or $x$ | 328–337 |
+| [ ] Gas changing $P$, $V$, $T$ | Thermo | $P$, $V$, $T$, $W$ | 350–354 |
+| [ ] Acceleration over distance/time | Kinematics | $v$ or $t$ | — |
+
+**Bridge variable:** ________ &nbsp;&nbsp;|&nbsp;&nbsp; **Second domain:** ________
 
 ---
 
 # STEP S — SIMPLIFY
 
-> *"Cross out what does not matter."*
+> *"Cross out what does not matter. Every assumption you can justify removes one unknown."*
 
 ---
 
-- [ ] **Frictionless?** → $f = 0$
-- [ ] **Massless rope / pulley?** → $T$ uniform, pulley changes direction only
-- [ ] **1D motion?** → ignore perpendicular axis
-- [ ] **Neglect air resistance?** → only gravity acts
-- [ ] **Point mass?** → no rotation, no moment of inertia
-- [ ] **Ideal gas?** → $PV = nRT$ applies
-- [ ] **Light spring?** → spring mass = 0
-- [ ] **Inextensible string?** → acceleration same for connected objects
-- [ ] **Small angle?** → $\sin\theta \approx \theta$, $\cos\theta \approx 1$ (pendulum)
-- [ ] **No external forces?** → momentum conserved
-- [ ] **Conservative only?** → mechanical energy conserved
+| Assumption | Condition | If true, then… | [ ] |
+|-----------|-----------|----------------|-----|
+| No friction | "frictionless", "smooth", "ice" | $f = 0$, mechanical energy conserved | [ ] |
+| Massless rope/pulley | "ideal", "light", "massless" | $T$ uniform | [ ] |
+| No air resistance | Not mentioned, or "neglect" | Only gravity acts | [ ] |
+| 1D motion | Only one axis changes | Ignore perpendicular axis | [ ] |
+| Point mass | No rotation mentioned | No moment of inertia | [ ] |
+| Ideal gas | No "real gas" / "van der Waals" | $PV = nRT$ applies | [ ] |
+| Light spring | Spring mass not given | Spring mass = 0 | [ ] |
+| Inextensible string | Not "elastic" | $a$ same for connected objects | [ ] |
+| Small angle | $\theta$ small (pendulum) | $\sin\theta \approx \theta$ | [ ] |
+| Isolated system | "no external forces" | Momentum conserved | [ ] |
+| Conservative only | No friction, no drag | $E_{\text{mech}}$ conserved | [ ] |
 
 **Additional simplifications:**
 
@@ -135,39 +181,41 @@
 
 # STEP E — EQUATION
 
-> *"The cards already chose. Write every equation from your Trigger Trace."*
+> *"The cards chose. Now write them in order. If the problem crosses domains, the first equation's output feeds the second."*
 
 ---
 
-### Equation Set (in Trigger Trace order)
+| Step | Card # | Equation | Purpose |
+|------|--------|----------|---------|
+| 1 | | | |
+| 2 | | | |
+| 3 | | | |
+| 4 | | | |
+| 5 | | | |
+| 6 | | | |
+| 7 | | | |
+| 8 | | | |
 
-| Step | Card # | Equation |
-|------|--------|----------|
-| 1 | | |
-| 2 | | |
-| 3 | | |
-| 4 | | |
-| 5 | | |
-| 6 | | |
-| 7 | | |
-| 8 | | |
-| 9 | | |
-| 10 | | |
+**Primary governing principle:** ________________________________
 
-**Primary law / principle anchoring this problem:** ________________________________
+**If kinematics:** Which variable am I NOT given and do NOT need?
+
+| Missing variable | → Equation |
+|-----------------|------------|
+| | |
 
 ---
 
 # STEP E — EXECUTE
 
-> *"Keep symbols until the last possible moment. Then substitute."*
+> *"Keep symbols until the target is isolated. Substitute numbers last. This catches algebra errors early and reveals cancellations."*
 
 ---
 
 ### Algebraic Solution (symbols only)
 
 $$
-\text{(Derive the answer in symbols first)}
+\text{(Derive the expression for the target variable — no numbers yet)}
 $$
 
 ---
@@ -189,145 +237,131 @@ $$
 
 ### Unit Trace
 
-> ________ $\longrightarrow$ ________ $\longrightarrow$ ________ $\longrightarrow$ ________ $\longrightarrow$ ________ $\longrightarrow$ **TARGET**
->
-> *(Do units cancel to the target unit?)*
+> *Follow the units from the first given quantity through every operation. If they do not cancel to the target unit, the equation path is wrong. Fix it before boxing the answer.*
+
+&nbsp;&nbsp; ________ &nbsp;$\rightarrow$&nbsp; ________ &nbsp;$\rightarrow$&nbsp; ________ &nbsp;$\rightarrow$&nbsp; ________ &nbsp;$\rightarrow$&nbsp; ________ &nbsp;$\rightarrow$&nbsp; **TARGET**
+
+**Units cancel correctly?** [ ] Yes &nbsp;&nbsp; [ ] No → Back to Equation step
 
 ---
 
 ### Answer
 
-> &nbsp;
+> **Value:** ________ &nbsp;&nbsp; **Unit:** ________ &nbsp;&nbsp; **Direction (if vector):** ________
 >
-> &nbsp;
+> **Boxed answer:** ________________________________________________
 
 ---
 
 # STEP R — REFLECT
 
-> *"Wrong? Find the broken link. Right? Confirm why."*
+> *"Three mechanical checks. Pass all three before moving to the next problem."*
 
 ---
 
-### ✅ Three-Point Verification
+### Check 1: Dimensional Analysis (Card 430)
 
-- [ ] **Dimensional Analysis** — Does the dimension of your answer match the target? *(LHS: _____ &nbsp; RHS: _____)*
-- [ ] **Extreme Case** — Does the formula behave correctly at limits? *(Test: $m \to 0$, $\theta \to 0^\circ$, $\theta \to 90^\circ$, $t \to \infty$)*
-- [ ] **Sign Check** — Does the sign make physical sense? *(velocity direction, force direction, work sign)*
+| LHS (your answer's dimension) | RHS (target dimension) | Match? |
+|-------------------------------|------------------------|--------|
+| | | [ ] Yes &nbsp;&nbsp; [ ] No |
 
----
+### Check 2: Extreme Case Test
 
-### 🔥 Error Log
+| Test (set one variable to limit) | Expected behavior | Your formula predicts… | Pass? |
+|----------------------------------|-------------------|----------------------|-------|
+| | | | [ ] |
+| | | | [ ] |
 
-*Mandatory if you got it wrong.*
+### Check 3: Sign Sanity
 
----
-
-**Error Type** *(check all that apply):*
-
-- [ ] Implied zero missed ($v_0 = 0$, $v = 0$, $v_y = 0$, $f = 0$, $N = 0$, $a = 0$)
-- [ ] Coordinate sign error (+ direction inconsistent)
-- [ ] Wrong kinematic equation (missing-variable rule violated)
-- [ ] Free-body diagram error (missing force, wrong direction)
-- [ ] Trig decomposition error (sin vs cos on incline)
-- [ ] Conservation law misapplied (momentum vs energy choice)
-- [ ] Collision type misidentified (elastic vs inelastic)
-- [ ] Energy: forgot non-conservative work term ($W_{\text{NC}}$)
-- [ ] Unit mismatch (cm vs m, g vs kg, km/h vs m/s, hours vs s)
-- [ ] Dimensional analysis not performed
-- [ ] Algebraic error (sign dropped, factor of 2 lost)
-- [ ] Sig fig error
-- [ ] $g$ sign error ($g = +9.8$ or $-9.8$ depending on axis choice)
-- [ ] Tension direction wrong (tension always pulls)
-- [ ] Normal force assumed = $mg$ (not true on incline / in elevator)
-- [ ] Other: ________________________________
+| Quantity | Your sign | Expected (physical reasoning) | OK? |
+|----------|-----------|-------------------------------|-----|
+| | | | [ ] |
 
 ---
 
-**What exactly went wrong:**
+### Error Log (complete only if answer was wrong)
+
+> *"The error log is not a record of failure. It is a vaccine against repeating the same mistake."*
+
+**Error type(s):**
+
+| Category | Specific detail (which variable? which step?) | [ ] |
+|----------|-----------------------------------------------|-----|
+| Missed implied zero | | [ ] |
+| Coordinate sign error | | [ ] |
+| Wrong kinematic equation (missing-variable rule) | | [ ] |
+| FBD error (missing/wrong force direction) | | [ ] |
+| Trig decomposition error (sin vs cos) | | [ ] |
+| Conservation law misapplied | | [ ] |
+| Collision type misidentified | | [ ] |
+| Forgot non-conservative work term | | [ ] |
+| Unit mismatch (cm↔m, g↔kg, h↔s) | | [ ] |
+| Algebra error (sign, factor of 2) | | [ ] |
+| $g$ sign error | | [ ] |
+| Tension direction wrong | | [ ] |
+| Normal force incorrectly set to $mg$ | | [ ] |
+| Bridge variable not identified | | [ ] |
+| Variable-Group Method needed | | [ ] |
+| Other: | | [ ] |
+
+**Root cause (one sentence):**
 
 > &nbsp;
->
-> &nbsp;
->
+
+**Prevention (actionable, specific):**
+
 > &nbsp;
 
 ---
 
-**How to prevent this next time:**
-
-> &nbsp;
->
-> &nbsp;
->
-> &nbsp;
-
----
-
-### 📊 Problem Classification (post-solve)
+### Post-Solve Summary
 
 | Item | Value |
 |------|-------|
 | Cards fired | |
 | Domains crossed | |
-| Domain list | |
-| Pivot card(s) | Card __, Card __ |
-| Free-body diagram needed | [ ] Yes &nbsp;&nbsp; [ ] No |
-| Conservation law applied | [ ] Energy &nbsp;&nbsp; [ ] Momentum &nbsp;&nbsp; [ ] Both &nbsp;&nbsp; [ ] Neither |
-| Coordinate system used | [ ] Cartesian &nbsp;&nbsp; [ ] Tilted (incline) &nbsp;&nbsp; [ ] Radial |
-| Quadratic required | [ ] Yes &nbsp;&nbsp; [ ] No |
-| Solve time | _____ min |
+| Domain list (in order) | |
+| Pivot card(s) | |
+| FBD needed? | [ ] Yes &nbsp;&nbsp; [ ] No |
+| Conservation law? | [ ] Energy &nbsp;&nbsp; [ ] Momentum &nbsp;&nbsp; [ ] Both &nbsp;&nbsp; [ ] Neither |
+| Coordinate system | [ ] Cartesian &nbsp;&nbsp; [ ] Tilted &nbsp;&nbsp; [ ] Radial |
+| Quadratic? | [ ] Yes &nbsp;&nbsp; [ ] No |
+| Architecture | [ ] Single-domain &nbsp;&nbsp; [ ] Two-domain bridge &nbsp;&nbsp; [ ] Multi-context &nbsp;&nbsp; [ ] 3+ domain synthesis |
 
 ---
 
-# Quick Reference — High-Frequency Implied Zeros
+# QUICK-REFERENCE PANEL
 
-| Trigger Phrase | Implied Value | Card |
-|---------------|---------------|------|
+> *Keep this panel available while solving. Contains the most commonly needed data from the 430-card vocabulary deck.*
+
+---
+
+## Implied Zero Catalog
+
+| Phrase | Value | Card |
+|--------|-------|------|
 | "from rest" / "dropped" / "released" | $v_0 = 0$ | 1, 308 |
 | "stops" / "comes to rest" | $v = 0$ | 2, 309 |
-| "maximum height" / "peak" / "top of trajectory" | $v_y = 0$ | 13, 310 |
-| "frictionless" / "smooth surface" / "ice" | $f = 0$ | 31, 311 |
-| "constant velocity" / "steady speed" / "coasting" | $a = 0$ | 3, 312 |
-| "free fall" / "falling freely" | $a_y = -g$ | 6, 313 |
-| "equilibrium" / "at rest" (with forces) | $\sum F = 0$ | 25, 314 |
-| "massless rope" / "ideal string" | $T$ same at both ends | 34, 315 |
-| "just loses contact" / "barely makes it" | $N = 0$ | 316 |
-| "level ground" (projectile) | $\Delta y = 0$ | 18, 317 |
-| "elastic collision" | $K_i = K_f$ | 74, 318 |
-| "perfectly inelastic" / "stick together" | $v_{1f} = v_{2f}$ | 73, 319 |
-| "terminal velocity" | $\sum F = 0$, $a = 0$ | 47, 320 |
-| "no external forces" / "isolated system" | $\sum p =$ constant | 77, 321 |
+| "maximum height" / "peak" / "top" | $v_y = 0$ | 13, 310 |
+| "frictionless" / "smooth" / "ice" | $f = 0$ | 31, 311 |
+| "constant velocity" / "steady speed" | $a = 0$ | 3, 318 |
+| "free fall" | $a_y = -g$ | 6 |
+| "just loses contact" | $N = 0$ | 93, 316 |
+| "massless rope" | $T$ uniform | 34, 312 |
+| "equilibrium" | $\sum F = 0$, $\sum\tau = 0$ | 25, 319 |
+| "level ground" (projectile) | $\Delta y = 0$ | 18, 314 |
+| "terminal velocity" | $a = 0$, $\sum F = 0$ | 47, 320 |
+| "elastic collision" | $K_i = K_f$ | 74 |
+| "stick together" / "embedded" | shared $v_f$ | 73 |
+| "rolling without slipping" | $v = \omega R$ | 113 |
 
 ---
 
-# Quick Reference — Physical Constants
+## Kinematic Equation Selector (Card 4)
 
-| Constant | Symbol | Value |
-|----------|--------|-------|
-| Gravitational acceleration (Earth surface) | $g$ | $9.8\;\mathrm{m/s^2}$ (AP: $10\;\mathrm{m/s^2}$) |
-| Universal gravitational constant | $G$ | $6.67\times10^{-11}\;\mathrm{N\;m^2/kg^2}$ |
-| Speed of light in vacuum | $c$ | $3.00\times10^8\;\mathrm{m/s}$ |
-| Elementary charge | $e$ | $1.60\times10^{-19}\;\mathrm{C}$ |
-| Electron mass | $m_e$ | $9.11\times10^{-31}\;\mathrm{kg}$ |
-| Proton mass | $m_p$ | $1.67\times10^{-27}\;\mathrm{kg}$ |
-| Coulomb constant | $k$ | $8.99\times10^9\;\mathrm{N\;m^2/C^2}$ |
-| Permittivity of free space | $\varepsilon_0$ | $8.85\times10^{-12}\;\mathrm{C^2/(N\;m^2)}$ |
-| Permeability of free space | $\mu_0$ | $4\pi\times10^{-7}\;\mathrm{T\;m/A}$ |
-| Planck's constant | $h$ | $6.63\times10^{-34}\;\mathrm{J\;s}$ |
-| Boltzmann constant | $k_B$ | $1.38\times10^{-23}\;\mathrm{J/K}$ |
-| Avogadro's number | $N_A$ | $6.022\times10^{23}\;\mathrm{mol^{-1}}$ |
-| Universal gas constant | $R$ | $8.314\;\mathrm{J/(mol\;K)}$ |
-| Atmospheric pressure | $P_{\text{atm}}$ | $1.013\times10^5\;\mathrm{Pa}$ |
-
----
-
-# Quick Reference — The Kinematic Equation Selector (Card 4)
-
-> **Find your row by asking:** *Which variable am I NOT given and do NOT need?*
-
-| I need... | I'm missing... | Use this equation |
-|-----------|---------------|-------------------|
+| I need… | I'm missing… | Use this |
+|---------|-------------|----------|
 | $v$ | $t$ | $v^2 = v_0^2 + 2a\Delta x$ |
 | $v$ | $\Delta x$ | $v = v_0 + at$ |
 | $\Delta x$ | $v$ | $\Delta x = v_0t + \frac{1}{2}at^2$ |
@@ -338,53 +372,83 @@ $$
 
 ---
 
-# Problem-Type Fast Routing
-
-| If the problem starts with... | Domain | Go-to Cards |
-|-------------------------------|--------|-------------|
-| "A car accelerates..." / "A ball is thrown..." / no forces mentioned | Kinematics | 1–22 |
-| "A force..." / "push" / "pull" / "friction" / "tension" / "incline" / "pulley" | Forces & Newton's Laws | 23–49 |
-| "How much work..." / "energy" / "speed at the bottom" / "spring" / no time asked | Energy & Work | 50–68 |
-| "Collision" / "hit" / "strike" / "bullet" / "recoil" / "explosion" | Momentum & Collisions | 69–82 |
-| "Circular" / "orbit" / "satellite" / "centripetal" / "banked curve" | Circular Motion & Gravitation | 83–102 |
-| "Torque" / "angular" / "moment of inertia" / "spins" / "rolls" | Rotational Mechanics | 103–130 |
-| "Oscillates" / "pendulum" / "spring-mass" / "period" / "frequency" | Simple Harmonic Motion | 131–150 |
-| "Wave" / "wavelength" / "frequency" / "sound" / "Doppler" / "standing wave" | Waves & Sound | 151–169 |
-| "Charge" / "Coulomb" / "electric field" / "potential" / "capacitor" | Electrostatics | 170–200 |
-| "Circuit" / "current" / "resistor" / "battery" / "Ohm" / "Kirchhoff" | Circuits | 201–250 |
-| "Magnetic field" / "B-field" / "Lorentz" / "flux" / "induction" | Magnetism | 251–280 |
-| "Heat" / "temperature" / "entropy" / "Carnot" | Thermodynamics | 281–310 |
-| "Fluid" / "pressure" / "buoyancy" / "Bernoulli" / "flow rate" | Fluids | 311–330 |
-| "Lens" / "mirror" / "refraction" / "image" / "focal length" / "Snell" | Optics | 331–360 |
-| "Photon" / "photoelectric" / "relativity" / "nuclear" / "de Broglie" | Modern Physics | 361–393 |
-
----
-
-# Dimensional Analysis Quick Check
+## Dimensional Analysis (Cards 401–430)
 
 | Quantity | Symbol | Dimension |
 |----------|--------|-----------|
-| Speed, velocity | $v$ | $[L][T]^{-1}$ |
+| Speed / velocity | $v$ | $[L][T]^{-1}$ |
 | Acceleration | $a$ | $[L][T]^{-2}$ |
 | Force | $F$ | $[M][L][T]^{-2}$ |
-| Energy, work, torque | $E, W, \tau$ | $[M][L]^2[T]^{-2}$ |
-| Momentum, impulse | $p, J$ | $[M][L][T]^{-1}$ |
+| Energy / work / heat | $E, K, U, W, Q$ | $[M][L]^2[T]^{-2}$ |
+| Momentum / impulse | $p, J$ | $[M][L][T]^{-1}$ |
 | Power | $P$ | $[M][L]^2[T]^{-3}$ |
-| Pressure, stress | $P$ | $[M][L]^{-1}[T]^{-2}$ |
-| Frequency | $f$ | $[T]^{-1}$ |
+| Pressure | $P$ | $[M][L]^{-1}[T]^{-2}$ |
+| Torque | $\tau$ | $[M][L]^2[T]^{-2}$ |
+| Moment of inertia | $I$ | $[M][L]^2$ |
+| Angular velocity | $\omega$ | $[T]^{-1}$ |
+| Angular momentum | $L$ | $[M][L]^2[T]^{-1}$ |
 | Spring constant | $k$ | $[M][T]^{-2}$ |
+| Frequency | $f$ | $[T]^{-1}$ |
 | Electric charge | $q$ | $[Q]$ |
 | Electric field | $E$ | $[M][L][Q]^{-1}[T]^{-2}$ |
-| Voltage, potential | $V$ | $[M][L]^2[Q]^{-1}[T]^{-2}$ |
+| Voltage | $V$ | $[M][L]^2[Q]^{-1}[T]^{-2}$ |
 | Magnetic field | $B$ | $[M][Q]^{-1}[T]^{-1}$ |
 | Resistance | $R$ | $[M][L]^2[Q]^{-2}[T]^{-1}$ |
 
-> **Rule:** After solving, compute the dimension of your answer. If it doesn't match the target dimension, your equation path is wrong. Fix it before boxing the answer.
+---
+
+## Physical Constants
+
+| Constant | Symbol | Value |
+|----------|--------|-------|
+| $g$ (Earth surface) | $g$ | $9.8\;\mathrm{m/s^2}$ (AP: $10$) |
+| Universal gravitation | $G$ | $6.67\times10^{-11}\;\mathrm{N\;m^2/kg^2}$ |
+| Speed of light | $c$ | $3.00\times10^8\;\mathrm{m/s}$ |
+| Elementary charge | $e$ | $1.60\times10^{-19}\;\mathrm{C}$ |
+| Electron mass | $m_e$ | $9.11\times10^{-31}\;\mathrm{kg}$ |
+| Proton mass | $m_p$ | $1.67\times10^{-27}\;\mathrm{kg}$ |
+| Coulomb constant | $k$ | $8.99\times10^9\;\mathrm{N\;m^2/C^2}$ |
+| $\varepsilon_0$ | $\varepsilon_0$ | $8.85\times10^{-12}\;\mathrm{C^2/(N\;m^2)}$ |
+| $\mu_0$ | $\mu_0$ | $4\pi\times10^{-7}\;\mathrm{T\;m/A}$ |
+| Planck's constant | $h$ | $6.63\times10^{-34}\;\mathrm{J\;s}$ |
+| Boltzmann constant | $k_B$ | $1.38\times10^{-23}\;\mathrm{J/K}$ |
+| Avogadro's number | $N_A$ | $6.022\times10^{23}\;\mathrm{mol^{-1}}$ |
+| Gas constant (J) | $R$ | $8.314\;\mathrm{J/(mol\;K)}$ |
+| Gas constant (L·atm) | $R$ | $0.08206\;\mathrm{L\;atm/(mol\;K)}$ |
+| Atmospheric pressure | $P_{\text{atm}}$ | $1.013\times10^5\;\mathrm{Pa} = 760\;\mathrm{mmHg}$ |
 
 ---
 
-> **Use this worksheet for every problem. First 20 will feel slow. After that, the I-SEE-R cycle becomes automatic.**
+## Problem-Type Fast Routing
+
+| Problem opens with… | Domain | Cards |
+|---------------------|--------|-------|
+| "accelerates" / "thrown" / no forces | Kinematics | 1–22 |
+| "force" / "push" / "pull" / "friction" / "incline" | Forces | 23–49 |
+| "work" / "speed at bottom" / "spring" / no time | Energy | 50–68 |
+| "collision" / "hit" / "bullet" / "recoil" / "explosion" | Momentum | 69–82 |
+| "circular" / "orbit" / "centripetal" / "banked" | Circular & Gravitation | 83–101 |
+| "torque" / "angular" / "rolls" / "spins" | Rotational | 102–120 |
+| "oscillates" / "pendulum" / "period" | SHM | 121–131 |
+| "wave" / "Doppler" / "standing wave" / "harmonic" | Waves & Sound | 132–153 |
+| "charge" / "Coulomb" / "E-field" / "capacitor" | Electrostatics | 154–170 |
+| "circuit" / "current" / "resistor" / "Ohm" | Circuits | 171–192 |
+| "magnetic" / "B-field" / "flux" / "induction" | Magnetism | 193–216 |
+| "heat" / "entropy" / "Carnot" / "isothermal" | Thermodynamics | 217–246 |
+| "fluid" / "buoyancy" / "Bernoulli" / "flow" | Fluids | 247–260 |
+| "lens" / "mirror" / "refraction" / "Snell" | Optics | 261–282 |
+| "photon" / "photoelectric" / "relativity" / "nuclear" | Modern Physics | 283–307 |
+
+---
+
+> **"The exam is won before you enter the room. This worksheet is the bridge between your 430 flashcard reflexes and the mechanical solution of any problem."**
 >
-> *"Difficulty = number of cards fired. A Level-1 problem fires 3 cards. An Olympiad problem fires 10. The method is the same."*
+> *— Physics Without Intuition*
 >
-> — *Physics Without Intuition*
+> ---
+>
+> **First 20 problems:** Fill every section. It will feel slow — you are building the protocol.
+> **Problems 20–50:** The cycle accelerates. You will notice yourself anticipating the next step.
+> **Problems 50+:** The worksheet becomes a mental checklist. You will catch your own errors before you make them.
+>
+> **Difficulty = number of cards fired.** Level 1 fires 3 cards. Level 4 fires 10. The method is identical. Count the cards. Trace the triggers. Execute.
