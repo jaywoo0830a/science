@@ -23,7 +23,7 @@ function randInt(min: number, max: number): number {
  */
 export function generateProblem(
   concept: ConceptDef,
-  positionalValues: (number | null)[],
+  positionalValues: (number | null | undefined)[],
   targetIndex: number,
   flags: Flags,
   inputLine: string

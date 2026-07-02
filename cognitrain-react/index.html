@@ -5,6 +5,187 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>cognitrain-react</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <style>
+      /* ===== Reset & Base ===== */
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      :where(body) {
+        max-width: 48rem;
+        margin-inline: auto;
+        padding: clamp(1rem, 4vw, 2.5rem);
+        font-family: 'Noto Serif', serif;
+        font-size: clamp(1rem, 1.6vw, 1.125rem);
+        font-weight: 400;
+        line-height: 1.75;
+      }
+
+      /* ===== Headings ===== */
+      :where(h1) {
+        font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        margin-block: 0 0.75rem;
+      }
+      :where(h2) {
+        font-size: clamp(1.15rem, 2vw, 1.35rem);
+        font-weight: 600;
+        margin-block: 2rem 0.5rem;
+      }
+      :where(h3) {
+        font-size: clamp(1.05rem, 1.6vw, 1.15rem);
+        font-weight: 600;
+        margin-block: 1.5rem 0.4rem;
+      }
+
+      /* ===== Paragraphs ===== */
+      :where(p) { margin-block: 0.4rem; }
+
+      /* ===== Horizontal Rule ===== */
+      :where(hr) {
+        border: none;
+        border-top: 1px solid currentColor;
+        opacity: 0.18;
+        margin-block: 1.25rem;
+      }
+
+      /* ===== Buttons ===== */
+      :where(button) {
+        font-family: inherit;
+        font-size: 0.9em;
+        font-weight: 500;
+        padding: 0.35em 0.85em;
+        margin: 0.15em;
+        border: 1px solid currentColor;
+        border-radius: 3px;
+        cursor: pointer;
+        opacity: 0.85;
+        transition: opacity 0.15s;
+      }
+      :where(button:hover) { opacity: 1; }
+
+      /* ===== Inputs ===== */
+      :where(input[type="text"]) {
+        font-family: 'Roboto Mono', monospace;
+        font-size: 0.95em;
+        padding: 0.35em 0.6em;
+        border: 1px solid currentColor;
+        border-radius: 3px;
+        opacity: 0.7;
+      }
+      :where(input[type="text"]:focus) {
+        opacity: 1;
+        outline: 1.5px solid currentColor;
+        outline-offset: 1px;
+      }
+
+      /* ===== Pre / Code ===== */
+      :where(pre) {
+        font-family: 'Roboto Mono', monospace;
+        font-size: 0.85em;
+        line-height: 1.55;
+        padding: 0.75rem 1rem;
+        margin-block: 0.5rem;
+        border-left: 2px solid currentColor;
+        opacity: 0.7;
+      }
+      :where(code) {
+        font-family: 'Roboto Mono', monospace;
+        font-size: 0.9em;
+      }
+
+      /* ===== Lists ===== */
+      :where(ul, ol) {
+        padding-inline-start: 1.5rem;
+        margin-block: 0.4rem;
+      }
+      :where(li) { margin-block: 0.15rem; }
+
+      /* ===== Strong ===== */
+      :where(strong) { font-weight: 650; }
+
+      /* ===== KaTeX ===== */
+      .katex { font-family: 'KaTeX_Main', 'Times New Roman', serif; }
+
+      /* ===== Flex Utilities ===== */
+      .flex-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.4rem;
+      }
+      .flex-col {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .justify-between { justify-content: space-between; }
+      .justify-center { justify-content: center; }
+      .align-start { align-items: flex-start; }
+      .gap-sm { gap: 0.3rem; }
+      .gap-md { gap: 0.75rem; }
+      .gap-lg { gap: 1.25rem; }
+
+      /* ===== Grid Utilities ===== */
+      .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+        gap: 0.5rem;
+      }
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+        gap: 0.5rem;
+      }
+
+      /* ===== Input Group (input + button inline) ===== */
+      .input-group {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+      }
+      .input-group input[type="text"] { flex: 1; min-width: 0; }
+
+      /* ===== Header Bar (training top bar) ===== */
+      .header-bar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 0.4rem 1rem;
+      }
+      .header-bar .badge {
+        font-weight: 600;
+        font-size: 0.85em;
+        opacity: 0.7;
+      }
+
+      /* ===== Stat Card (summary) ===== */
+      .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+        gap: 0.6rem;
+      }
+      .stat-item {
+        padding: 0.5rem 0.75rem;
+        border: 1px solid currentColor;
+        border-radius: 3px;
+        opacity: 0.8;
+      }
+      .stat-item dt {
+        font-size: 0.75em;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin-block-end: 0.15rem;
+      }
+      .stat-item dd {
+        font-size: 1.3em;
+        font-weight: 650;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>

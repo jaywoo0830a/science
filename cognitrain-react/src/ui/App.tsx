@@ -1,12 +1,13 @@
 import { useState, useCallback, useRef, useEffect } from "react";
 import katex from "katex";
-import type { GeneratedProblem, Flags } from "../engine/types";
-import { createSession, currentProblem, advanceSession, isSessionComplete, getSessionStats } from "../engine/session";
+import type { GeneratedProblem } from "../engine/types";
+import { createSession, getSessionStats } from "../engine/session";
 import { parseLine, validateParsedLine } from "../engine/parser";
 import { generateProblem } from "../engine/generator";
 import { approxEqual, fmt, parseUserNumber } from "../engine/evaluator";
 import { physicsModule } from "../data/physics";
 import { chemistryModule } from "../data/chemistry";
+import { triggerHintMap } from "../data/trigger-hints";
 import type { SubjectModule } from "../engine/types";
 
 // ============================================================
@@ -32,6 +33,7 @@ export default function App() {
   const [feedback, setFeedback] = useState<{ correct: boolean; message: string } | null>(null);
   const [errors, setErrors] = useState<{ keyword: string; step: number; userAnswer: number; correctAnswer: number }[]>([]);
   const [startTime, setStartTime] = useState(0);
+  const [showHint, setShowHint] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const problem = problems[currentIdx] ?? null;
@@ -48,8 +50,9 @@ export default function App() {
     (lineCount: number) => {
       setSubject(subject);
       const session = createSession(
-        { subject: subject.id, domains: [], lanes: [], problemCount: lineCount, flagsProbability: 0.5 },
-        subject
+        { domains: [], lanes: [], flagsProbability: 0.5 },
+        subject,
+        lineCount
       );
       setProblems(session.problems);
       setCurrentIdx(0);
@@ -57,6 +60,7 @@ export default function App() {
       setFeedback(null);
       setErrors([]);
       setStartTime(Date.now());
+      setShowHint(false);
       setMode("training");
     },
     [subject]
@@ -66,39 +70,35 @@ export default function App() {
   const handleSubmit = useCallback(() => {
     if (!problem) return;
 
-    const step = problem.concept.steps[problem.currentStep];
-    if (!step) return;
-
-    const correctAnswer = problem.stepResults[problem.currentStep];
-
     // Lane B and C have no numeric answer — just show the equation
     if (problem.concept.lane === "B" || problem.concept.lane === "C") {
-      const isCorrect = userInput.trim().toLowerCase() === "ok";
-      const newAnswers = [...problem.userAnswers];
-      newAnswers[problem.currentStep] = 1;
-      const newCorrect = [...problem.stepCorrect];
-      newCorrect[problem.currentStep] = true;
       const updated = {
         ...problem,
-        userAnswers: newAnswers,
-        stepCorrect: newCorrect,
+        userAnswers: [...problem.userAnswers, 1],
+        stepCorrect: [...problem.stepCorrect, true],
         currentStep: problem.currentStep + 1,
-        completed: problem.currentStep + 1 >= problem.concept.steps.length,
+        completed: true,
       };
       setProblems(prev => prev.map((p, i) => (i === currentIdx ? updated : p)));
       setFeedback({
         correct: true,
-        message: `Equation: ${step.equationLatex || problem.concept.equationLatex || ""}`,
+        message: `Equation: ${problem.concept.equationLatex || ""}`,
       });
       setUserInput("");
-      if (updated.completed && currentIdx + 1 < problems.length) {
+      if (currentIdx + 1 < problems.length) {
         setTimeout(() => {
           setCurrentIdx(prev => prev + 1);
           setFeedback(null);
+          setShowHint(false);
         }, 800);
       }
       return;
     }
+
+    const step = problem.concept.steps[problem.currentStep];
+    if (!step) return;
+
+    const correctAnswer = problem.stepResults[problem.currentStep];
 
     // Lane A/Bridge: numeric answer
     const userNum = parseUserNumber(userInput);
@@ -144,6 +144,7 @@ export default function App() {
       setTimeout(() => {
         setCurrentIdx(prev => prev + 1);
         setFeedback(null);
+        setShowHint(false);
       }, 1200);
     } else if (completed && currentIdx + 1 >= problems.length) {
       setTimeout(() => setMode("summary"), 1500);
@@ -184,6 +185,7 @@ export default function App() {
     setFeedback(null);
     setErrors([]);
     setStartTime(Date.now());
+    setShowHint(false);
     setMode("training");
   }, [customLine, subject]);
 
@@ -197,42 +199,40 @@ export default function App() {
         <hr />
 
         <h2>Subject</h2>
-        <div>
+        <div className="flex-row gap-sm">
           <button
             onClick={() => setSubject(physicsModule)}
-            style={{ fontWeight: subject.id === "physics" ? "bold" : "normal" }}
+            style={{ fontWeight: subject.id === "physics" ? 650 : 400 }}
           >
             Physics ({physicsModule.concepts.length} cards)
-          </button>{" "}
+          </button>
           <button
             onClick={() => setSubject(chemistryModule)}
-            style={{ fontWeight: subject.id === "chemistry" ? "bold" : "normal" }}
+            style={{ fontWeight: subject.id === "chemistry" ? 650 : 400 }}
           >
             Chemistry ({chemistryModule.concepts.length} cards)
           </button>
         </div>
 
         <h2>Quick Start</h2>
-        <div>
-          <button onClick={() => startSession(10)}>10 problems</button>{" "}
-          <button onClick={() => startSession(20)}>20 problems</button>{" "}
+        <div className="flex-row gap-sm">
+          <button onClick={() => startSession(10)}>10 problems</button>
+          <button onClick={() => startSession(20)}>20 problems</button>
           <button onClick={() => startSession(50)}>50 problems</button>
         </div>
 
         <h2>Custom Line</h2>
         <p>Type a Physcript line for single-problem mode:</p>
-        <p>
+        <div className="input-group">
           <input
             type="text"
             value={customLine}
             onChange={e => setCustomLine(e.target.value)}
             onKeyDown={e => e.key === "Enter" && handleCustomLine()}
             placeholder="e.g., incline 37 5 0.25 10 ! ~"
-            size={50}
           />
-          {" "}
           <button onClick={handleCustomLine}>Go</button>
-        </p>
+        </div>
 
         <hr />
 
@@ -257,7 +257,7 @@ planck !
 force_dim
 
 # Flags: ! (unit)  ~ (dim)  !! (unit-all)  ~~ (dim-all)`}</pre>
-        <p>Available concepts: {subject.concepts.map(c => c.keyword).join(", ")}</p>
+
       </div>
     );
   }
@@ -265,7 +265,7 @@ force_dim
   // ==================== Summary Screen ====================
   if (mode === "summary") {
     const stats = getSessionStats({
-      config: { subject: subject.id, domains: [], lanes: [], problemCount: problems.length, flagsProbability: 0.5 },
+      config: { domains: [], lanes: [], flagsProbability: 0.5 },
       problems,
       currentIndex: currentIdx,
       startTime,
@@ -277,9 +277,24 @@ force_dim
         <h1>Session Complete</h1>
         <p>{subject.name} — {stats.elapsedSeconds}s</p>
         <hr />
-        <p>Problems: {stats.completedProblems}/{stats.totalProblems}</p>
-        <p>Steps correct: {stats.correctSteps}/{stats.totalSteps}</p>
-        <p>Accuracy: {stats.accuracy.toFixed(1)}%</p>
+        <dl className="stat-grid">
+          <div className="stat-item">
+            <dt>Problems</dt>
+            <dd>{stats.completedProblems}/{stats.totalProblems}</dd>
+          </div>
+          <div className="stat-item">
+            <dt>Steps Correct</dt>
+            <dd>{stats.correctSteps}/{stats.totalSteps}</dd>
+          </div>
+          <div className="stat-item">
+            <dt>Accuracy</dt>
+            <dd>{stats.accuracy.toFixed(1)}%</dd>
+          </div>
+          <div className="stat-item">
+            <dt>Time</dt>
+            <dd>{stats.elapsedSeconds}s</dd>
+          </div>
+        </dl>
         <hr />
         {stats.errors.length > 0 && (
           <>
@@ -301,8 +316,6 @@ force_dim
 
   // ==================== Training Screen ====================
   const step = problem?.concept.steps[problem?.currentStep ?? 0];
-  const stepLabel = step?.label ?? "";
-  const stepUnit = step?.unit ?? "";
   const stepEq = step?.equationLatex ?? "";
 
   // Lane B/C display
@@ -310,66 +323,48 @@ force_dim
 
   return (
     <div>
-      <p>
-        <strong>{subject.name}</strong> · {problem?.concept.domain} · {problem?.concept.displayName} ·{" "}
-        [{currentIdx + 1}/{problems.length}]
-      </p>
+      <div className="header-bar">
+        <strong>{subject.name}</strong>
+        <span className="badge">[{currentIdx + 1}/{problems.length}]</span>
+      </div>
 
       <hr />
 
-      {/* Input line */}
-      <pre style={{ fontSize: "16px", margin: "8px 0" }}>{problem?.inputLine}</pre>
+      {/* Toggleable hint — answer dimension/unit only */}
+      <div className="flex-row justify-between" style={{ marginBlock: "0.3rem" }}>
+        {showHint ? (
+          <span className="badge">
+            {isRecall
+              ? <>Hint: <span dangerouslySetInnerHTML={{ __html: renderKaTeX(problem?.concept.equationLatex ?? problem?.concept.keyword) }} /></>
+              : <>Hint: {step?.dimension || ""} {step?.unit ? `(${step.unit})` : ""}</>
+            }
+          </span>
+        ) : (
+          <span />
+        )}
+        <button
+          onClick={() => setShowHint(h => !h)}
+          style={{ fontSize: "0.75em", padding: "0.15em 0.5em", opacity: 0.5 }}
+        >
+          {showHint ? "Hide hint" : "Hint?"}
+        </button>
+      </div>
 
-      {/* Lane B/C: show trigger and ask for equation */}
+      {/* Input line */}
+      <pre>{problem?.inputLine}</pre>
+
+      {/* Lane B/C: recall mode */}
       {isRecall && (
         <div>
-          <p>
-            Trigger: <strong>{problem?.concept.triggers?.[0] ?? problem?.concept.keyword}</strong>
-          </p>
-          <p>Recall the equation/value:</p>
           {feedback ? (
             <div>
-              <p style={{ color: feedback.correct ? "green" : "red" }}>{feedback.message}</p>
+              <p>{feedback.correct ? "✓" : "✗"} {feedback.message}</p>
               <p
                 dangerouslySetInnerHTML={{
                   __html: renderKaTeX(problem?.concept.equationLatex ?? ""),
                 }}
               />
-              {problem?.completed ? (
-                <p>✓ Complete — moving to next...</p>
-              ) : (
-                <button
-                  onClick={() => {
-                    setUserInput("ok");
-                    // Trigger submit via the input
-                    setTimeout(() => {
-                      const newAnswers = [...problem.userAnswers];
-                      newAnswers[problem.currentStep] = 1;
-                      const newCorrect = [...problem.stepCorrect];
-                      newCorrect[problem.currentStep] = true;
-                      const updated = {
-                        ...problem,
-                        userAnswers: newAnswers,
-                        stepCorrect: newCorrect,
-                        currentStep: problem.currentStep + 1,
-                        completed: problem.currentStep + 1 >= problem.concept.steps.length,
-                      };
-                      setProblems(prev => prev.map((p, i) => (i === currentIdx ? updated : p)));
-                      setFeedback(null);
-                      setUserInput("");
-                      if (updated.completed) {
-                        if (currentIdx + 1 < problems.length) {
-                          setCurrentIdx(prev => prev + 1);
-                        } else {
-                          setMode("summary");
-                        }
-                      }
-                    }, 800);
-                  }}
-                >
-                  OK — Show Answer
-                </button>
-              )}
+              {problem?.completed && <p>✓ Complete — moving to next...</p>}
             </div>
           ) : (
             <button onClick={handleSubmit}>Show Answer</button>
@@ -380,31 +375,18 @@ force_dim
       {/* Lane A/Bridge: calculation steps */}
       {!isRecall && problem && step && (
         <div>
-          <p>
-            Step {problem.currentStep + 1}/{problem.concept.steps.length}: <strong>{stepLabel}</strong>
-          </p>
-
-          {/* Known values (context) */}
-          {problem.currentStep === 0 && problem.targetIndex < 0 && (
-            <p>
-              Given: {problem.concept.params.map((p, i) => `${p.name}=${fmt(problem.paramValues[i])} ${p.unit}`).join(", ")}
-            </p>
-          )}
-
           {/* Input */}
           {!problem.completed && (
-            <div>
+            <div className="input-group">
               <input
                 ref={inputRef}
                 type="text"
                 value={userInput}
                 onChange={e => setUserInput(e.target.value)}
                 onKeyDown={e => e.key === "Enter" && handleSubmit()}
-                placeholder={`${stepLabel} (${stepUnit})`}
-                size={20}
+                placeholder="answer"
                 autoComplete="off"
               />
-              {" "}
               <button onClick={handleSubmit}>Enter</button>
             </div>
           )}
@@ -412,9 +394,7 @@ force_dim
           {/* Feedback */}
           {feedback && (
             <div>
-              <p style={{ color: feedback.correct ? "green" : "red" }}>
-                {feedback.message}
-              </p>
+              <p>{feedback.correct ? "✓" : "✗"} {feedback.message}</p>
               {!feedback.correct && stepEq && (
                 <p dangerouslySetInnerHTML={{ __html: renderKaTeX(stepEq) }} />
               )}
@@ -453,7 +433,7 @@ force_dim
             {problem.stepCorrect.filter(c => c === true).length}/{problem.stepCorrect.length} steps correct
           </p>
           {currentIdx + 1 < problems.length && (
-            <button onClick={() => { setCurrentIdx(prev => prev + 1); setFeedback(null); setUserInput(""); }}>
+            <button onClick={() => { setCurrentIdx(prev => prev + 1); setFeedback(null); setUserInput(""); setShowHint(false); }}>
               Next Problem
             </button>
           )}
@@ -469,6 +449,7 @@ force_dim
                 setCurrentIdx(prev => prev + 1);
                 setFeedback(null);
                 setUserInput("");
+                setShowHint(false);
               } else {
                 setMode("summary");
               }

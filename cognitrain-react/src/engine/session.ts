@@ -55,21 +55,21 @@ export function createSession(
           .filter(i => i >= 0);
         const ti = targetableParams[Math.floor(Math.random() * targetableParams.length)];
 
-        const positionalValues: (number | null)[] = concept.params.map((_, i) =>
-          i === ti ? null : 0
+        const positionalValues: (number | null | undefined)[] = concept.params.map((_, i) =>
+          i === ti ? null : undefined
         );
         const flags = generateFlags(config.flagsProbability);
 
         problem = generateProblem(concept, positionalValues, ti, flags, concept.keyword);
       } else {
         // Multi-step chain — generate all values
-        const positionalValues: (number | null)[] = concept.params.map(() => 0);
+        const positionalValues: (number | null | undefined)[] = concept.params.map(() => undefined);
         const flags = generateFlags(config.flagsProbability);
         problem = generateProblem(concept, positionalValues, -1, flags, concept.keyword);
       }
     } else {
       // Fallback
-      const positionalValues: (number | null)[] = concept.params.map(() => 0);
+      const positionalValues: (number | null | undefined)[] = concept.params.map(() => undefined);
       const flags = generateFlags(config.flagsProbability);
       problem = generateProblem(concept, positionalValues, -1, flags, concept.keyword);
     }
