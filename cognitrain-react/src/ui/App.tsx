@@ -6,6 +6,7 @@ import { parseLine, validateParsedLine } from "../engine/parser";
 import { generateProblem } from "../engine/generator";
 import { approxEqual, fmt, parseUserNumber } from "../engine/evaluator";
 import { physicsModule } from "../data/physics";
+import { physicsVocabMap } from "../data/physics/vocab-map";
 import { chemistryModule } from "../data/chemistry";
 import { triggerHintMap } from "../data/trigger-hints";
 import type { SubjectModule } from "../engine/types";
@@ -34,20 +35,22 @@ export default function App() {
   const [errors, setErrors] = useState<{ keyword: string; step: number; userAnswer: number; correctAnswer: number }[]>([]);
   const [startTime, setStartTime] = useState(0);
   const [showHint, setShowHint] = useState(false);
+  const [trainingMode, setTrainingMode] = useState<"normal" | "learnCalc">("normal");
+  const [previewMode, setPreviewMode] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const problem = problems[currentIdx] ?? null;
 
-  // Focus input on problem change
+  // Focus input on problem change (only in calc mode, not preview)
   useEffect(() => {
-    if (mode === "training" && inputRef.current) {
+    if (mode === "training" && !previewMode && inputRef.current) {
       inputRef.current.focus();
     }
-  }, [currentIdx, mode]);
+  }, [currentIdx, mode, previewMode]);
 
   // Start a new session
   const startSession = useCallback(
-    (lineCount: number) => {
+    (lineCount: number, tMode: "normal" | "learnCalc" = "normal") => {
       setSubject(subject);
       const session = createSession(
         { domains: [], lanes: [], flagsProbability: 0.5 },
@@ -61,6 +64,8 @@ export default function App() {
       setErrors([]);
       setStartTime(Date.now());
       setShowHint(false);
+      setTrainingMode(tMode);
+      setPreviewMode(tMode === "learnCalc");
       setMode("training");
     },
     [subject]
@@ -186,6 +191,8 @@ export default function App() {
     setErrors([]);
     setStartTime(Date.now());
     setShowHint(false);
+    setTrainingMode("normal");
+    setPreviewMode(false);
     setMode("training");
   }, [customLine, subject]);
 
@@ -219,6 +226,14 @@ export default function App() {
           <button onClick={() => startSession(10)}>10 problems</button>
           <button onClick={() => startSession(20)}>20 problems</button>
           <button onClick={() => startSession(50)}>50 problems</button>
+        </div>
+
+        <h2>Learn &amp; Calculate</h2>
+        <p>See the formula first, then compute with numbers.</p>
+        <div className="flex-row gap-sm">
+          <button onClick={() => startSession(10, "learnCalc")} style={{ background: "var(--accent-bg, #e8f0fe)" }}>10 problems</button>
+          <button onClick={() => startSession(20, "learnCalc")} style={{ background: "var(--accent-bg, #e8f0fe)" }}>20 problems</button>
+          <button onClick={() => startSession(50, "learnCalc")} style={{ background: "var(--accent-bg, #e8f0fe)" }}>50 problems</button>
         </div>
 
         <h2>Custom Line</h2>
@@ -350,8 +365,8 @@ force_dim
         </button>
       </div>
 
-      {/* Input line */}
-      <pre>{problem?.inputLine}</pre>
+      {/* Input line — hidden during preview */}
+      {!previewMode && <pre>{problem?.inputLine}</pre>}
 
       {/* Lane B/C: recall mode */}
       {isRecall && (
@@ -372,8 +387,46 @@ force_dim
         </div>
       )}
 
+      {/* Learn & Calculate: Preview all formulas before starting */}
+      {previewMode && (
+        <div style={{ marginBlock: "1rem" }}>
+          <div style={{ padding: "0.75rem 1rem", border: "1px solid #ccc", borderRadius: "8px", background: "#f0f4ff", marginBottom: "1rem" }}>
+            <p style={{ fontWeight: 600, marginBottom: "0.5rem" }}>
+              Memorize these {problems.length} formulas — then click Start:
+            </p>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem 1.5rem", fontSize: "0.9em" }}>
+              {problems.map((p, i) => {
+                const firstStep = p.concept.steps[0];
+                const eq = firstStep?.equationLatex || p.concept.equationLatex || p.concept.displayName;
+                const vocabRef = physicsVocabMap[p.concept.keyword];
+                return (
+                  <div key={i} style={{ display: "flex", alignItems: "center", gap: "0.5rem", padding: "0.3rem 0", borderBottom: "1px solid #e0e0e0" }}>
+                    <span style={{ fontWeight: 600, minWidth: "1.5em", color: "#666" }}>{i + 1}.</span>
+                    <span dangerouslySetInnerHTML={{ __html: renderKaTeX(eq) }} />
+                    {vocabRef && (
+                      <span style={{ fontSize: "0.7em", color: "#888", marginLeft: "auto", whiteSpace: "nowrap" }}>
+                        card{vocabRef.includes(",") ? "s" : ""} {vocabRef}
+                      </span>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          <button
+            onClick={() => {
+              setPreviewMode(false);
+              setTimeout(() => inputRef.current?.focus(), 150);
+            }}
+            style={{ fontWeight: 600, fontSize: "1.1em", padding: "0.6em 2em" }}
+          >
+            Start Calculating (I've memorized them)
+          </button>
+        </div>
+      )}
+
       {/* Lane A/Bridge: calculation steps */}
-      {!isRecall && problem && step && (
+      {!previewMode && !isRecall && problem && step && (
         <div>
           {/* Input */}
           {!problem.completed && (
