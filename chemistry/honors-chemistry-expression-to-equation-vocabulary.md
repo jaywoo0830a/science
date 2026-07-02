@@ -469,22 +469,22 @@
 | # | From | To | Multiply By |
 |---|------|----|-------------|
 | 197 | °C | K | $T_K = T_C + 273.15$ |
-| 198 | atm | Pa | $1\;\mathrm{atm} = 101{,}325\;\mathrm{Pa}$ |
-| 199 | atm | torr / mmHg | $1\;\mathrm{atm} = 760\;\mathrm{torr}$ |
-| 200 | L | m³ | $1\;\mathrm{L} = 10^{-3}\;\mathrm{m^3}$ |
-| 201 | mL | L (and cm³) | $1\;\mathrm{mL} = 10^{-3}\;\mathrm{L} = 1\;\mathrm{cm^3}$ |
-| 202 | J | cal | $1\;\mathrm{cal} = 4.184\;\mathrm{J}$ |
-| 203 | kJ | J | Multiply by 1000 |
-| 204 | eV | J | $1\;\mathrm{eV} = 1.602\times10^{-19}\;\mathrm{J}$ |
+| 198 | atm | Pa | $1\ \mathrm{atm} = 101\,325\ \mathrm{Pa}$ |
+| 199 | atm | torr / mmHg | $1\ \mathrm{atm} = 760\ \mathrm{torr}$ |
+| 200 | L | m³ | $1\ \mathrm{L} = 10^{-3}\ \mathrm{m}^{3}$ |
+| 201 | mL | L (and cm³) | $1\ \mathrm{mL} = 10^{-3}\ \mathrm{L} = 1\ \mathrm{cm}^{3}$ |
+| 202 | J | cal | $1\ \mathrm{cal} = 4.184\ \mathrm{J}$ |
+| 203 | kJ | J | Multiply by $1000$ |
+| 204 | eV | J | $1\ \mathrm{eV} = 1.602 \times 10^{-19}\ \mathrm{J}$ |
 | 205 | eV/particle | kJ/mol | Multiply by $96.485$ |
-| 206 | amu (u) | kg | $1\;\mathrm{u} = 1.661\times10^{-27}\;\mathrm{kg}$ |
-| 207 | amu (u) | MeV/$c^2$ | $1\;\mathrm{u} = 931.5\;\mathrm{MeV}/c^2$ |
-| 208 | M (molar) | mol/L | $1\;\mathrm{M} \equiv 1\;\mathrm{mol/L}$ |
-| 209 | Å (angstrom) | m | $1\;\mathrm{Å} = 10^{-10}\;\mathrm{m}$ |
-| 210 | nm | m | $1\;\mathrm{nm} = 10^{-9}\;\mathrm{m}$ |
-| 211 | pm | m | $1\;\mathrm{pm} = 10^{-12}\;\mathrm{m}$ |
-| 212 | g/cm³ | kg/m³ | Multiply by 1000 |
-| 213 | g/mol | kg/mol | Divide by 1000 |
+| 206 | amu (u) | kg | $1\ \mathrm{u} = 1.661 \times 10^{-27}\ \mathrm{kg}$ |
+| 207 | amu (u) | MeV/$c^{2}$ | $1\ \mathrm{u} = 931.5\ \mathrm{MeV}/c^{2}$ |
+| 208 | M (molar) | mol/L | $1\ \mathrm{M} \equiv 1\ \mathrm{mol/L}$ |
+| 209 | Å (angstrom) | m | $1\ \text{Å} = 10^{-10}\ \mathrm{m}$ |
+| 210 | nm | m | $1\ \mathrm{nm} = 10^{-9}\ \mathrm{m}$ |
+| 211 | pm | m | $1\ \mathrm{pm} = 10^{-12}\ \mathrm{m}$ |
+| 212 | g/cm³ | kg/m³ | Multiply by $1000$ |
+| 213 | g/mol | kg/mol | Divide by $1000$ |
 
 ---
 
