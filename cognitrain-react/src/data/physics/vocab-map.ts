@@ -68,7 +68,7 @@ export const physicsVocabMap: Record<string, string> = {
   "elastic_collision_1d":            "74",
   "elastic_equal_mass":              "75",
   "recoil_velocity":                 "77",
-  "explosion_momentum":              "78",
+  "explosion_momentum":              "77, 78",
   "ballistic_pendulum":              "79",
   "center_of_mass_2body":            "82",
   "momentum_conservation_2d_x":      "81",
