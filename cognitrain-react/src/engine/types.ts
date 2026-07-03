@@ -39,6 +39,23 @@ export interface CalcStep {
   equationLatex?: string;
 }
 
+// ---- Concept Connections (for building conceptual networks) ----
+
+export type ConceptRelation = 
+  | "feeds_into"       // 이 개념의 출력이 대상 개념의 입력
+  | "fed_by"           // 대상 개념의 출력이 이 개념의 입력
+  | "same_family"      // 같은 domain, 비슷한 구조
+  | "contrasts_with";  // 혼동하기 쉬운 개념 (구별 훈련용)
+
+export interface ConceptEdge {
+  targetKeyword: string;
+  relation: ConceptRelation;
+  /** feeds_into일 때 전달되는 파라미터 인덱스 (이 개념 출력 → 대상 개념의 이 파라미터) */
+  bridgeParamIndex?: number;
+  /** feeds_into일 때 전달되는 변수 설명 */
+  bridgeVariable?: string;
+}
+
 // ---- Concept Definition (a single "card") ----
 
 export interface ConceptDef {
@@ -68,6 +85,13 @@ export interface ConceptDef {
   thresholdQuestion?: string;
   thresholdYes?: string;
   thresholdNo?: string;
+  // ---- Connection / Clustering (NEW) ----
+  /** 이 개념이 연결된 다른 개념들 */
+  connections?: ConceptEdge[];
+  /** 개념 군집 ID (같은 clusterId끼리 묶어서 훈련) */
+  clusterId?: string;
+  /** 난이도 (1=기초, 2=중급, 3=고급, 4=Olympiad) */
+  difficultyLevel?: 1 | 2 | 3 | 4;
 }
 
 // ---- Runtime Problem State ----
@@ -92,6 +116,8 @@ export interface GeneratedProblem {
   userAnswers: (number | null)[];
   /** Correct/incorrect per step */
   stepCorrect: (boolean | null)[];
+  /** Bridge pair: label explaining connection to previous problem */
+  bridgeLabel?: string;
 }
 
 // ---- Session ----

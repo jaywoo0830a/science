@@ -1,12 +1,13 @@
 import { useState, useCallback, useRef, useEffect } from "react";
 import katex from "katex";
 import type { GeneratedProblem } from "../engine/types";
-import { createSession, getSessionStats } from "../engine/session";
+import { createSession, createBridgePairSession, getSessionStats } from "../engine/session";
 import { parseLine, validateParsedLine } from "../engine/parser";
 import { generateProblem } from "../engine/generator";
 import { approxEqual, fmt, parseUserNumber } from "../engine/evaluator";
 import { physicsModule } from "../data/physics";
 import { physicsVocabMap } from "../data/physics/vocab-map";
+import { chemistryVocabMap } from "../data/chemistry/vocab-map";
 import { chemistryModule } from "../data/chemistry";
 import { triggerHintMap } from "../data/trigger-hints";
 import type { SubjectModule } from "../engine/types";
@@ -35,7 +36,7 @@ export default function App() {
   const [errors, setErrors] = useState<{ keyword: string; step: number; userAnswer: number; correctAnswer: number }[]>([]);
   const [startTime, setStartTime] = useState(0);
   const [showHint, setShowHint] = useState(false);
-  const [trainingMode, setTrainingMode] = useState<"normal" | "learnCalc">("normal");
+  const [trainingMode, setTrainingMode] = useState<"normal" | "learnCalc" | "bridge">("normal");
   const [previewMode, setPreviewMode] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -50,13 +51,19 @@ export default function App() {
 
   // Start a new session
   const startSession = useCallback(
-    (lineCount: number, tMode: "normal" | "learnCalc" = "normal") => {
+    (lineCount: number, tMode: "normal" | "learnCalc" | "bridge" = "normal") => {
       setSubject(subject);
-      const session = createSession(
-        { domains: [], lanes: [], flagsProbability: 0.5 },
-        subject,
-        lineCount
-      );
+      const session = tMode === "bridge"
+        ? createBridgePairSession(
+            { domains: [], lanes: [], flagsProbability: 0.5 },
+            subject,
+            Math.floor(lineCount / 2)  // lineCount = total problems; pairs = lineCount/2
+          )
+        : createSession(
+            { domains: [], lanes: [], flagsProbability: 0.5 },
+            subject,
+            lineCount
+          );
       setProblems(session.problems);
       setCurrentIdx(0);
       setUserInput("");
@@ -237,6 +244,18 @@ export default function App() {
           <button onClick={() => startSession(20, "learnCalc")} style={{ background: "var(--accent-bg, #e8f0fe)" }}>20 problems</button>
         </div>
 
+        <h2>🔗 Bridge Pairs — Connect Concepts</h2>
+        <p>Each pair chains two concepts: the <strong>output</strong> of problem A becomes the <strong>input</strong> of problem B. <em>Neurons that fire together, wire together.</em></p>
+        <div className="flex-row gap-sm">
+          <button onClick={() => startSession(4, "bridge")} style={{ background: "var(--accent-bg, #fff3cd)" }}>2 pairs (4 probs)</button>
+          <button onClick={() => startSession(8, "bridge")} style={{ background: "var(--accent-bg, #fff3cd)" }}>4 pairs (8 probs)</button>
+          <button onClick={() => startSession(12, "bridge")} style={{ background: "var(--accent-bg, #fff3cd)" }}>6 pairs (12 probs)</button>
+          <button onClick={() => startSession(20, "bridge")} style={{ background: "var(--accent-bg, #fff3cd)" }}>10 pairs (20 probs)</button>
+        </div>
+        <p style={{ fontSize: "0.82rem", color: "#666" }}>
+          Bridged values appear in <code>[brackets]</code>. Active chains: mole bridge (g→mol→particles/gas), stoichiometry core (limiting→yield), thermo core (ΔG→K).
+        </p>
+
         <h2>Custom Line</h2>
         <p>Type a Physcript line for single-problem mode:</p>
         <div className="input-group">
@@ -369,6 +388,13 @@ force_dim
       {/* Input line — hidden during preview */}
       {!previewMode && <pre>{problem?.inputLine}</pre>}
 
+      {/* Bridge label — shows connection between paired problems */}
+      {!previewMode && problem?.bridgeLabel && (
+        <p style={{ fontSize: "0.82rem", color: "#856404", background: "#fff3cd", padding: "0.3em 0.6em", borderRadius: "4px", margin: "0.3rem 0" }}>
+          🔗 {problem.bridgeLabel}
+        </p>
+      )}
+
       {/* Lane B/C: recall mode */}
       {isRecall && (
         <div>
@@ -399,7 +425,8 @@ force_dim
               {problems.map((p, i) => {
                 const firstStep = p.concept.steps[0];
                 const eq = firstStep?.equationLatex || p.concept.equationLatex || p.concept.displayName;
-                const vocabRef = physicsVocabMap[p.concept.keyword];
+                const vocabMap = subject.id === "physics" ? physicsVocabMap : chemistryVocabMap;
+                const vocabRef = vocabMap[p.concept.keyword];
                 return (
                   <div key={i} style={{ display: "flex", alignItems: "center", gap: "0.5rem", padding: "0.3rem 0", borderBottom: "1px solid #e0e0e0" }}>
                     <span style={{ fontWeight: 600, minWidth: "1.5em", color: "#666" }}>{i + 1}.</span>
