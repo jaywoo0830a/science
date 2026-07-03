@@ -231,9 +231,10 @@ export default function App() {
         <h2>Learn &amp; Calculate</h2>
         <p>See the formula first, then compute with numbers.</p>
         <div className="flex-row gap-sm">
+          <button onClick={() => startSession(3, "learnCalc")} style={{ background: "var(--accent-bg, #e8f0fe)" }}>3 problems</button>
+          <button onClick={() => startSession(5, "learnCalc")} style={{ background: "var(--accent-bg, #e8f0fe)" }}>5 problems</button>
           <button onClick={() => startSession(10, "learnCalc")} style={{ background: "var(--accent-bg, #e8f0fe)" }}>10 problems</button>
           <button onClick={() => startSession(20, "learnCalc")} style={{ background: "var(--accent-bg, #e8f0fe)" }}>20 problems</button>
-          <button onClick={() => startSession(50, "learnCalc")} style={{ background: "var(--accent-bg, #e8f0fe)" }}>50 problems</button>
         </div>
 
         <h2>Custom Line</h2>

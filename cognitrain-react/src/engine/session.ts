@@ -51,7 +51,7 @@ export function createSession(
       if (useTarget && concept.params.length >= 2) {
         // Single-step with `?` — pick a random target param
         const targetableParams = concept.params
-          .map((p, i) => (p.canBeTarget !== false ? i : -1))
+          .map((p, i) => (p.canBeTarget === true ? i : -1))
           .filter(i => i >= 0);
         const ti = targetableParams[Math.floor(Math.random() * targetableParams.length)];
 
