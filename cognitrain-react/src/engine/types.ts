@@ -3,18 +3,21 @@
 // ============================================================
 
 /** Training lane — determines the interaction pattern */
-export type Lane = "A" | "B" | "C" | "bridge" | "proportional" | "threshold" | "sign" | "comparison";
+export type Lane = "A" | "B" | "C" | "bridge" | "proportional" | "threshold" | "sign" | "comparison" | "template" | "contract" | "error";
 
 /** Domain within a subject (e.g. "mechanics", "stoichiometry") */
 export type Domain = string;
 
-// ---- Flag System ----
+// ---- Flag System (v2 Unified) ----
 
 export interface Flags {
   unitCheck: boolean;       // !  — check units on final answer
   unitAll: boolean;         // !! — check units on every step
-  dimCheck: boolean;        // ~  — check dimension on final answer (physics) or sig-figs (chemistry)
-  dimAll: boolean;          // ~~ — check on every step
+  dimCheck: boolean;        // ~  — check dimension on final answer (physics only)
+  dimAll: boolean;          // ~~ — check dimension on every step (physics only)
+  sigFigCheck: boolean;     // #  — check significant figures
+  contractCheck: boolean;   // ?@ — recall positional contract only, no calculation
+  errorDetect: boolean;     // !? — find the deliberate error in notation
 }
 
 // ---- Parameter Definition ----

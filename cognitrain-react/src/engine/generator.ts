@@ -75,12 +75,14 @@ export function generateProblem(
  */
 export function generateFlags(prob: number): Flags {
   if (Math.random() > prob) {
-    return { unitCheck: false, unitAll: false, dimCheck: false, dimAll: false };
+    return { unitCheck: false, unitAll: false, dimCheck: false, dimAll: false, sigFigCheck: false, contractCheck: false, errorDetect: false };
   }
   const roll = Math.random();
-  if (roll < 0.33) return { unitCheck: true, unitAll: false, dimCheck: false, dimAll: false };
-  if (roll < 0.5) return { unitCheck: false, unitAll: false, dimCheck: true, dimAll: false };
-  if (roll < 0.7) return { unitCheck: true, unitAll: false, dimCheck: true, dimAll: false };
-  if (roll < 0.85) return { unitCheck: true, unitAll: true, dimCheck: false, dimAll: false };
-  return { unitCheck: true, unitAll: true, dimCheck: true, dimAll: true };
+  if (roll < 0.25) return { unitCheck: true, unitAll: false, dimCheck: false, dimAll: false, sigFigCheck: false, contractCheck: false, errorDetect: false };
+  if (roll < 0.4) return { unitCheck: false, unitAll: false, dimCheck: true, dimAll: false, sigFigCheck: false, contractCheck: false, errorDetect: false };
+  if (roll < 0.55) return { unitCheck: true, unitAll: false, dimCheck: true, dimAll: false, sigFigCheck: false, contractCheck: false, errorDetect: false };
+  if (roll < 0.7) return { unitCheck: true, unitAll: true, dimCheck: false, dimAll: false, sigFigCheck: false, contractCheck: false, errorDetect: false };
+  if (roll < 0.82) return { unitCheck: true, unitAll: true, dimCheck: true, dimAll: true, sigFigCheck: false, contractCheck: false, errorDetect: false };
+  if (roll < 0.9) return { unitCheck: true, unitAll: false, dimCheck: false, dimAll: false, sigFigCheck: true, contractCheck: false, errorDetect: false };
+  return { unitCheck: true, unitAll: true, dimCheck: true, dimAll: true, sigFigCheck: true, contractCheck: false, errorDetect: false };
 }
