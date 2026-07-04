@@ -1,481 +1,247 @@
-# Stoichiometry -- Calculation-First Training
+# Stoichiometry -- 3-Hour Calculation Session
 
-> Philosophy: If you can calculate it, you at least understand it.
-> How to use: Work through the example solution. The formula comes after -- as a summary of what your hands just did.
-> Ratio: Beginner 2 : Intermediate 6 : Advanced 2 (15 patterns: 3-9-3)
+> **Experience first, patterns after.** Phase 1: your hands calculate. Phase 2: your brain names the pattern. Phase 3: mixed retrieval.
 
 ---
 
-## BEGINNER (3 patterns)
-
-> Goal: 3 patterns. Fast. Then into the fire.
+## PHASE 1 -- DO FIRST (~30 min)
 
 ---
 
-### Pattern 1: grams to moles
-
-**Example.** How many **moles** are in **25.0 g** of $\ce{H2O}$?
+**1.** How many moles in $25.0 \ \text{g}$ of $\ce{H2O}$?
 
 $$
-M(\ce{H2O}) = 2(1.008) + 16.00 = 18.016 \ \text{g/mol}
+M(\ce{H2O}) = 2(1.008) + 16.00 = 18.016 \ \text{g/mol}, \quad n = \dfrac{25.0}{18.016} = \boxed{1.39 \ \text{mol}}
 $$
-$$
-n = \dfrac{25.0}{18.016} = 1.39 \ \text{mol}
-$$
-
-> SEE: **"grams"** **"mass"** **"g"** of a substance
-> WRITE: $n = \dfrac{m}{M}$
 
 ---
 
-**Practice B1.** How many **moles** are in **100.0 g** of $\ce{NaCl}$?
+**2.** $\ce{2H2 + O2 -> 2H2O}$. $3.0 \ \text{mol} \ \ce{O2}$ reacts. Moles $\ce{H2O}$?
 
-**Practice B2.** How many **moles** are in **5.00 g** of $\ce{C6H12O6}$?
+$$
+n_{\ce{H2O}} = 3.0 \cdot \dfrac{2}{1} = \boxed{6.0 \ \text{mol}}
+$$
 
 ---
 
-### Pattern 2: moles of A to moles of B
-
-**Example.** $\ce{2H2 + O2 -> 2H2O}$. You have **3.0 mol** $\ce{O2}$. How many **moles** of $\ce{H2O}$ form?
-
-$$
-n_{\ce{H2O}} = 3.0 \cdot \dfrac{2}{1} = 6.0 \ \text{mol}
-$$
-
-> SEE: **"equation"** + **"moles of A"** + **"how many moles of B"**
-> WRITE: $n_B = n_A \cdot \dfrac{\text{coeff}_B}{\text{coeff}_A}$
-
----
-
-**Practice B3.** $\ce{N2 + 3H2 -> 2NH3}$. How many **moles** of $\ce{NH3}$ from **5.0 mol** of $\ce{N2}$?
-
-**Practice B4.** $\ce{4Fe + 3O2 -> 2Fe2O3}$. How many **moles** of $\ce{Fe2O3}$ from **8.0 mol** of $\ce{Fe}$?
-
----
-
-### Pattern 3: moles to grams
-
-**Example.** What is the **mass** of **2.50 mol** of $\ce{CO2}$?
-
-$$
-M(\ce{CO2}) = 12.01 + 2(16.00) = 44.01 \ \text{g/mol}
-$$
-$$
-m = 2.50 \times 44.01 = 110.0 \ \text{g}
-$$
-
-> SEE: **"moles"** + asked for **"mass"** **"grams"** **"g"**
-> WRITE: $m = n \cdot M$
-
----
-
-**Practice B5.** What is the **mass** of **0.500 mol** of $\ce{CaCO3}$?
-
-**Practice B6.** What is the **mass** of **3.20 mol** of $\ce{NH3}$?
-
----
-
-## INTERMEDIATE (9 patterns)
-
-> Goal: Chain patterns. Mass $\xrightarrow{\div M}$ moles $\xrightarrow{\times\text{ratio}}$ moles $\xrightarrow{\times M}$ mass. Drill until automatic.
-
----
-
-### Pattern 4: Mass-to-Mass
-
-**Example.** $\ce{C3H8 + 5O2 -> 3CO2 + 4H2O}$. How many **grams** of $\ce{CO2}$ are produced from **50.0 g** of $\ce{C3H8}$?
+**3.** $\ce{C3H8 + 5O2 -> 3CO2 + 4H2O}$. Grams $\ce{CO2}$ from $50.0 \ \text{g} \ \ce{C3H8}$?
 
 $$
 \begin{aligned}
-M(\ce{C3H8}) &= 3(12.01) + 8(1.008) = 44.10 \ \text{g/mol} \\
-n_{\ce{C3H8}} &= \dfrac{50.0}{44.10} = 1.134 \ \text{mol} \\
-n_{\ce{CO2}} &= 1.134 \cdot \dfrac{3}{1} = 3.402 \ \text{mol} \\
-M(\ce{CO2}) &= 44.01 \ \text{g/mol} \\
-m_{\ce{CO2}} &= 3.402 \times 44.01 = 149.7 \ \text{g}
+M(\ce{C3H8}) &= 44.10, \quad n_{\ce{C3H8}} = \dfrac{50.0}{44.10} = 1.134 \ \text{mol} \\
+n_{\ce{CO2}} &= 1.134 \cdot \dfrac{3}{1} = 3.402 \ \text{mol}, \quad m_{\ce{CO2}} = 3.402 \times 44.01 = \boxed{149.7 \ \text{g}}
 \end{aligned}
 $$
 
-> SEE: **"grams"** of reactant **AND ALSO** of product
-> WRITE: $m_B = m_A \cdot \dfrac{1}{M_A} \cdot \dfrac{\text{coeff}_B}{\text{coeff}_A} \cdot M_B$
->
-> Hand chain: grams A $\xrightarrow{\div M}$ moles A $\xrightarrow{\times\text{ratio}}$ moles B $\xrightarrow{\times M}$ grams B
-
 ---
 
-**Practice I1.** $\ce{CH4 + 2O2 -> CO2 + 2H2O}$. How many **grams** of $\ce{CO2}$ from **32.0 g** of $\ce{CH4}$?
-
-**Practice I2.** $\ce{2KClO3 -> 2KCl + 3O2}$. How many **grams** of $\ce{O2}$ from **245.0 g** of $\ce{KClO3}$?
-
-**Practice I3.** $\ce{Fe2O3 + 3CO -> 2Fe + 3CO2}$. How many **grams** of $\ce{Fe}$ from **80.0 g** of $\ce{Fe2O3}$?
-
----
-
-### Pattern 5: Limiting Reagent (+ excess remaining)
-
-**Example.** $\ce{2Al + 3Cl2 -> 2AlCl3}$. You have **10.0 g** $\ce{Al}$ and **15.0 g** $\ce{Cl2}$. Which is **limiting**? How many **grams** of $\ce{AlCl3}$? How many **grams** of **excess** **remain**?
+**4.** $\ce{2Al + 3Cl2 -> 2AlCl3}$. $10.0 \ \text{g} \ \ce{Al}$ + $15.0 \ \text{g} \ \ce{Cl2}$. Limiting? Grams $\ce{AlCl3}$?
 
 $$
 \begin{aligned}
-n_{\ce{Al}} &= \dfrac{10.0}{26.98} = 0.3706 \ \text{mol} \quad\Rightarrow\quad \dfrac{0.3706}{2} = 0.1853 \\[4pt]
-n_{\ce{Cl2}} &= \dfrac{15.0}{70.90} = 0.2116 \ \text{mol} \quad\Rightarrow\quad \dfrac{0.2116}{3} = 0.0705 \quad\leftarrow \textbf{LIMITING} \\[4pt]
-n_{\ce{AlCl3}} &= 0.2116 \cdot \dfrac{2}{3} = 0.1411 \ \text{mol} \\
-M(\ce{AlCl3}) &= 26.98 + 3(35.45) = 133.33 \ \text{g/mol} \\
-m_{\ce{AlCl3}} &= 0.1411 \times 133.33 = 18.8 \ \text{g} \\[6pt]
-n_{\ce{Al\ used}} &= 0.2116 \cdot \dfrac{2}{3} = 0.1411 \ \text{mol} \\
-m_{\ce{Al\ used}} &= 0.1411 \times 26.98 = 3.807 \ \text{g} \\
-m_{\ce{Al\ remaining}} &= 10.0 - 3.807 = 6.19 \ \text{g}
+n_{\ce{Al}} &= \dfrac{10.0}{26.98} = 0.3706 &\Rightarrow \dfrac{0.3706}{2} = 0.1853 \\
+n_{\ce{Cl2}} &= \dfrac{15.0}{70.90} = 0.2116 &\Rightarrow \dfrac{0.2116}{3} = 0.0705 \ \leftarrow \textbf{LIMITING} \\[4pt]
+n_{\ce{AlCl3}} &= 0.2116 \cdot \dfrac{2}{3} = 0.1411, \quad m = 0.1411 \times 133.33 = \boxed{18.8 \ \text{g}}
 \end{aligned}
 $$
 
-> SEE: **"limiting"** **"which runs out"** **"excess"** + two given amounts
-> WRITE: $\dfrac{n_A}{\text{coeff}_A}$ vs $\dfrac{n_B}{\text{coeff}_B}$ $\to$ smallest = limiting
-> Excess: total $-$ used = remaining
-
 ---
 
-**Practice I4.** $\ce{2H2 + O2 -> 2H2O}$. **5.00 g** $\ce{H2}$ and **40.0 g** $\ce{O2}$. Find **limiting**, **grams** of $\ce{H2O}$, **grams** of **excess remaining**.
-
-**Practice I5.** $\ce{N2 + 3H2 -> 2NH3}$. **14.0 g** $\ce{N2}$ and **3.00 g** $\ce{H2}$. Find **limiting** and **grams** of $\ce{NH3}$.
-
----
-
-### Pattern 6: Percent Yield
-
-**Example.** Theoretical $\ce{CO2}$ yield is **149.7 g**, you collect **132.0 g** (actual). What's the **% yield**?
-
-$$
-\% = \dfrac{132.0}{149.7} \times 100 = 88.2\%
-$$
-
-> SEE: **"actual yield"** **"theoretical yield"** **"% yield"**
-> WRITE: $\% = \dfrac{\text{actual}}{\text{theoretical}} \times 100\%$
-
----
-
-**Practice I6.** Theoretical: **50.0 g**. Actual: **42.5 g**. **% yield**?
-
-**Practice I7.** $\ce{2Al + 3Br2 -> 2AlBr3}$. From **10.0 g** $\ce{Al}$, theoretical $\ce{AlBr3}$ is $98.8 \ \text{g}$. You get **75.0 g**. **% yield**?
-
----
-
-### Pattern 7: Molarity -- moles from solution
-
-**Example.** What **mass** of $\ce{AgCl}$ precipitates when **25.0 mL** of **0.500 M** $\ce{AgNO3}$ reacts with excess $\ce{NaCl}$?
-
-$$
-\ce{AgNO3 + NaCl -> AgCl + NaNO3}
-$$
+**5.** What mass of $\ce{AgCl}$ precipitates when $25.0 \ \text{mL}$ of $0.500 \ \text{M} \ \ce{AgNO3}$ reacts with excess $\ce{NaCl}$?
 
 $$
 \begin{aligned}
-V &= 25.0 \ \text{mL} = 0.0250 \ \text{L} \\
 n_{\ce{AgNO3}} &= 0.500 \times 0.0250 = 0.0125 \ \text{mol} \\
-n_{\ce{AgCl}} &= 0.0125 \cdot \dfrac{1}{1} = 0.0125 \ \text{mol} \\
-M(\ce{AgCl}) &= 107.87 + 35.45 = 143.32 \ \text{g/mol} \\
-m_{\ce{AgCl}} &= 0.0125 \times 143.32 = 1.79 \ \text{g}
+n_{\ce{AgCl}} &= 0.0125, \quad M(\ce{AgCl}) = 143.32, \quad m = 0.0125 \times 143.32 = \boxed{1.79 \ \text{g}}
 \end{aligned}
 $$
 
-> SEE: **"M"** **"molarity"** **"concentration"** + **"mL"** **"L"**
-> WRITE: $n = M \cdot V$ (V **must** be in L!)
->
-> Hand reflex: See **M** and **mL** $\to$ instantly $V \div 1000$ $\to$ $n = MV$
+---
+
+> **You just executed:** grams $\leftrightarrow$ moles, mole ratio, mass-to-mass chain, limiting reagent, and solution stoichiometry.
 
 ---
 
-**Practice I8.** How many **moles** of $\ce{NaCl}$ are in **250.0 mL** of **0.400 M** $\ce{NaCl}$?
-
-**Practice I9.** **50.0 mL** of **0.200 M** $\ce{BaCl2}$ reacts with excess $\ce{Na2SO4}$. Find **grams** of $\ce{BaSO4}$.
-
-$$
-\ce{BaCl2 + Na2SO4 -> BaSO4 + 2NaCl}
-$$
+## PHASE 2 -- THE PATTERNS (~90 min)
 
 ---
 
-### Pattern 8: Gas Stoichiometry at STP
+### 1. Grams $\to$ Moles
 
-**Example.** $\ce{Zn + 2HCl -> ZnCl2 + H2}$. What **volume** of $\ce{H2}$ **gas** at **STP** from **10.0 g** $\ce{Zn}$?
+SEE: **"grams"** **"mass"** **"g"** &nbsp;|&nbsp; WRITE: $n = \dfrac{m}{M}$
 
-$$
-\begin{aligned}
-n_{\ce{Zn}} &= \dfrac{10.0}{65.38} = 0.1529 \ \text{mol} \\
-n_{\ce{H2}} &= 0.1529 \cdot \dfrac{1}{1} = 0.1529 \ \text{mol} \\
-V_{\ce{H2}} &= 0.1529 \times 22.4 = 3.43 \ \text{L}
-\end{aligned}
-$$
+**Example.** Moles in $100.0 \ \text{g} \ \ce{NaCl}$? $M = 58.44$, $n = 100.0/58.44 = \boxed{1.711 \ \text{mol}}$
 
-> SEE: **"STP"** + **"gas"** + **"volume"**
-> WRITE: $V = n \times 22.4 \ \text{L}$
->
-> STP = $0^\circ\text{C}$ (273 K), 1 atm. If NOT STP, use Pattern 9.
+**Practice 1.** Moles in $5.00 \ \text{g} \ \ce{C6H12O6}$ ($M = 180.16$)?
 
 ---
 
-**Practice I10.** What **volume** at **STP** does **2.00 mol** of $\ce{CO2}$ occupy?
+### 2. Moles $\to$ Grams
 
-**Practice I11.** $\ce{CaCO3 -> CaO + CO2}$. **50.0 g** $\ce{CaCO3}$ decomposes. **Volume** of $\ce{CO2}$ at **STP**?
+SEE: **"moles"** + asked for **"mass"** &nbsp;|&nbsp; WRITE: $m = n \cdot M$
 
----
+**Example.** Mass of $2.50 \ \text{mol} \ \ce{CO2}$? $M = 44.01$, $m = 2.50 \times 44.01 = \boxed{110.0 \ \text{g}}$
 
-### Pattern 9: Gas Stoichiometry NOT at STP (PV=nRT)
-
-**Example.** $\ce{2NaN3 -> 2Na + 3N2}$. What **volume** of $\ce{N2}$ at **25.0°C** and **1.20 atm** from **65.0 g** $\ce{NaN3}$?
-
-$$
-\begin{aligned}
-T &= 25.0 + 273 = 298 \ \text{K} \\
-n_{\ce{NaN3}} &= \dfrac{65.0}{65.02} = 0.9997 \ \text{mol} \\
-n_{\ce{N2}} &= 0.9997 \cdot \dfrac{3}{2} = 1.500 \ \text{mol} \\
-V &= \dfrac{nRT}{P} = \dfrac{1.500 \times 0.08206 \times 298}{1.20} = 30.6 \ \text{L}
-\end{aligned}
-$$
-
-> SEE: **"gas"** + **"pressure"** + **"temperature"** + NOT STP
-> WRITE: $PV = nRT$
-
-| Symbol | Meaning | Value |
-|---|---|---|
-| $P$ | pressure | **must be atm** |
-| $V$ | volume | L |
-| $n$ | moles | mol |
-| $R$ | gas constant | $0.08206 \ \dfrac{\text{L} \cdot \text{atm}}{\text{mol} \cdot \text{K}}$ |
-| $T$ | temperature | **must be K** ($T_K = T_{^\circ\text{C}} + 273$) |
-
-> Hand reflex: $^\circ\text{C} \xrightarrow{+273} \text{K}$ $\to$ solve $PV=nRT$ $\to$ plug $n$ into stoichiometry.
+**Practice 2.** Mass of $0.500 \ \text{mol} \ \ce{CaCO3}$ ($M = 100.09$)?
 
 ---
 
-**Practice I12.** **2.00 mol** $\ce{O2}$ at **30.0°C** and **0.950 atm**. **Volume**?
+### 3. Mole Ratio
 
-**Practice I13.** $\ce{2Mg + O2 -> 2MgO}$. **5.00 g** $\ce{Mg}$ burns. **Volume** of $\ce{O2}$ at **22.0°C**, **755 mmHg**? ($760 \ \text{mmHg} = 1 \ \text{atm}$)
+SEE: **"equation"** + **"moles of A"** $\to$ **"moles of B"** &nbsp;|&nbsp; WRITE: $n_B = n_A \cdot \dfrac{\text{coeff}_B}{\text{coeff}_A}$
 
----
+**Example.** $\ce{N2 + 3H2 -> 2NH3}$. $5.0 \ \text{mol} \ \ce{N2}$, moles $\ce{NH3}$? $n = 5.0 \cdot \frac{2}{1} = \boxed{10.0 \ \text{mol}}$
 
-### Pattern 10: Empirical Formula from % composition
-
-**Example.** A compound is **40.0% C**, **6.71% H**, **53.3% O** by mass. Find the **empirical formula**.
-
-$$
-\begin{array}{c|c|c|c}
-\text{Element} & \text{mass (g)} & M \ (\text{g/mol}) & n \ (\text{mol}) & \div \text{smallest} \\
-\hline
-\ce{C} & 40.0 & 12.01 & 3.331 & 1.00 \\
-\ce{H} & 6.71 & 1.008 & 6.657 & 2.00 \\
-\ce{O} & 53.3 & 16.00 & 3.331 & 1.00
-\end{array}
-$$
-
-$$
-\boxed{\ce{CH2O}}
-$$
-
-> SEE: **"% by mass"** + **"empirical formula"**
-> WRITE: assume 100 g $\to$ grams $\to$ moles $\to$ $\div$ smallest $\to$ whole numbers
+**Practice 3.** $\ce{4Fe + 3O2 -> 2Fe2O3}$. $8.0 \ \text{mol} \ \ce{Fe}$, moles $\ce{Fe2O3}$?
 
 ---
 
-**Practice I14.** **75.0% C**, **25.0% H** by mass. **Empirical formula**?
+### 4. Mass-to-Mass Chain
 
-**Practice I15.** **52.1% C**, **13.1% H**, **34.7% O** by mass. **Empirical formula**?
+SEE: **"grams of A"** $\to$ **"grams of B"** &nbsp;|&nbsp; WRITE: $m_A \xrightarrow{\div M_A} n_A \xrightarrow{\times\text{ratio}} n_B \xrightarrow{\times M_B} m_B$
+
+**Example.** $\ce{CH4 + 2O2 -> CO2 + 2H2O}$. Grams $\ce{CO2}$ from $32.0 \ \text{g} \ \ce{CH4}$?
+
+$$
+n_{\ce{CH4}} = 32.0/16.04 = 1.995, \ n_{\ce{CO2}} = 1.995, \ m = 1.995 \times 44.01 = \boxed{87.8 \ \text{g}}
+$$
+
+**Practice 4.** $\ce{2KClO3 -> 2KCl + 3O2}$. Grams $\ce{O2}$ from $245.0 \ \text{g} \ \ce{KClO3}$?
 
 ---
 
-### Pattern 11: Dilution
+### 5. Limiting Reagent
 
-**Example.** What **volume** of **12.0 M** $\ce{HCl}$ is needed to **prepare** **500.0 mL** of **0.600 M** $\ce{HCl}$?
+SEE: **"limiting"** **"which runs out"** + two amounts &nbsp;|&nbsp; WRITE: $\dfrac{n_A}{\text{coeff}_A}$ vs $\dfrac{n_B}{\text{coeff}_B}$, smallest = limiting
+
+**Example.** $\ce{2H2 + O2 -> 2H2O}$. $5.00 \ \text{g} \ \ce{H2}$ + $40.0 \ \text{g} \ \ce{O2}$.
 
 $$
-\begin{aligned}
-M_1 V_1 &= M_2 V_2 \\
-12.0 \cdot V_1 &= 0.600 \times 500.0 \\
-V_1 &= \dfrac{0.600 \times 500.0}{12.0} = 25.0 \ \text{mL}
-\end{aligned}
+n_{\ce{H2}} = 2.480 \to 1.240, \ n_{\ce{O2}} = 1.250 \to 1.250, \ \ce{H2} \ \text{limiting}. \ m_{\ce{H2O}} = 2.480 \times 18.016 = \boxed{44.7 \ \text{g}}
 $$
 
-> SEE: **"dilute"** **"dilution"** **"prepare"** + two M, two V
-> WRITE: $M_1 V_1 = M_2 V_2$
+**Practice 5.** $\ce{N2 + 3H2 -> 2NH3}$. $14.0 \ \text{g} \ \ce{N2}$ + $3.00 \ \text{g} \ \ce{H2}$. Limiting? Grams $\ce{NH3}$?
 
 ---
 
-**Practice I16.** **25.0 mL** of **6.00 M** $\ce{NaOH}$ diluted to **500.0 mL**. New **concentration**?
+### 6. Percent Yield
 
-**Practice I17.** What **volume** of **18.0 M** $\ce{H2SO4}$ makes **250.0 mL** of **0.500 M** $\ce{H2SO4}$?
+SEE: **"actual"** + **"theoretical"** + **"% yield"** &nbsp;|&nbsp; WRITE: $\% = \dfrac{\text{actual}}{\text{theoretical}} \times 100$
 
----
+**Example.** Theoretical $149.7 \ \text{g}$, actual $132.0 \ \text{g}$. $\% = 132.0/149.7 \times 100 = \boxed{88.2\%}$
 
-### Pattern 12: Titration
-
-**Example.** **25.0 mL** of $\ce{H2SO4}$ is **titrated** with **0.200 M** $\ce{NaOH}$. **32.5 mL** $\ce{NaOH}$ used. Find $[\ce{H2SO4}]$.
-
-$$
-\ce{H2SO4 + 2NaOH -> Na2SO4 + 2H2O}
-$$
-
-$$
-\begin{aligned}
-n_{\ce{NaOH}} &= 0.200 \times 0.0325 = 0.00650 \ \text{mol} \\
-n_{\ce{H2SO4}} &= 0.00650 \cdot \dfrac{1}{2} = 0.00325 \ \text{mol} \\
-[\ce{H2SO4}] &= \dfrac{0.00325}{0.0250} = 0.130 \ \text{M}
-\end{aligned}
-$$
-
-> SEE: **"titrate"** **"titration"** **"neutralize"** **"endpoint"**
-> WRITE: $n_{\text{titrant}} = MV$ $\to$ mole ratio $\to$ $n_{\text{analyte}}$ $\to$ $M = n/V$
+**Practice 6.** Theoretical $50.0 \ \text{g}$, actual $42.5 \ \text{g}$. % yield?
 
 ---
 
-**Practice I18.** **50.0 mL** $\ce{HCl}$ **titrated** with **0.100 M** $\ce{NaOH}$, **40.0 mL** used. Find $[\ce{HCl}]$.
+### 7. Molarity ($n = MV$)
 
-**Practice I19.** **20.0 mL** $\ce{Ca(OH)2}$ **titrated** with **0.250 M** $\ce{HCl}$, **30.0 mL** used. Find $[\ce{Ca(OH)2}]$.
+SEE: **"M"** **"molarity"** + **"mL"** **"L"** &nbsp;|&nbsp; WRITE: $n = MV$ (V in L!)
 
-$$
-\ce{Ca(OH)2 + 2HCl -> CaCl2 + 2H2O}
-$$
+**Example.** Moles in $250.0 \ \text{mL}$ of $0.400 \ \text{M} \ \ce{NaCl}$? $n = 0.400 \times 0.2500 = \boxed{0.100 \ \text{mol}}$
 
----
-
-## ADVANCED (3 patterns) -- College-Level
+**Practice 7.** $50.0 \ \text{mL}$ of $0.200 \ \text{M} \ \ce{BaCl2}$ + excess $\ce{Na2SO4}$. Grams $\ce{BaSO4}$?
 
 ---
 
-### Pattern 13: Combustion Analysis
+### 8. Gas Stoichiometry at STP
 
-**Example.** **Combustion** of **1.000 g** of C,H,O compound produces **1.466 g CO2** and **0.600 g H2O**. Find the **empirical formula**.
+SEE: **"STP"** + **"gas"** + **"volume"** &nbsp;|&nbsp; WRITE: $V = n \times 22.4 \ \text{L}$
 
-$$
-\begin{aligned}
-n_{\ce{C}} &= \dfrac{1.466}{44.01} = 0.03331 \ \text{mol}
-& m_{\ce{C}} &= 0.03331 \times 12.01 = 0.4000 \ \text{g} \\
-n_{\ce{H}} &= \dfrac{0.600}{18.016} \times 2 = 0.0666 \ \text{mol}
-& m_{\ce{H}} &= 0.0666 \times 1.008 = 0.0671 \ \text{g} \\
-m_{\ce{O}} &= 1.000 - 0.4000 - 0.0671 = 0.5329 \ \text{g} \\
-n_{\ce{O}} &= \dfrac{0.5329}{16.00} = 0.03331 \ \text{mol}
-\end{aligned}
-$$
+**Example.** $\ce{Zn + 2HCl -> ZnCl2 + H2}$. $10.0 \ \text{g} \ \ce{Zn}$, volume $\ce{H2}$ at STP?
 
 $$
-\begin{array}{c|c}
-\text{Element} & n \ (\text{mol}) & \div \text{smallest} \\
-\hline
-\ce{C} & 0.03331 & 1.00 \\
-\ce{H} & 0.0666 & 2.00 \\
-\ce{O} & 0.03331 & 1.00
-\end{array}
-\quad\Rightarrow\quad \boxed{\ce{CH2O}}
+n_{\ce{Zn}} = 0.1529, \ V = 0.1529 \times 22.4 = \boxed{3.43 \ \text{L}}
 $$
 
-> SEE: **"combustion"** **"burned"** + **"CO2 and H2O produced"**
-> WRITE: $\ce{CO2} \xrightarrow{\div 44.01} \xrightarrow{\times 1}$ mol C $\xrightarrow{\times 12.01}$ g C. $\ce{H2O} \xrightarrow{\div 18.016} \xrightarrow{\times 2}$ mol H. O by subtraction.
+**Practice 8.** $\ce{CaCO3 -> CaO + CO2}$. $50.0 \ \text{g} \ \ce{CaCO3}$. Volume $\ce{CO2}$ at STP?
 
 ---
 
-**Practice A1.** **Combustion** of **0.500 g** hydrocarbon (C,H only) produces **1.565 g CO2** and **0.641 g H2O**. **Empirical formula**?
+### 9. Gas Stoichiometry NOT at STP
 
-**Practice A2.** **Combustion** of **2.000 g** C,H,O compound gives **2.933 g CO2** and **1.800 g H2O**. Molar mass = $60.0 \ \text{g/mol}$. **Molecular formula**?
+SEE: **"gas"** + **"P"** + **"T"** + NOT STP &nbsp;|&nbsp; WRITE: $PV = nRT$
+
+$R = 0.08206$, T in K, P in atm.
+
+**Example.** $\ce{2NaN3 -> 2Na + 3N2}$. $65.0 \ \text{g} \ \ce{NaN3}$ at $25^\circ\text{C}$, $1.20 \ \text{atm}$.
+
+$$
+n_{\ce{N2}} = 1.500, \ V = \dfrac{1.500 \times 0.08206 \times 298}{1.20} = \boxed{30.6 \ \text{L}}
+$$
+
+**Practice 9.** $\ce{2Mg + O2 -> 2MgO}$. $5.00 \ \text{g} \ \ce{Mg}$ at $22^\circ\text{C}$, $755 \ \text{mmHg}$. Volume $\ce{O2}$?
 
 ---
 
-### Pattern 14: Mixture Problem (Two-Component System)
+### 10. Empirical Formula from %
 
-**Example.** A **5.00 g** **mixture** of $\ce{NaCl}$ and $\ce{KCl}$ is treated with excess $\ce{AgNO3}$. **10.50 g** $\ce{AgCl}$ precipitates. Find **mass % of NaCl**.
+SEE: **"% composition"** + **"empirical formula"** &nbsp;|&nbsp; WRITE: assume $100 \ \text{g} \to$ mol $\to \div$ smallest
 
-Let $x = m_{\ce{NaCl}}$, $y = m_{\ce{KCl}}$.
+**Example.** $40.0\% \ \ce{C}$, $6.71\% \ \ce{H}$, $53.3\% \ \ce{O}$.
 
-$$
-\begin{aligned}
-x + y &= 5.00 \\[4pt]
-n_{\ce{AgCl}} &= \dfrac{10.50}{143.32} = 0.07326 \ \text{mol} \\[4pt]
-\dfrac{x}{58.44} + \dfrac{5.00 - x}{74.55} &= 0.07326 \\[4pt]
-x\left(\dfrac{1}{58.44} - \dfrac{1}{74.55}\right) &= 0.07326 - \dfrac{5.00}{74.55} \\[4pt]
-x \cdot 0.003699 &= 0.006190 \\[4pt]
-x &= 1.674 \ \text{g} \\[4pt]
-\% \ce{NaCl} &= \dfrac{1.674}{5.00} \times 100 = 33.5\%
-\end{aligned}
-$$
+| | C | H | O |
+|---|---|---|---|
+| mol | 3.331 | 6.657 | 3.331 |
+| $\div$ smallest | 1 | 2 | 1 |
 
-> SEE: **"mixture"** + two unknowns + **"total mass"** + reaction consuming both
-> WRITE: $x + y = m_{\text{total}}$ and $\dfrac{x}{M_A} + \dfrac{y}{M_B} = n_{\text{product}}$
+$\boxed{\ce{CH2O}}$
+
+**Practice 10.** $75.0\% \ \ce{C}$, $25.0\% \ \ce{H}$. Empirical formula?
 
 ---
 
-**Practice A3.** A **3.00 g** **mixture** of $\ce{Na2CO3}$ and $\ce{K2CO3}$ + excess $\ce{HCl}$ $\to$ **2.50 g** $\ce{CO2}$. Find **mass % of Na2CO3**. (Both react 1:1 to give $\ce{CO2}$)
+### PHASE 2 PRACTICE ANSWERS
+
+- P1: $0.0278 \ \text{mol}$ &nbsp;|&nbsp; P2: $50.0 \ \text{g}$ &nbsp;|&nbsp; P3: $4.0 \ \text{mol}$
+- P4: $96.0 \ \text{g}$ &nbsp;|&nbsp; P5: $\ce{H2}$ limiting, $16.9 \ \text{g} \ \ce{NH3}$ &nbsp;|&nbsp; P6: $85.0\%$
+- P7: $2.33 \ \text{g} \ \ce{BaSO4}$ &nbsp;|&nbsp; P8: $11.2 \ \text{L}$ &nbsp;|&nbsp; P9: $2.51 \ \text{L}$
+- P10: $\ce{CH4}$
 
 ---
 
-### Pattern 15: Hydrate Analysis
+## PHASE 3 -- LOCK IT IN (~60 min)
 
-**Example.** Heating **5.00 g** of $\ce{BaCl2 \cdot xH2O}$ leaves **4.26 g** of anhydrous $\ce{BaCl2}$. Find $x$.
-
-$$
-\begin{aligned}
-m_{\ce{H2O}} &= 5.00 - 4.26 = 0.74 \ \text{g} \\
-n_{\ce{BaCl2}} &= \dfrac{4.26}{208.23} = 0.02046 \ \text{mol} \\
-n_{\ce{H2O}} &= \dfrac{0.74}{18.016} = 0.04107 \ \text{mol} \\[4pt]
-x &= \dfrac{n_{\ce{H2O}}}{n_{\ce{BaCl2}}} = \dfrac{0.04107}{0.02046} = 2.01 \approx 2
-\end{aligned}
-$$
-
-$$
-\boxed{\ce{BaCl2 \cdot 2H2O}}
-$$
-
-> SEE: **"hydrate"** **"anhydrous"** **"x H2O"** **"water of crystallization"**
-> WRITE: $x = \dfrac{n_{\ce{H2O}}}{n_{\text{anhydrous}}}$
->
-> Hand reflex: mass loss = water $\to$ mol water $\to$ mol anhydrous $\to$ ratio.
+> 15 problems. All patterns interleaved. No scrolling up.
 
 ---
 
-**Practice A4.** Heating **3.00 g** of $\ce{CuSO4 \cdot xH2O}$ leaves **1.92 g** $\ce{CuSO4}$. Find $x$.
+**1.** Moles in $100.0 \ \text{g} \ \ce{NaCl}$?
+
+**2.** Mass of $3.20 \ \text{mol} \ \ce{NH3}$?
+
+**3.** $\ce{N2 + 3H2 -> 2NH3}$. Moles $\ce{NH3}$ from $5.0 \ \text{mol} \ \ce{N2}$?
+
+**4.** $\ce{Fe2O3 + 3CO -> 2Fe + 3CO2}$. Grams $\ce{Fe}$ from $80.0 \ \text{g} \ \ce{Fe2O3}$?
+
+**5.** $\ce{2H2 + O2 -> 2H2O}$. $5.00 \ \text{g} \ \ce{H2}$ + $40.0 \ \text{g} \ \ce{O2}$. Limiting? Grams $\ce{H2O}$? Grams excess remaining?
+
+**6.** Theoretical $85.0 \ \text{g}$, actual $68.0 \ \text{g}$. % yield?
+
+**7.** Moles in $250.0 \ \text{mL}$ of $0.400 \ \text{M} \ \ce{NaCl}$?
+
+**8.** $\ce{CaCO3 -> CaO + CO2}$. $25.0 \ \text{g}$ decomposes. Volume $\ce{CO2}$ at STP?
+
+**9.** $2.00 \ \text{mol} \ \ce{O2}$ at $30^\circ\text{C}$, $0.950 \ \text{atm}$. Volume?
+
+**10.** $52.1\% \ \ce{C}$, $13.1\% \ \ce{H}$, $34.7\% \ \ce{O}$. Empirical formula?
+
+**11.** What volume of $12.0 \ \text{M} \ \ce{HCl}$ makes $500.0 \ \text{mL}$ of $0.600 \ \text{M}$?
+
+**12.** $25.0 \ \text{mL} \ \ce{H2SO4}$ titrated with $0.200 \ \text{M} \ \ce{NaOH}$. $32.5 \ \text{mL}$ used. $[\ce{H2SO4}]$? ($\ce{H2SO4 + 2NaOH -> Na2SO4 + 2H2O}$)
+
+**13.** Combustion of $0.500 \ \text{g}$ hydrocarbon gives $1.565 \ \text{g} \ \ce{CO2}$ and $0.641 \ \text{g} \ \ce{H2O}$. Empirical formula?
+
+**14.** $\ce{2NaN3 -> 2Na + 3N2}$. $32.5 \ \text{g} \ \ce{NaN3}$ at $30^\circ\text{C}$, $1.10 \ \text{atm}$. Volume $\ce{N2}$?
+
+**15.** $\ce{4FeS2 + 11O2 -> 2Fe2O3 + 8SO2}$ then $\ce{2SO2 + O2 -> 2SO3}$ then $\ce{SO3 + H2O -> H2SO4}$. $100.0 \ \text{g} \ \ce{FeS2}$. Mass $\ce{H2SO4}$?
 
 ---
 
-## MASTER CHEAT SHEET -- Trigger to Equation
+### PHASE 3 ANSWERS
 
-| # | SEE this word/phrase... | Your hand writes... |
-|---|---|---|
-| 1 | **grams**, **mass**, **g** of something | $n = \dfrac{m}{M}$ |
-| 2 | **equation** + **moles of A** $\to$ **moles of B** | $n_B = n_A \cdot \dfrac{\text{coeff}_B}{\text{coeff}_A}$ |
-| 3 | **moles** + asked for **mass**/**grams** | $m = n \cdot M$ |
-| 4 | **grams of A** $\to$ **grams of B** | $m_A \xrightarrow{\div M} n_A \xrightarrow{\times\text{ratio}} n_B \xrightarrow{\times M} m_B$ |
-| 5 | **limiting**, two amounts | $n/\text{coeff}$ each, smallest = limiting |
-|   | **excess**, **remaining** | total $-$ used = remaining |
-| 6 | **actual** + **theoretical** + **% yield** | $\% = \dfrac{\text{actual}}{\text{theoretical}} \times 100$ |
-| 7 | **M** + **mL** or **L** | $n = MV$ (V in L!) |
-| 8 | **STP** + **gas** + **volume** | $V = n \times 22.4$ |
-| 9 | **gas** + **P** + **T** + NOT STP | $PV = nRT$ (T in K, P in atm) |
-| 10 | **%** composition + **empirical formula** | 100 g $\to$ mol $\to$ $\div$ smallest |
-| 11 | **dilute**, **prepare** + two M, two V | $M_1 V_1 = M_2 V_2$ |
-| 12 | **titrate**, **neutralize**, **endpoint** | $n_{\text{titrant}} \to$ ratio $\to n_{\text{analyte}} \to M = n/V$ |
-| 13 | **combustion** + $\ce{CO2}$ + $\ce{H2O}$ | C from $\ce{CO2}$, H from $\ce{H2O}$, O by difference |
-| 14 | **mixture** + two unknowns | $x+y=m$, mole equation from product |
-| 15 | **hydrate**, **anhydrous**, **x H2O** | $x = \dfrac{n_{\ce{H2O}}}{n_{\text{anhydrous}}}$ |
+**1:** $1.711 \ \text{mol}$ &nbsp; **2:** $54.5 \ \text{g}$ &nbsp; **3:** $10.0 \ \text{mol}$ &nbsp; **4:** $55.9 \ \text{g}$ &nbsp; **5:** $\ce{H2}$ limiting, $44.7 \ \text{g} \ \ce{H2O}$, $0.32 \ \text{g} \ \ce{O2}$ remain &nbsp; **6:** $80.0\%$ &nbsp; **7:** $0.100 \ \text{mol}$ &nbsp; **8:** $5.60 \ \text{L}$ &nbsp; **9:** $52.4 \ \text{L}$ &nbsp; **10:** $\ce{C2H6O}$ &nbsp; **11:** $25.0 \ \text{mL}$ &nbsp; **12:** $0.130 \ \text{M}$ &nbsp; **13:** $\ce{CH2}$ &nbsp; **14:** $17.0 \ \text{L}$ &nbsp; **15:** $163.5 \ \text{g}$
 
 ---
 
-## ANSWERS
-
-> Solve everything first. Check after.
-
-**Beginner**
-- B1: $1.711 \ \text{mol}$ &nbsp;&nbsp;|&nbsp;&nbsp; B2: $0.0278 \ \text{mol}$
-- B3: $10.0 \ \text{mol}$ &nbsp;&nbsp;|&nbsp;&nbsp; B4: $4.0 \ \text{mol}$
-- B5: $50.0 \ \text{g}$ &nbsp;&nbsp;|&nbsp;&nbsp; B6: $54.5 \ \text{g}$
-
-**Intermediate**
-- I1: $87.8 \ \text{g} \ \ce{CO2}$ &nbsp;&nbsp;|&nbsp;&nbsp; I2: $96.0 \ \text{g} \ \ce{O2}$ &nbsp;&nbsp;|&nbsp;&nbsp; I3: $55.9 \ \text{g} \ \ce{Fe}$
-- I4: $\ce{H2}$ limiting, $44.7 \ \text{g} \ \ce{H2O}$, $0.32 \ \text{g} \ \ce{O2}$ remaining
-- I5: $\ce{H2}$ limiting, $16.9 \ \text{g} \ \ce{NH3}$
-- I6: $85.0\%$ &nbsp;&nbsp;|&nbsp;&nbsp; I7: $75.9\%$
-- I8: $0.100 \ \text{mol}$ &nbsp;&nbsp;|&nbsp;&nbsp; I9: $2.33 \ \text{g} \ \ce{BaSO4}$
-- I10: $44.8 \ \text{L}$ &nbsp;&nbsp;|&nbsp;&nbsp; I11: $11.2 \ \text{L}$
-- I12: $52.4 \ \text{L}$ &nbsp;&nbsp;|&nbsp;&nbsp; I13: $2.51 \ \text{L}$
-- I14: $\ce{CH4}$ &nbsp;&nbsp;|&nbsp;&nbsp; I15: $\ce{C2H6O}$
-- I16: $0.300 \ \text{M}$ &nbsp;&nbsp;|&nbsp;&nbsp; I17: $6.94 \ \text{mL}$
-- I18: $0.0800 \ \text{M}$ &nbsp;&nbsp;|&nbsp;&nbsp; I19: $0.188 \ \text{M}$
-
-**Advanced**
-- A1: $\ce{CH2}$ &nbsp;&nbsp;|&nbsp;&nbsp; A2: $\ce{C2H4O2}$
-- A3: $50.0\% \ \ce{Na2CO3}$
-- A4: $x = 5 \ (\ce{CuSO4 \cdot 5H2O})$
+> **3-hour session complete.** Redo Phase 3 cold tomorrow.

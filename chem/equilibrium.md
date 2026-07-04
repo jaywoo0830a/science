@@ -1,404 +1,249 @@
-# Chemical Equilibrium -- Calculation-First Training
+# Chemical Equilibrium -- 3-Hour Calculation Session
 
-> Philosophy: If you can calculate it, you at least understand it.
-> How to use: Work through the example solution. The formula comes after -- as a summary of what your hands just did.
-> Ratio: Beginner 2 : Intermediate 6 : Advanced 2 (10 patterns: 2-6-2)
+> **Experience first, patterns after.** Phase 1: calculate. Phase 2: name the pattern. Phase 3: mixed retrieval.
 
 ---
 
-## BEGINNER (2 patterns)
-
-> Goal: 2 patterns. Write K. Convert Kc to Kp. The ICE table comes next.
+## PHASE 1 -- DO FIRST (~30 min)
 
 ---
 
-### Pattern 1: Writing $K_c$ and $K_p$
-
-**Example.** Write $K_c$ for $\ce{2SO2 + O2 <=> 2SO3}$.
+**1.** Write $K_c$ for $\ce{2SO2 + O2 <=> 2SO3}$.
 
 $$
 K_c = \dfrac{[\ce{SO3}]^2}{[\ce{SO2}]^2[\ce{O2}]}
 $$
 
-**Example.** Write $K_p$ for the same reaction.
-
-$$
-K_p = \dfrac{(P_{\ce{SO3}})^2}{(P_{\ce{SO2}})^2(P_{\ce{O2}})}
-$$
-
-> SEE: **"Kc"** **"equilibrium constant"** **"write the expression"**
-> WRITE: $K_c = \dfrac{[\text{products}]^{\text{coeff}}}{[\text{reactants}]^{\text{coeff}}}$
->
-> Pure solids and pure liquids do NOT appear in K (activity = 1).
-> Hand reflex: products over reactants. Each concentration raised to its coefficient.
-
 ---
 
-**Practice B1.** Write $K_c$ for $\ce{N2 + 3H2 <=> 2NH3}$.
-
-**Practice B2.** Write $K_c$ for $\ce{CaCO3(s) <=> CaO(s) + CO2(g)}$. (Hint: solids are omitted.)
-
-**Practice B3.** Write $K_p$ for $\ce{2NO2 <=> N2O4}$.
-
----
-
-### Pattern 2: Converting $K_p \leftrightarrow K_c$
-
-**Example.** For $\ce{N2 + 3H2 <=> 2NH3}$ at $400^\circ\text{C}$, $K_c = 0.50$. Find $K_p$.
+**2.** $\ce{N2 + 3H2 <=> 2NH3}$ at $400^\circ\text{C}$, $K_c = 0.50$. Find $K_p$.
 
 $$
-\begin{aligned}
-\Delta n &= \text{mol gas products} - \text{mol gas reactants} = 2 - (1 + 3) = -2 \\
-T &= 400 + 273 = 673 \ \text{K} \\[4pt]
-K_p &= K_c(RT)^{\Delta n} = 0.50 \times (0.08206 \times 673)^{-2} \\[4pt]
-K_p &= 0.50 \times (55.23)^{-2} = 0.50 \times \dfrac{1}{3050} = \boxed{1.64 \times 10^{-4}}
-\end{aligned}
-$$
-
-> SEE: **"Kp from Kc"** **"convert Kc to Kp"** or vice versa
-> WRITE: $K_p = K_c(RT)^{\Delta n}$ where $\Delta n = n_{\text{gas(products)}} - n_{\text{gas(reactants)}}$
->
-> $R = 0.08206$ (L·atm/mol·K). $T$ in **Kelvin**.
-> If $\Delta n = 0$, then $K_p = K_c$.
->
-> Hand reflex: Count gas moles $\to$ $\Delta n$ $\to$ plug into $K_p = K_c(RT)^{\Delta n}$.
-
----
-
-**Practice B4.** For $\ce{2SO2 + O2 <=> 2SO3}$ at $727^\circ\text{C}$, $K_c = 3.50$. Find $K_p$. ($\Delta n = 2 - 3 = -1$)
-
-**Practice B5.** For $\ce{H2 + I2 <=> 2HI}$ at $450^\circ\text{C}$, $K_p = 50.0$. Find $K_c$. ($\Delta n = 0$, so $K_p = K_c$)
-
----
-
-## INTERMEDIATE (6 patterns)
-
-> Goal: Master the ICE table. Initial, Change, Equilibrium. This is the heart of equilibrium.
-
----
-
-### Pattern 3: ICE Table -- Find $K$ from Equilibrium Data
-
-**Example.** $0.500 \ \text{mol}$ $\ce{H2}$ and $0.500 \ \text{mol}$ $\ce{I2}$ are placed in a **1.00 L** flask at $430^\circ\text{C}$. At **equilibrium**, $[\ce{HI}] = 0.786 \ \text{M}$. Find $K_c$.
-
-$$
-\ce{H2 + I2 <=> 2HI}
-$$
-
-```
-           H2       I2       HI
-I (M):    0.500    0.500     0
-C (M):     -x       -x      +2x
-E (M):  0.500-x  0.500-x    2x
-```
-
-Given: at equilibrium, $[\ce{HI}] = 2x = 0.786$, so $x = 0.393$.
-
-$$
-\begin{aligned}
-[\ce{H2}]_e &= 0.500 - 0.393 = 0.107 \ \text{M} \\
-[\ce{I2}]_e &= 0.500 - 0.393 = 0.107 \ \text{M} \\[4pt]
-K_c &= \dfrac{[\ce{HI}]^2}{[\ce{H2}][\ce{I2}]} = \dfrac{(0.786)^2}{(0.107)(0.107)} = \dfrac{0.6178}{0.01145} = \boxed{54.0}
-\end{aligned}
-$$
-
-> SEE: initial amounts + **equilibrium** concentration of one species + asked for **K**
-> WRITE: ICE table $\to$ solve for $x$ from known E $\to$ fill in all E values $\to$ $K =$ products/reactants
->
-> Hand reflex: Draw ICE $\to$ the one E value you have gives $x$ $\to$ compute all E $\to$ plug into K.
-
----
-
-**Practice I1.** **2.00 mol** $\ce{PCl5}$ in **2.00 L** flask. At **equilibrium**, $[\ce{Cl2}] = 0.300 \ \text{M}$. Find $K_c$.
-
-$$
-\ce{PCl5 <=> PCl3 + Cl2}
-$$
-
-**Practice I2.** **1.00 mol** $\ce{CO}$ and **2.00 mol** $\ce{H2}$ in **1.00 L** flask. At **equilibrium**, $[\ce{CH3OH}] = 0.250 \ \text{M}$. Find $K_c$.
-
-$$
-\ce{CO + 2H2 <=> CH3OH}
+\Delta n = 2-(1+3) = -2, \ T = 673 \ \text{K}, \ K_p = 0.50 \times (0.08206 \times 673)^{-2} = \boxed{1.64 \times 10^{-4}}
 $$
 
 ---
 
-### Pattern 4: ICE Table -- Find Equilibrium [] from $K$
+**3.** $1.00 \ \text{mol} \ \ce{PCl5}$ in $2.00 \ \text{L}$ flask. At equilibrium $[\ce{Cl2}] = 0.300 \ \text{M}$. Find $K_c$.
 
-**Example.** $K_c = 54.0$ for $\ce{H2 + I2 <=> 2HI}$. Initial: $[\ce{H2}] = 1.00 \ \text{M}$, $[\ce{I2}] = 1.00 \ \text{M}$, $[\ce{HI}] = 0$. Find **equilibrium** concentrations.
+$\ce{PCl5 <=> PCl3 + Cl2}$
 
-```
-           H2       I2       HI
-I (M):    1.00     1.00      0
-C (M):     -x       -x      +2x
-E (M):   1.00-x   1.00-x    2x
-```
+| | $\ce{PCl5}$ | $\ce{PCl3}$ | $\ce{Cl2}$ |
+|---|---|---|---|
+| I | $0.500$ | $0$ | $0$ |
+| C | $-x$ | $+x$ | $+x$ |
+| E | $0.500-x$ | $x$ | $x$ |
 
-$$
-\begin{aligned}
-K_c &= \dfrac{[\ce{HI}]^2}{[\ce{H2}][\ce{I2}]} = \dfrac{(2x)^2}{(1.00 - x)^2} = 54.0 \\[4pt]
-\dfrac{2x}{1.00 - x} &= \sqrt{54.0} = 7.348 \\[4pt]
-2x &= 7.348 - 7.348x \\[4pt]
-9.348x &= 7.348 \\[4pt]
-x &= 0.786 \\[4pt]
-[\ce{H2}]_e &= 1.00 - 0.786 = 0.214 \ \text{M} \\
-[\ce{I2}]_e &= 1.00 - 0.786 = 0.214 \ \text{M} \\
-[\ce{HI}]_e &= 2(0.786) = \boxed{1.572 \ \text{M}}
-\end{aligned}
-$$
-
-> SEE: **K** given + initial concentrations + asked for **equilibrium []**
-> WRITE: ICE table $\to$ set $K =$ expression in terms of $x$ $\to$ solve for $x$ $\to$ plug back.
->
-> Hand reflex: ICE $\to$ $K = f(x)$ $\to$ solve (quadratic often) $\to$ $x$ $\to$ all E values.
+$x = 0.300$, $[\ce{PCl5}]_e = 0.200$, $K_c = \dfrac{(0.300)^2}{0.200} = \boxed{0.129}$
 
 ---
 
-**Practice I3.** $K_c = 0.040$ for $\ce{PCl5 <=> PCl3 + Cl2}$. Initial: $[\ce{PCl5}] = 1.00 \ \text{M}$. Find all **equilibrium** concentrations.
+**4.** $K_c = 54.0$ for $\ce{H2 + I2 <=> 2HI}$. Initial $[\ce{H2}] = [\ce{I2}] = 0.500 \ \text{M}$. Find equilibrium $[\ce{HI}]$.
 
-**Practice I4.** $K_c = 4.20$ for $\ce{2NO2 <=> N2O4}$. Initial: $[\ce{NO2}] = 0.500 \ \text{M}$. Find **equilibrium** concentrations.
-
----
-
-### Pattern 5: Small-$x$ Approximation
-
-**Example.** $K_c = 1.8 \times 10^{-5}$ for $\ce{CH3COOH <=> CH3COO- + H+}$. Initial: $[\ce{CH3COOH}] = 0.100 \ \text{M}$. Find $[\ce{H+}]$ at equilibrium.
-
-```
-              CH3COOH    CH3COO-    H+
-I (M):         0.100        0       0
-C (M):          -x         +x      +x
-E (M):        0.100-x       x       x
-```
+| | $\ce{H2}$ | $\ce{I2}$ | $\ce{HI}$ |
+|---|---|---|---|
+| I | $0.500$ | $0.500$ | $0$ |
+| C | $-x$ | $-x$ | $+2x$ |
+| E | $0.500-x$ | $0.500-x$ | $2x$ |
 
 $$
-\begin{aligned}
-K_c &= \dfrac{x^2}{0.100 - x} = 1.8 \times 10^{-5} \\[4pt]
-\text{Since } K &\ll 1 \text{ and initial conc is large, } x \ll 0.100 \text{ (check: } 0.100/K > 1000 \text{)} \\[4pt]
-\dfrac{x^2}{0.100} &\approx 1.8 \times 10^{-5} \\[4pt]
-x &= \sqrt{0.100 \times 1.8 \times 10^{-5}} = \sqrt{1.8 \times 10^{-6}} = 1.34 \times 10^{-3} \ \text{M} \\[4pt]
-\text{Check: } \dfrac{x}{0.100} &\times 100 = 1.34\% < 5\% \quad \checkmark \text{ Approximation valid}
-\end{aligned}
+\dfrac{(2x)^2}{(0.500-x)^2} = 54.0, \ \dfrac{2x}{0.500-x} = 7.348, \ x = 0.393, \ [\ce{HI}] = \boxed{0.786 \ \text{M}}
 $$
 
-> SEE: **K << 1** (small K, like $10^{-5}$) + initial concentration $\gg K$
-> WRITE: Assume $x \ll [\text{initial}]$, so $[\text{initial}] - x \approx [\text{initial}]$
->
-> Check: If $[A]_0 / K > 1000$, skip the quadratic. At the end, verify $x / [A]_0 < 5\%$.
-> Hand reflex: Small $K$ $\to$ try $[A]_0 - x \approx [A]_0$ $\to$ solve easily $\to$ check 5% rule.
-
 ---
 
-**Practice I5.** $K_c = 1.7 \times 10^{-3}$ for $\ce{N2O4 <=> 2NO2}$. Initial: $[\ce{N2O4}] = 2.00 \ \text{M}$. Find all **equilibrium** concentrations. Use the small-$x$ approximation and verify it.
-
----
-
-### Pattern 6: Reaction Quotient $Q$ -- Predict Direction
-
-**Example.** $K_c = 54.0$ for $\ce{H2 + I2 <=> 2HI}$. A mixture has $[\ce{H2}] = 0.200$, $[\ce{I2}] = 0.200$, $[\ce{HI}] = 2.00$. Which way does the reaction shift?
+**5.** $K_c = 54.0$. Current: $[\ce{H2}] = 0.100$, $[\ce{I2}] = 0.100$, $[\ce{HI}] = 1.50$. Which way shifts?
 
 $$
-Q = \dfrac{[\ce{HI}]^2}{[\ce{H2}][\ce{I2}]} = \dfrac{(2.00)^2}{(0.200)(0.200)} = \dfrac{4.00}{0.0400} = 100
+Q = \dfrac{(1.50)^2}{(0.100)^2} = 225 > K_c \ (54.0) \ \Rightarrow \ \boxed{\text{Shifts LEFT}}
 $$
 
-Since $Q = 100 > K_c = 54.0$: Too much product. **Shifts LEFT** (toward reactants).
+---
 
-> SEE: **"Q"** **"reaction quotient"** **"which direction"** **"shift"**
-> WRITE: $Q = \dfrac{[\text{products}]^{\text{coeff}}}{[\text{reactants}]^{\text{coeff}}}$ using **current** (not equilibrium) concentrations
->
-> - $Q < K$: too little product $\to$ shifts **RIGHT** (forward)
-> - $Q > K$: too much product $\to$ shifts **LEFT** (reverse)
-> - $Q = K$: at equilibrium
->
-> Hand reflex: Calculate $Q$ exactly like $K$ but with current [] $\to$ compare to $K$ $\to$ shift direction.
+> **You just executed:** $K_c$ expression, $K_p \leftrightarrow K_c$, ICE (find $K$), ICE (find []), and $Q$ vs $K$.
 
 ---
 
-**Practice I6.** $K_c = 0.50$ for $\ce{N2 + 3H2 <=> 2NH3}$. A mixture has $[\ce{N2}] = 0.40$, $[\ce{H2}] = 0.60$, $[\ce{NH3}] = 0.20$. Which way does it shift?
+## PHASE 2 -- THE PATTERNS (~90 min)
 
 ---
 
-### Pattern 7: Le Chatelier -- Concentration/Pressure Change Calculations
+### 1. $K_c$ / $K_p$ Expression
 
-**Example.** $\ce{N2 + 3H2 <=> 2NH3}$ is at equilibrium: $[\ce{N2}] = 0.40$, $[\ce{H2}] = 0.60$, $[\ce{NH3}] = 0.20$. More $\ce{N2}$ is added so $[\ce{N2}]$ becomes $0.80$ instantaneously. Find new equilibrium concentrations.
+SEE: **"write Kc"** **"equilibrium expression"** &nbsp;|&nbsp; WRITE: $K_c = \dfrac{[\text{products}]^{\text{coeff}}}{[\text{reactants}]^{\text{coeff}}}$
 
-```
-First, find K:
-K = (0.20)^2 / (0.40 * 0.60^3) = 0.04 / 0.0864 = 0.463
+Solids and pure liquids $= 1$ (omitted).
 
-After adding N2 (instantaneous, not equilibrium):
-[N2] = 0.80, [H2] = 0.60, [NH3] = 0.20
+**Example.** $\ce{CaCO3(s) <=> CaO(s) + CO2(g)}$. $K_c = [\ce{CO2}]$, $K_p = P_{\ce{CO2}}$.
 
-Q = (0.20)^2 / (0.80 * 0.60^3) = 0.04 / 0.1728 = 0.231 < K (0.463)
-Shifts right.
-
-New ICE:
-            N2        H2        NH3
-I (M):     0.80      0.60      0.20
-C (M):      -x       -3x       +2x
-E (M):   0.80-x    0.60-3x   0.20+2x
-
-K = (0.20+2x)^2 / ((0.80-x)(0.60-3x)^3) = 0.463
-```
-
-> SEE: **"added"** **"removed"** **"stress"** + equilibrium system + asked for new equilibrium
-> WRITE: Change concentration instantly $\to$ new ICE from that instant $\to$ solve with same $K$.
->
-> Hand reflex: Apply stress instantly (new I row) $\to$ ICE table with same K $\to$ solve.
+**Practice 1.** Write $K_c$ for $\ce{N2 + 3H2 <=> 2NH3}$.
 
 ---
 
-**Practice I7.** $\ce{H2 + I2 <=> 2HI}$, $K_c = 54.0$. Equilibrium: $[\ce{H2}] = [\ce{I2}] = 0.107$, $[\ce{HI}] = 0.786$. More $\ce{HI}$ is **added**: $[\ce{HI}]$ becomes $1.20$. Find the new equilibrium $[\ce{HI}]$ after shift.
+### 2. $K_p \leftrightarrow K_c$
+
+SEE: **"Kp from Kc"** &nbsp;|&nbsp; WRITE: $K_p = K_c(RT)^{\Delta n}$, $\Delta n = n_{\text{gas(prod)}} - n_{\text{gas(react)}}$
+
+$R = 0.08206$, $T$ in K. If $\Delta n = 0$, $K_p = K_c$.
+
+**Example.** $\ce{H2 + I2 <=> 2HI}$ at $450^\circ\text{C}$, $K_p = 50.0$. $\Delta n = 0$, $K_c = 50.0$.
+
+**Practice 2.** $\ce{2SO2 + O2 <=> 2SO3}$ at $727^\circ\text{C}$, $K_c = 3.50$. $K_p$?
 
 ---
 
-### Pattern 8: Heterogeneous Equilibrium & Determining K
+### 3. ICE: Find $K$ from Equilibrium Data
 
-**Example.** $\ce{CaCO3(s) <=> CaO(s) + CO2(g)}$. At $800^\circ\text{C}$, the **pressure** of $\ce{CO2}$ above the solid mixture is $0.236 \ \text{atm}$. Find $K_p$ and $K_c$.
+SEE: initial amounts + one equilibrium [] &nbsp;|&nbsp; WRITE: ICE $\to$ $x$ from known E $\to$ all E $\to$ $K$
 
-$$
-\begin{aligned}
-K_p &= P_{\ce{CO2}} = 0.236 \quad (\text{solids omitted}) \\[4pt]
-\Delta n &= 1 - 0 = 1 \quad (\text{only gases count}) \\
-T &= 800 + 273 = 1073 \ \text{K} \\[4pt]
-K_c &= \dfrac{K_p}{(RT)^{\Delta n}} = \dfrac{0.236}{0.08206 \times 1073} = \dfrac{0.236}{88.05} = \boxed{2.68 \times 10^{-3}}
-\end{aligned}
-$$
+**Example.** $2.00 \ \text{mol} \ \ce{PCl5}$ in $2.00 \ \text{L}$, at eq $[\ce{Cl2}] = 0.300$. $K_c$?
 
-> SEE: **"solid"** **"heterogeneous"** + equilibrium pressure given
-> WRITE: Solids/liquids = 1 (not in K). Only gases and aqueous species appear.
+$[\ce{PCl5}]_0 = 1.00$, ICE: $x = 0.300$, $[\ce{PCl5}]_e = 0.700$, $K_c = \dfrac{(0.300)^2}{0.700} = \boxed{0.129}$
+
+**Practice 3.** $1.00 \ \text{mol} \ \ce{CO} + 2.00 \ \text{mol} \ \ce{H2}$ in $1.00 \ \text{L}$, at eq $[\ce{CH3OH}] = 0.250$. $K_c$? ($\ce{CO + 2H2 <=> CH3OH}$)
 
 ---
 
-**Practice I8.** $\ce{NH4HS(s) <=> NH3(g) + H2S(g)}$. At $25^\circ\text{C}$, total pressure above solid = $0.660 \ \text{atm}$. Find $K_p$. (Hint: $P_{\ce{NH3}} = P_{\ce{H2S}} = P_{\text{total}}/2$)
+### 4. ICE: Find [] from $K$
+
+SEE: $K$ given + initial [] &nbsp;|&nbsp; WRITE: ICE $\to$ $K = f(x)$ $\to$ solve $x$ $\to$ all E
+
+**Example.** $K_c = 0.040$, $\ce{PCl5 <=> PCl3 + Cl2}$, $[\ce{PCl5}]_0 = 1.00$.
+
+$\dfrac{x^2}{1.00-x} = 0.040$, $x = 0.181$, $[\ce{PCl5}]_e = 0.819$, $[\ce{PCl3}]_e = [\ce{Cl2}]_e = \boxed{0.181}$
+
+**Practice 4.** $K_c = 4.20$, $\ce{2NO2 <=> N2O4}$, $[\ce{NO2}]_0 = 0.500$. Find all eq [].
 
 ---
 
-## ADVANCED (2 patterns) -- College-Level
+### 5. Small-$x$ Approximation
+
+SEE: $K \ll 1$ + $[\text{initial}] \gg K$ &nbsp;|&nbsp; WRITE: $[\text{initial}] - x \approx [\text{initial}]$
+
+Check: if $[\text{initial}]/K > 1000$, skip quadratic. Verify $x/[\text{initial}] < 5\%$.
+
+**Example.** $K_c = 1.8\times10^{-5}$, $\ce{CH3COOH <=> CH3COO- + H+}$, $[\ce{HA}]_0 = 0.100$.
+
+$x = \sqrt{0.100 \times 1.8\times10^{-5}} = \boxed{1.34\times10^{-3}}$, check: $1.34\% < 5\% \ \checkmark$
+
+**Practice 5.** $K_c = 1.7\times10^{-3}$, $\ce{N2O4 <=> 2NO2}$, $[\ce{N2O4}]_0 = 2.00$. Find eq [].
 
 ---
 
-### Pattern 9: Simultaneous Equilibria
+### 6. Reaction Quotient $Q$
 
-**Example.** Two equilibria occur simultaneously. Find the final concentrations.
+SEE: **"which direction"** **"shift"** + current [] &nbsp;|&nbsp; WRITE: $Q$ (same form as $K$, current []). $Q<K$: right. $Q>K$: left.
 
-$$
-\begin{aligned}
-\ce{A + B &<=> C} \quad &K_1 &= 10.0 \\
-\ce{C + B &<=> D} \quad &K_2 &= 5.0
-\end{aligned}
-$$
+**Example.** $K_c = 0.50$, $\ce{N2 + 3H2 <=> 2NH3}$. $[0.40, 0.60, 0.20]$.
 
-Initial: $[\ce{A}] = 1.00$, $[\ce{B}] = 2.00$, $[\ce{C}] = [\ce{D}] = 0$.
+$Q = 0.20^2/(0.40 \times 0.60^3) = 0.463 < 0.50$ $\Rightarrow$ **shifts RIGHT**.
 
-Let $x$ = amount of A consumed in first reaction, $y$ = amount of C consumed in second reaction.
-
-```
-        A       B       C       D
-I:     1.00    2.00     0       0
-C1:     -x      -x      +x       0
-C2:      0       -y     -y      +y
-E:    1.00-x  2.00-x-y  x-y      y
-```
-
-$$
-\begin{aligned}
-K_1 &= \dfrac{x-y}{(1.00-x)(2.00-x-y)} = 10.0 \\[4pt]
-K_2 &= \dfrac{y}{(x-y)(2.00-x-y)} = 5.0
-\end{aligned}
-$$
-
-Solve the system of two equations for $x$ and $y$. (Typically requires numerical methods or clever algebra.)
-
-> SEE: two (or more) equilibrium arrows, two $K$ values
-> WRITE: Multiple ICE changes ($x$, $y$, $z$...) $\to$ system of equations with all $K$'s $\to$ solve.
->
-> Hand reflex: One variable per reaction $\to$ express all E in terms of them $\to$ write all $K$ equations $\to$ solve system.
+**Practice 6.** $K_c = 54.0$, $\ce{H2 + I2 <=> 2HI}$. $[0.200, 0.200, 2.00]$. Shift?
 
 ---
 
-**Practice A1.** Two simultaneous equilibria:
+### 7. Le Chatelier Shift Calculation
 
-$$
-\begin{aligned}
-\ce{A &<=> 2B} \quad &K_1 &= 4.0 \times 10^{-2} \\
-\ce{B + C &<=> D} \quad &K_2 &= 1.0 \times 10^{3}
-\end{aligned}
-$$
+SEE: **"added"** **"removed"** + equilibrium &nbsp;|&nbsp; WRITE: apply stress instantly (new I) $\to$ ICE with same $K$
 
-Initial: $[\ce{A}] = 0.500$, $[\ce{C}] = 0.500$, $[\ce{B}] = [\ce{D}] = 0$. Set up the system (you don't need to fully solve). Write the two equations in terms of $x$ and $y$.
+**Example.** $\ce{H2 + I2 <=> 2HI}$, $K_c=54$. Eq: $[0.107, 0.107, 0.786]$. Add $\ce{HI}$ to $1.20$.
 
----
+New I: $[0.107, 0.107, 1.20]$, ICE shifts left. $x$ consumed, $[\ce{HI}]_{\text{new}} = \boxed{0.926}$.
 
-### Pattern 10: Temperature Dependence (Van't Hoff Equation)
-
-**Example.** For $\ce{N2 + 3H2 <=> 2NH3}$, $K_1 = 6.0 \times 10^5$ at $T_1 = 298 \ \text{K}$ and $\Delta H^\circ = -92 \ \text{kJ/mol}$. Find $K_2$ at $T_2 = 500 \ \text{K}$.
-
-$$
-\begin{aligned}
-\ln\left(\dfrac{K_2}{K_1}\right) &= -\dfrac{\Delta H^\circ}{R}\left(\dfrac{1}{T_2} - \dfrac{1}{T_1}\right) \\[4pt]
-\ln\left(\dfrac{K_2}{6.0 \times 10^5}\right) &= -\dfrac{-92000}{8.314}\left(\dfrac{1}{500} - \dfrac{1}{298}\right) \\[4pt]
-&= 11066 \times (0.002000 - 0.003356) \\[4pt]
-&= 11066 \times (-0.001356) = -15.00 \\[4pt]
-\dfrac{K_2}{6.0 \times 10^5} &= e^{-15.00} = 3.06 \times 10^{-7} \\[4pt]
-K_2 &= 6.0 \times 10^5 \times 3.06 \times 10^{-7} = \boxed{0.184}
-\end{aligned}
-$$
-
-Exothermic reaction ($\Delta H < 0$): $K$ decreases as $T$ increases (as seen: $6\times10^5 \to 0.184$).
-
-> SEE: **"Van't Hoff"** **"K at different temperature"** **"ΔH°"** + two temperatures
-> WRITE: $\ln\left(\dfrac{K_2}{K_1}\right) = -\dfrac{\Delta H^\circ}{R}\left(\dfrac{1}{T_2} - \dfrac{1}{T_1}\right)$
->
-> $R = 8.314 \ \text{J/mol·K}$. $\Delta H^\circ$ in J/mol (not kJ).
-> Exothermic ($\Delta H < 0$): $K \downarrow$ as $T \uparrow$. Endothermic: opposite.
->
-> Hand reflex: $\Delta H^\circ$ to J $\to$ van't Hoff $\to$ solve for $K_2$.
+**Practice 7.** Same system, add $\ce{H2}$ so $[\ce{H2}]$ becomes $0.300$. New $[\ce{HI}]$?
 
 ---
 
-**Practice A2.** $K_1 = 1.0 \times 10^{-14}$ at $T_1 = 298 \ \text{K}$ for $\ce{H2O <=> H+ + OH-}$ (this is $K_w$). $\Delta H^\circ = +56 \ \text{kJ/mol}$. Find $K_2$ at $T_2 = 323 \ \text{K}$ ($50^\circ\text{C}$).
+### 8. Heterogeneous Equilibrium
+
+SEE: **"solid"** **"heterogeneous"** + pressure &nbsp;|&nbsp; WRITE: omit solids/liquids from $K$
+
+**Example.** $\ce{NH4HS(s) <=> NH3(g) + H2S(g)}$. $P_{\text{total}} = 0.660 \ \text{atm}$.
+
+$P_{\ce{NH3}} = P_{\ce{H2S}} = 0.330$, $K_p = 0.330^2 = \boxed{0.109}$
+
+**Practice 8.** $\ce{CaCO3(s) <=> CaO(s) + CO2(g)}$. $P_{\ce{CO2}} = 0.236 \ \text{atm}$ at $800^\circ\text{C}$. $K_p$?
 
 ---
 
-## MASTER CHEAT SHEET -- Trigger to Equation
+### 9. Simultaneous Equilibria
 
-| # | SEE this word/phrase... | Your hand writes... |
-|---|---|---|
-| 1 | **Kc** **equilibrium expression** | $K_c = \dfrac{[\text{products}]^{\text{coeff}}}{[\text{reactants}]^{\text{coeff}}}$ (no solids/liquids) |
-| 2 | **Kp from Kc** (or vice versa) | $K_p = K_c(RT)^{\Delta n}$, $\Delta n =$ gas moles(prod) $-$ gas moles(react) |
-| 3 | equilibrium [] given + find **K** | ICE $\to$ $x$ from known E $\to$ all E $\to$ $K =$ expression |
-| 4 | **K** given + find equilibrium [] | ICE $\to$ $K = f(x)$ $\to$ solve $x$ $\to$ all E |
-| 5 | **K << 1** (small), conc $\gg K$ | $[\text{initial}] - x \approx [\text{initial}]$ $\to$ check 5% rule |
-| 6 | **Q** **which direction** **shift** | $Q =$ expression with current [] $\to$ $Q < K$: right; $Q > K$: left |
-| 7 | **added** **removed** + equilibrium | apply stress to I row $\to$ new ICE $\to$ same $K$ $\to$ solve |
-| 8 | **solid** **heterogeneous** + pressure | omit solids/liquids from K; only gases count for $\Delta n$ |
-| 9 | two **equilibria** + two $K$ values | $x$ for rxn 1, $y$ for rxn 2 $\to$ system of $K$ equations |
-| 10 | **Van't Hoff** **K at T** **ΔH°** | $\ln\left(\dfrac{K_2}{K_1}\right) = -\dfrac{\Delta H^\circ}{R}\left(\dfrac{1}{T_2} - \dfrac{1}{T_1}\right)$ |
+SEE: two equilibrium arrows + two $K$ values &nbsp;|&nbsp; WRITE: $x$ for rxn 1, $y$ for rxn 2, system of equations
+
+**Example.** $\ce{A+B<=>C}$ ($K_1=10$) and $\ce{C+B<=>D}$ ($K_2=5$). $[\ce{A}]_0=1$, $[\ce{B}]_0=2$.
+
+E: $\ce{A}=1-x$, $\ce{B}=2-x-y$, $\ce{C}=x-y$, $\ce{D}=y$. Two equations, solve for $x,y$.
+
+**Practice 9.** Set up (no need to fully solve): $\ce{A<=>2B}$ ($K_1=4\times10^{-2}$), $\ce{B+C<=>D}$ ($K_2=10^3$). $[\ce{A}]_0=[\ce{C}]_0=0.5$.
 
 ---
 
-## ANSWERS
+### 10. Van't Hoff ($K$ vs $T$)
 
-> Solve everything first. Check after.
+SEE: **"K at different T"** + $\Delta H^\circ$ &nbsp;|&nbsp; WRITE: $\ln\dfrac{K_2}{K_1} = -\dfrac{\Delta H^\circ}{R}\left(\dfrac{1}{T_2} - \dfrac{1}{T_1}\right)$
 
-**Beginner**
-- B1: $K_c = \dfrac{[\ce{NH3}]^2}{[\ce{N2}][\ce{H2}]^3}$
-- B2: $K_c = [\ce{CO2}]$ (solids omitted)
-- B3: $K_p = \dfrac{P_{\ce{N2O4}}}{(P_{\ce{NO2}})^2}$
-- B4: $K_p = 0.0427$
-- B5: $K_c = 50.0$ ($\Delta n = 0$)
+$R = 8.314$, $\Delta H^\circ$ in J/mol. Exothermic: $K \downarrow$ as $T \uparrow$.
 
-**Intermediate**
-- I1: $[\ce{PCl5}] = 0.700$, $[\ce{PCl3}] = [\ce{Cl2}] = 0.300$; $K_c = 0.129$
-- I2: $[\ce{CO}] = 0.750$, $[\ce{H2}] = 1.50$, $[\ce{CH3OH}] = 0.250$; $K_c = 0.148$
-- I3: $[\ce{PCl5}] = 0.819$, $[\ce{PCl3}] = [\ce{Cl2}] = 0.181$ (solve $x^2/(1-x) = 0.040$)
-- I4: $[\ce{NO2}] = 0.220$, $[\ce{N2O4}] = 0.140$ (solve $x/(0.5-2x)^2 = 4.20$)
-- I5: $[\ce{N2O4}] = 1.971 \ \text{M}$, $[\ce{NO2}] = 0.058 \ \text{M}$ ($x = 0.0292$, check: $1.46\% < 5\% \ \checkmark$)
-- I6: $Q = 0.463 > 0.50$, shifts **LEFT**
-- I7: $[\ce{HI}]_{new} = 0.926 \ \text{M}$ (shift left consumes excess HI)
-- I8: $K_p = P_{\ce{NH3}} \cdot P_{\ce{H2S}} = (0.330)(0.330) = 0.109$
+**Example.** $\ce{N2 + 3H2 <=> 2NH3}$, $K_1 = 6\times10^5$ at $298 \ \text{K}$, $\Delta H^\circ = -92 \ \text{kJ}$. $K$ at $500 \ \text{K}$?
 
-**Advanced**
-- A1: $K_1 = (2x+y)^2/(0.5-x)$, $K_2 = y/((2x+y)(0.5-y))$ (approximate system)
-- A2: $K_w(50^\circ\text{C}) = 5.5 \times 10^{-14}$ (increases with T, endothermic)
+$\ln(K_2/6\times10^5) = -(-92000/8.314)(1/500 - 1/298) = -15.0$, $K_2 = \boxed{0.18}$
+
+**Practice 10.** $K_w = 1.0\times10^{-14}$ at $298 \ \text{K}$, $\Delta H^\circ = +56 \ \text{kJ}$. $K_w$ at $323 \ \text{K}$?
+
+---
+
+### PHASE 2 PRACTICE ANSWERS
+
+- P1: $[\ce{NH3}]^2/([\ce{N2}][\ce{H2}]^3)$ &nbsp;|&nbsp; P2: $K_p = 0.0427$
+- P3: $[\ce{CO}]=0.750$, $[\ce{H2}]=1.50$, $K_c=0.148$
+- P4: $[\ce{NO2}]=0.220$, $[\ce{N2O4}]=0.140$
+- P5: $[\ce{N2O4}]=1.971$, $[\ce{NO2}]=0.058$ &nbsp;|&nbsp; P6: $Q=100>54$, shifts LEFT
+- P7: $[\ce{HI}] \approx 0.90$ &nbsp;|&nbsp; P8: $K_p = 0.236$
+- P9: $K_1 = (2x)^2/(0.5-x)$, $K_2 = y/((2x)(0.5-y))$
+- P10: $K_w = 5.5\times10^{-14}$
+
+---
+
+## PHASE 3 -- LOCK IT IN (~60 min)
+
+---
+
+**1.** $K_c$ for $\ce{2SO2 + O2 <=> 2SO3}$?
+
+**2.** $K_c = 0.50$, $\ce{N2 + 3H2 <=> 2NH3}$ at $400^\circ\text{C}$. $K_p$?
+
+**3.** $0.500 \ \text{mol} \ \ce{H2} + 0.500 \ \text{mol} \ \ce{I2}$ in $1.00 \ \text{L}$. At eq $[\ce{HI}] = 0.786$. $K_c$?
+
+**4.** $K_c = 54.0$, $\ce{H2 + I2 <=> 2HI}$, $[\ce{H2}]_0 = [\ce{I2}]_0 = 1.00$. Find $[\ce{HI}]_e$.
+
+**5.** $K_c = 4.2\times10^{-3}$, $\ce{N2O4 <=> 2NO2}$, $[\ce{N2O4}]_0 = 1.00$. Use small-$x$. $[\ce{NO2}]_e$?
+
+**6.** $K_c = 54.0$. Current: $[\ce{H2}]=0.100$, $[\ce{I2}]=0.100$, $[\ce{HI}]=1.50$. Shift?
+
+**7.** $K_c = 0.040$, $\ce{PCl5 <=> PCl3 + Cl2}$, $[\ce{PCl5}]_0 = 1.00$. Find all eq [].
+
+**8.** $\ce{H2 + I2 <=> 2HI}$, $K_c=54$. Eq: $[0.107, 0.107, 0.786]$. Add $\ce{HI}$ to $1.20$. New $[\ce{HI}]$?
+
+**9.** $\ce{NH4HS(s) <=> NH3(g) + H2S(g)}$. $P_{\text{total}}=0.500$. $K_p$?
+
+**10.** $K_1 = 6\times10^5$ at $298 \ \text{K}$, $\Delta H^\circ = -92 \ \text{kJ}$. $K$ at $500 \ \text{K}$?
+
+**11.** $K_c = 0.50$, $\ce{N2 + 3H2 <=> 2NH3}$. $[0.40, 0.60, 0.20]$. $Q$? Shift?
+
+**12.** $\ce{2NO2 <=> N2O4}$, $K_c=4.20$, $[\ce{NO2}]_0=0.500$. Eq []?
+
+**13.** $\ce{CaCO3(s) <=> CaO(s) + CO2(g)}$. $P_{\ce{CO2}}=0.236$ at $800^\circ\text{C}$. $K_c$?
+
+**14.** $\ce{2SO3 <=> 2SO2 + O2}$, $K_c=0.230$ at $600^\circ\text{C}$. Initial $[\ce{SO3}]=0.500$. Find $[\ce{O2}]_e$.
+
+**15.** $K_w = 1.0\times10^{-14}$ at $25^\circ\text{C}$, $\Delta H^\circ=+56 \ \text{kJ}$. $K_w$ at $50^\circ\text{C}$?
+
+---
+
+### PHASE 3 ANSWERS
+
+**1:** $[\ce{SO3}]^2/([\ce{SO2}]^2[\ce{O2}])$ &nbsp; **2:** $1.64\times10^{-4}$ &nbsp; **3:** $54.0$ &nbsp; **4:** $1.572 \ \text{M}$ &nbsp; **5:** $0.065 \ \text{M}$ &nbsp; **6:** LEFT ($Q=225>54$) &nbsp; **7:** $[\ce{PCl5}]=0.819$, $[\ce{PCl3}]=[\ce{Cl2}]=0.181$ &nbsp; **8:** $0.926$ &nbsp; **9:** $0.0625$ &nbsp; **10:** $0.18$ &nbsp; **11:** $Q=0.463 < 0.50$, RIGHT &nbsp; **12:** $[\ce{NO2}]=0.220$, $[\ce{N2O4}]=0.140$ &nbsp; **13:** $K_c = 2.68\times10^{-3}$ &nbsp; **14:** $[\ce{O2}]=0.118$ &nbsp; **15:** $5.5\times10^{-14}$
+
+---
+
+> **3-hour session complete.**

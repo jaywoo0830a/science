@@ -1,344 +1,219 @@
-# Gas Laws -- Calculation-First Training
+# Gas Laws -- 3-Hour Calculation Session
 
-> Philosophy: If you can calculate it, you at least understand it.
-> How to use: Work through the example solution. The formula comes after -- as a summary of what your hands just did.
-> Ratio: Beginner 2 : Intermediate 6 : Advanced 2 (10 patterns: 2-6-2)
+> **Experience first, patterns after.** Phase 1: calculate. Phase 2: name the pattern. Phase 3: mixed retrieval.
 
 ---
 
-## BEGINNER (2 patterns)
-
-> Goal: 2 patterns. Both are special cases of PV=nRT. Temperature must ALWAYS be in K.
+## PHASE 1 -- DO FIRST (~30 min)
 
 ---
 
-### Pattern 1: Boyle's Law (fixed n, T)
+**1.** Gas at $3.00 \ \text{atm}$, $2.00 \ \text{L}$. Pressure increases to $9.00 \ \text{atm}$ at constant $T$. New volume?
 
-**Example.** A **gas** at **2.00 atm** occupies **3.00 L**. The **pressure** is increased to **6.00 atm** at **constant temperature**. What is the new **volume**?
-
-```
-P1 * V1 = P2 * V2
-2.00 * 3.00 = 6.00 * V2
-V2 = (2.00 * 3.00) / 6.00 = 1.00 L
-```
-
-> SEE: **"pressure"** changes + **"volume"** asked + **"constant temperature"** **"constant moles"**
-> WRITE: $P_1 V_1 = P_2 V_2$
+$$
+P_1 V_1 = P_2 V_2, \quad 3.00 \times 2.00 = 9.00 \times V_2, \quad V_2 = \boxed{0.667 \ \text{L}}
+$$
 
 ---
 
-**Practice B1.** A **gas** at **1.50 atm** has **volume** **4.00 L**. **Pressure** increases to **4.50 atm** at **constant T**. New **volume**?
+**2.** Gas at $127^\circ\text{C}$, $4.00 \ \text{L}$ at constant $P$. Cooled to $27^\circ\text{C}$. New volume?
 
-**Practice B2.** A **gas** at **800 mmHg** occupies **500 mL**. **Volume** expands to **1200 mL** at **constant T**. New **pressure** (mmHg)?
-
----
-
-### Pattern 2: Charles's & Gay-Lussac's Laws (fixed n, one variable constant)
-
-**Example (Charles).** A **gas** occupies **2.00 L** at **27.0°C**. The **temperature** is raised to **127.0°C** at **constant pressure**. What is the new **volume**?
-
-```
-T1 = 27.0 + 273 = 300 K
-T2 = 127.0 + 273 = 400 K
-
-V1 / T1 = V2 / T2
-2.00 / 300 = V2 / 400
-V2 = 2.00 * (400 / 300) = 2.67 L
-```
-
-**Example (Gay-Lussac).** A **sealed** container at **27.0°C** has **pressure** **2.00 atm**. Heated to **127.0°C** at **constant volume**. New **pressure**?
-
-```
-T1 = 27.0 + 273 = 300 K
-T2 = 127.0 + 273 = 400 K
-
-P1 / T1 = P2 / T2
-2.00 / 300 = P2 / 400
-P2 = 2.00 * (400 / 300) = 2.67 atm
-```
-
-> SEE: **"constant pressure"** + V,T changing $\to$ $\dfrac{V_1}{T_1} = \dfrac{V_2}{T_2}$
-> SEE: **"constant volume"** **"sealed"** **"rigid"** + P,T changing $\to$ $\dfrac{P_1}{T_1} = \dfrac{P_2}{T_2}$
->
-> **T must be in K. Always.** See **°C** $\to$ **+273** first.
+$$
+T_1 = 400 \ \text{K}, \ T_2 = 300 \ \text{K}, \quad \dfrac{V_1}{T_1} = \dfrac{V_2}{T_2}, \quad V_2 = 4.00 \cdot \dfrac{300}{400} = \boxed{3.00 \ \text{L}}
+$$
 
 ---
 
-**Practice B3.** A **gas** at **127.0°C** occupies **3.00 L** at **constant P**. **Temperature** drops to **27.0°C**. New **volume**?
+**3.** Gas at $1.50 \ \text{atm}$, $27^\circ\text{C}$, $6.00 \ \text{L}$. New volume at $3.00 \ \text{atm}$, $127^\circ\text{C}$?
 
-**Practice B4.** A **gas** at **-73.0°C** has **volume** **1.50 L** at **constant P**. **Temperature** rises to **27.0°C**. New **volume**?
-
-**Practice B5.** A **sealed** container at **-23.0°C** has **pressure** **3.00 atm**. Heated to **227.0°C**. New **pressure**?
-
----
-
-> Checkpoint. Triggers locked:
-> - See **constant T** + P,V changing $\to$ $P_1V_1 = P_2V_2$
-> - See **constant P** + V,T changing $\to$ $V_1/T_1 = V_2/T_2$
-> - See **constant V** (**sealed**) + P,T changing $\to$ $P_1/T_1 = P_2/T_2$
-> - See **°C** $\to$ **+273**. Always. First.
+$$
+\dfrac{P_1 V_1}{T_1} = \dfrac{P_2 V_2}{T_2}, \quad V_2 = \dfrac{1.50 \times 6.00 \times 400}{300 \times 3.00} = \boxed{4.00 \ \text{L}}
+$$
 
 ---
 
-## INTERMEDIATE (6 patterns)
+**4.** $0.500 \ \text{mol} \ \ce{N2}$ at $25^\circ\text{C}$, $1.50 \ \text{atm}$. Volume?
 
-> Goal: $PV = nRT$ is the only equation you really need. Everything derives from it.
-
----
-
-### Pattern 3: Combined Gas Law (nothing constant)
-
-**Example.** A **gas** at **2.00 atm**, **27.0°C** occupies **5.00 L**. What **volume** at **1.00 atm** and **127.0°C**?
-
-```
-T1 = 27.0 + 273 = 300 K
-T2 = 127.0 + 273 = 400 K
-
-P1*V1 / T1 = P2*V2 / T2
-(2.00 * 5.00) / 300 = (1.00 * V2) / 400
-V2 = (2.00 * 5.00 * 400) / (300 * 1.00) = 13.3 L
-```
-
-> SEE: P, V, T **all changing** -- no "constant" keyword in sight
-> WRITE: $\dfrac{P_1 V_1}{T_1} = \dfrac{P_2 V_2}{T_2}$ ($n$ constant implied)
+$$
+V = \dfrac{nRT}{P} = \dfrac{0.500 \times 0.08206 \times 298}{1.50} = \boxed{8.15 \ \text{L}}
+$$
 
 ---
 
-**Practice I1.** A **gas** at **1.20 atm**, **25.0°C**, occupies **10.0 L**. What **volume** at **2.40 atm** and **75.0°C**?
+**5.** Gas density $2.86 \ \text{g/L}$ at STP. Molar mass?
 
-**Practice I2.** A **gas** at **STP** occupies **4.00 L**. What **pressure** (atm) at **100.0°C** if **volume** is compressed to **2.00 L**?
-
----
-
-### Pattern 4: Ideal Gas Law (the master equation)
-
-**Example.** What **volume** does **0.500 mol** of $\ce{N2}$ occupy at **25.0°C** and **1.50 atm**?
-
-```
-T = 25.0 + 273 = 298 K
-
-PV = nRT
-V = nRT / P = (0.500 * 0.08206 * 298) / 1.50 = 8.15 L
-```
-
-> SEE: **moles** + **P** + **T** + **V** -- any 3 of the 4 given
-> WRITE: $PV = nRT$
-
-| Symbol | Meaning | Value |
-|---|---|---|
-| $P$ | pressure | must be **atm** |
-| $V$ | volume | L |
-| $n$ | moles | mol |
-| $R$ | gas constant | $0.08206 \ \dfrac{\text{L} \cdot \text{atm}}{\text{mol} \cdot \text{K}}$ |
-| $T$ | temperature | must be **K** |
+$$
+M = d \times 22.4 = 2.86 \times 22.4 = \boxed{64.1 \ \text{g/mol} \ (\ce{SO2})}
+$$
 
 ---
 
-**Practice I3.** How many **moles** of gas occupy **10.0 L** at **2.00 atm** and **27.0°C**?
-
-**Practice I4.** What is the **pressure** (atm) of **1.00 mol** $\ce{He}$ in a **5.00 L** container at **-23.0°C**?
-
-**Practice I5.** What **temperature** (°C) is required for **2.00 mol** of gas at **3.00 atm** to occupy **20.0 L**?
+> **You just used:** Boyle's, Charles's, Combined, $PV=nRT$, and density $\to$ molar mass. Now name them.
 
 ---
 
-### Pattern 5: Molar Mass from Gas Density
-
-**Example (STP).** A **gas** has **density** **1.96 g/L** at **STP**. Find its **molar mass**.
-
-```
-At STP: 1 mol = 22.4 L
-M = density * 22.4 = 1.96 * 22.4 = 43.9 g/mol  -->  CO2
-```
-
-**Example (non-STP).** A **gas** has **density** **2.50 g/L** at **30.0°C** and **1.20 atm**. Find its **molar mass**.
-
-```
-T = 30.0 + 273 = 303 K
-
-M = d * (RT / P) = 2.50 * (0.08206 * 303 / 1.20) = 51.8 g/mol
-```
-
-> SEE: **"density"** **"g/L"** + **"molar mass"**
-> WRITE: $M = \dfrac{dRT}{P}$ or at STP: $M = d \times 22.4$
->
-> Derivation: $PV = nRT$, $n = m/M$, so $M = (m/V)(RT/P) = dRT/P$.
+## PHASE 2 -- THE PATTERNS (~90 min)
 
 ---
 
-**Practice I6.** A **gas** has **density** **1.25 g/L** at **STP**. **Molar mass**? Identify: $\ce{N2}$ (28.0), $\ce{O2}$ (32.0), $\ce{CO2}$ (44.0).
+### 1. Boyle's Law ($T, n$ constant)
 
-**Practice I7.** A **gas** has **density** **3.17 g/L** at **25.0°C** and **0.950 atm**. **Molar mass**?
+SEE: **"constant T"** + P,V changing &nbsp;|&nbsp; WRITE: $P_1 V_1 = P_2 V_2$
 
----
+**Example.** $1.50 \ \text{atm}$, $4.00 \ \text{L} \to 4.50 \ \text{atm}$. $V_2 = 1.50 \times 4.00 / 4.50 = \boxed{1.33 \ \text{L}}$
 
-### Pattern 6: Dalton's Law of Partial Pressures
-
-**Example.** A mixture contains **0.200 mol** $\ce{N2}$, **0.300 mol** $\ce{O2}$, **0.100 mol** $\ce{He}$ in **10.0 L** at **27.0°C**. Find **total pressure** and **partial pressures**.
-
-```
-n_total = 0.200 + 0.300 + 0.100 = 0.600 mol
-T = 27.0 + 273 = 300 K
-
-P_total = nRT / V = (0.600 * 0.08206 * 300) / 10.0 = 1.48 atm
-
-P(N2)  = 1.48 * (0.200 / 0.600) = 0.493 atm
-P(O2)  = 1.48 * (0.300 / 0.600) = 0.740 atm
-P(He)  = 1.48 * (0.100 / 0.600) = 0.247 atm
-```
-
-> SEE: **"mixture"** of gases + **"partial pressure"** **"total pressure"**
-> WRITE: $P_{\text{total}} = \sum P_i$ and $P_i = X_i \cdot P_{\text{total}}$ where $X_i = \dfrac{n_i}{n_{\text{total}}}$
+**Practice 1.** $800 \ \text{mmHg}$, $500 \ \text{mL} \to 1200 \ \text{mL}$ at constant $T$. New $P$?
 
 ---
 
-**Practice I8.** **0.500 mol** $\ce{H2}$ and **0.300 mol** $\ce{N2}$ in **5.00 L** at **25.0°C**. Find **total pressure** and **partial pressures**.
+### 2. Charles's Law ($P, n$ constant)
+
+SEE: **"constant P"** + V,T changing &nbsp;|&nbsp; WRITE: $\dfrac{V_1}{T_1} = \dfrac{V_2}{T_2}$ (T in K)
+
+**Example.** $127^\circ\text{C}$, $3.00 \ \text{L} \to 27^\circ\text{C}$. $V_2 = 3.00 \times 300/400 = \boxed{2.25 \ \text{L}}$
+
+**Practice 2.** $-73^\circ\text{C}$, $1.50 \ \text{L} \to 27^\circ\text{C}$ at constant $P$. $V_2$?
 
 ---
 
-### Pattern 7: Gas Stoichiometry (volumes at same T,P)
+### 3. Gay-Lussac's Law ($V, n$ constant)
 
-**Example.** $\ce{2H2 + O2 -> 2H2O}$ (all gases at same T, P). What **volume** of $\ce{O2}$ reacts with **10.0 L** of $\ce{H2}$?
+SEE: **"sealed"** **"rigid"** **"constant V"** + P,T changing &nbsp;|&nbsp; WRITE: $\dfrac{P_1}{T_1} = \dfrac{P_2}{T_2}$
 
-```
-At same T and P: volume ratio = mole ratio (Avogadro's law)
-V(O2) = 10.0 * (1/2) = 5.00 L
-```
+**Example.** Sealed at $-23^\circ\text{C}$, $3.00 \ \text{atm} \to 227^\circ\text{C}$. $P_2 = 3.00 \times 500/250 = \boxed{6.00 \ \text{atm}}$
 
-> SEE: **"volume"** of gas A + **"volume"** of gas B + **"same temperature and pressure"**
-> WRITE: $\dfrac{V_A}{\text{coeff}_A} = \dfrac{V_B}{\text{coeff}_B}$
->
-> Gas volumes at same T,P act like moles. No conversion needed.
+**Practice 3.** Sealed at $27^\circ\text{C}$, $2.00 \ \text{atm} \to 127^\circ\text{C}$. $P_2$?
 
 ---
 
-**Practice I9.** $\ce{N2 + 3H2 -> 2NH3}$. All gases at same T,P. **15.0 L** of $\ce{H2}$ reacts. **Volume** of $\ce{NH3}$? **Volume** of $\ce{N2}$ consumed?
+### 4. Combined Gas Law
+
+SEE: P, V, T all changing, no "constant" &nbsp;|&nbsp; WRITE: $\dfrac{P_1 V_1}{T_1} = \dfrac{P_2 V_2}{T_2}$
+
+**Example.** STP, $4.00 \ \text{L} \to 100^\circ\text{C}$, $2.00 \ \text{L}$. $P_2 = \dfrac{1 \times 4.00 \times 373}{273 \times 2.00} = \boxed{2.73 \ \text{atm}}$
+
+**Practice 4.** $1.20 \ \text{atm}$, $25^\circ\text{C}$, $10.0 \ \text{L} \to 2.40 \ \text{atm}$, $75^\circ\text{C}$. $V_2$?
 
 ---
 
-### Pattern 8: Graham's Law of Effusion
+### 5. Ideal Gas Law
 
-**Example.** The **rate of effusion** of $\ce{O2}$ (M = 32.0) is **1.00 mL/min**. What is the rate for $\ce{H2}$ (M = 2.02)?
+SEE: 3 of {P, V, n, T} &nbsp;|&nbsp; WRITE: $PV = nRT$, $R = 0.08206$
 
-```
-rate(H2) / rate(O2) = sqrt( M(O2) / M(H2) )
-rate(H2) = 1.00 * sqrt(32.0 / 2.02) = 1.00 * 3.98 = 3.98 mL/min
-```
+**Example.** $1.00 \ \text{mol} \ \ce{He}$ in $5.00 \ \text{L}$ at $-23^\circ\text{C}$. $P = 1.00 \times 0.08206 \times 250 / 5.00 = \boxed{4.10 \ \text{atm}}$
 
-> SEE: **"effusion"** **"diffusion"** **"rate"** **"Graham"** + two gases compared
-> WRITE: $\dfrac{\text{rate}_1}{\text{rate}_2} = \sqrt{\dfrac{M_2}{M_1}}$
->
-> Lighter = faster. Molar mass ratio is **inverted**.
+**Practice 5.** $2.00 \ \text{mol}$ at $3.00 \ \text{atm}$ in $20.0 \ \text{L}$. $T$ ($^\circ\text{C}$)?
 
 ---
 
-**Practice I10.** An unknown **gas** **effuses** at **0.500** times the **rate** of $\ce{He}$ (M = 4.00). Find the **molar mass**.
+### 6. Molar Mass from Density
+
+SEE: **"density"** + **"molar mass"** &nbsp;|&nbsp; WRITE: STP: $M = d \times 22.4$; Non-STP: $M = \dfrac{dRT}{P}$
+
+**Example.** $d = 3.17 \ \text{g/L}$ at $25^\circ\text{C}$, $0.950 \ \text{atm}$. $M = 3.17 \times 0.08206 \times 298 / 0.950 = \boxed{81.4 \ \text{g/mol}}$
+
+**Practice 6.** $d = 1.25 \ \text{g/L}$ at STP. $M$? Identify ($\ce{N2}=28$, $\ce{O2}=32$, $\ce{CO2}=44$).
 
 ---
 
-## ADVANCED (2 patterns) -- College-Level
+### 7. Dalton's Law
+
+SEE: **"mixture"** + **"partial pressure"** &nbsp;|&nbsp; WRITE: $P_i = X_i \cdot P_{\text{total}}$, $X_i = \dfrac{n_i}{n_{\text{total}}}$
+
+**Example.** $0.200 \ \ce{N2} + 0.300 \ \ce{O2} + 0.100 \ \ce{He}$ in $10.0 \ \text{L}$ at $27^\circ\text{C}$.
+
+$P_{\text{total}} = 0.600 \times 0.08206 \times 300 / 10.0 = 1.48 \ \text{atm}$; $P_{\ce{N2}} = 0.493$, $P_{\ce{O2}} = 0.740$, $P_{\ce{He}} = 0.247$.
+
+**Practice 7.** $0.500 \ \ce{H2} + 0.300 \ \ce{N2}$ in $5.00 \ \text{L}$ at $25^\circ\text{C}$. $P_{\text{total}}$? $P_{\ce{H2}}$?
 
 ---
 
-### Pattern 9: Collecting Gas Over Water
+### 8. Gas Stoichiometry by Volume
 
-**Example.** $\ce{H2}$ gas is **collected over water** at **25.0°C** and **755 mmHg** barometric pressure. Volume = **150.0 mL**. Vapor pressure of $\ce{H2O}$ at $25.0^\circ\text{C}$ = **23.8 mmHg**. Find **mass** of dry $\ce{H2}$.
+SEE: gas **"volumes"** + **"same T,P"** &nbsp;|&nbsp; WRITE: volume ratio = mole ratio
 
-```
-P_dry(H2) = P_total - P_water = 755 - 23.8 = 731.2 mmHg
-P_dry(H2) in atm = 731.2 / 760 = 0.9621 atm
-T = 25.0 + 273 = 298 K
-V = 150.0 mL = 0.1500 L
+**Example.** $\ce{N2 + 3H2 -> 2NH3}$. $15.0 \ \text{L} \ \ce{H2}$, volume $\ce{NH3}$? $V = 15.0 \times 2/3 = \boxed{10.0 \ \text{L}}$
 
-n(H2) = PV / RT = (0.9621 * 0.1500) / (0.08206 * 298) = 0.00590 mol
-m(H2) = 0.00590 * 2.016 = 0.0119 g
-```
-
-> SEE: **"collected over water"** **"over water"** + barometric pressure + vapor pressure given
-> WRITE: $P_{\text{dry}} = P_{\text{total}} - P_{\ce{H2O}}$ then $PV = nRT$ as usual.
+**Practice 8.** $\ce{2H2 + O2 -> 2H2O}$. $10.0 \ \text{L} \ \ce{H2}$, volume $\ce{O2}$ consumed?
 
 ---
 
-**Practice A1.** $\ce{O2}$ is **collected over water** at **30.0°C** ($P_{\ce{H2O}} = 31.8 \ \text{mmHg}$) and **740 mmHg**. Volume = **250.0 mL**. Find **mass** of dry $\ce{O2}$.
+### 9. Graham's Law
+
+SEE: **"effusion"** **"diffusion"** **"rate"** &nbsp;|&nbsp; WRITE: $\dfrac{\text{rate}_1}{\text{rate}_2} = \sqrt{\dfrac{M_2}{M_1}}$
+
+**Example.** $\ce{O2}$ ($M=32$) effuses at $1.00 \ \text{mL/min}$. Rate of $\ce{H2}$ ($M=2.02$)?
+
+$\text{rate}_{\ce{H2}} = 1.00 \times \sqrt{32/2.02} = \boxed{3.98 \ \text{mL/min}}$
+
+**Practice 9.** Unknown effuses at $0.500\times$ rate of $\ce{He}$ ($M=4.00$). $M$?
 
 ---
 
-### Pattern 10: Van der Waals Equation (Real Gas)
+### 10. Collecting Gas Over Water
 
-**Example.** **2.00 mol** of $\ce{NH3}$ in **5.00 L** at **27.0°C**. Find **pressure** via (a) ideal gas law, (b) van der Waals.
+SEE: **"over water"** &nbsp;|&nbsp; WRITE: $P_{\text{dry}} = P_{\text{total}} - P_{\ce{H2O}}$, then $PV=nRT$
 
-For $\ce{NH3}$: $a = 4.17 \ \text{L}^2\!\cdot\!\text{atm/mol}^2$, $b = 0.0371 \ \text{L/mol}$
+**Example.** $\ce{H2}$ over water at $25^\circ\text{C}$ ($P_{\ce{H2O}}=23.8 \ \text{mmHg}$), barometer $=755 \ \text{mmHg}$, $V=150.0 \ \text{mL}$.
 
-```
-T = 27.0 + 273 = 300 K
+$P_{\text{dry}} = 755-23.8 = 731.2 \ \text{mmHg} = 0.9621 \ \text{atm}$, $n = PV/RT = 0.00590$, $m = \boxed{0.0119 \ \text{g}}$
 
-(a) Ideal:
-P = nRT / V = (2.00 * 0.08206 * 300) / 5.00 = 9.85 atm
-
-(b) Van der Waals:
-P = nRT / (V - nb) - a*(n/V)^2
-P = (2.00 * 0.08206 * 300) / (5.00 - 2.00*0.0371) - 4.17*(2.00/5.00)^2
-P = 49.236 / 4.9258 - 4.17*0.1600
-P = 9.996 - 0.667 = 9.33 atm
-```
-
-> SEE: **"van der Waals"** **"real gas"** + $a$, $b$ constants given
-> WRITE: $\left( P + \dfrac{an^2}{V^2} \right)(V - nb) = nRT$
->
-> $a$ corrects for attraction. $b$ corrects for molecular volume.
+**Practice 10.** $\ce{O2}$ over water at $30^\circ\text{C}$ ($P_{\ce{H2O}}=31.8$), barometer $=740 \ \text{mmHg}$, $V=250.0 \ \text{mL}$. Mass dry $\ce{O2}$?
 
 ---
 
-**Practice A2.** **3.00 mol** $\ce{CO2}$ ($a = 3.59$, $b = 0.0427$) in **10.0 L** at **100.0°C**. Find **pressure** via (a) ideal, (b) van der Waals.
+### PHASE 2 PRACTICE ANSWERS
+
+- P1: $333 \ \text{mmHg}$ &nbsp;|&nbsp; P2: $2.25 \ \text{L}$ &nbsp;|&nbsp; P3: $2.67 \ \text{atm}$
+- P4: $5.84 \ \text{L}$ &nbsp;|&nbsp; P5: $92.5^\circ\text{C}$ &nbsp;|&nbsp; P6: $28.0 \ (\ce{N2})$
+- P7: $P_{\text{total}} = 3.91 \ \text{atm}$, $P_{\ce{H2}} = 2.44 \ \text{atm}$
+- P8: $5.00 \ \text{L}$ &nbsp;|&nbsp; P9: $16.0 \ \text{g/mol} \ (\ce{CH4})$
+- P10: $0.304 \ \text{g}$
 
 ---
 
-## MASTER CHEAT SHEET -- Trigger to Equation
+## PHASE 3 -- LOCK IT IN (~60 min)
 
-| # | SEE this word/phrase... | Your hand writes... |
-|---|---|---|
-| 1 | **constant T**, P,V changing | $P_1 V_1 = P_2 V_2$ |
-| 2 | **constant P**, V,T changing | $\dfrac{V_1}{T_1} = \dfrac{V_2}{T_2}$ (T in K) |
-|   | **constant V**, **sealed**, **rigid** | $\dfrac{P_1}{T_1} = \dfrac{P_2}{T_2}$ (T in K) |
-| 3 | P, V, T **all changing**, no "constant" | $\dfrac{P_1 V_1}{T_1} = \dfrac{P_2 V_2}{T_2}$ |
-| 4 | 3 of {P, V, n, T} given | $PV = nRT$ |
-| 5 | **density** + **molar mass** | $M = \dfrac{dRT}{P}$ (STP: $M = d \times 22.4$) |
-| 6 | **mixture** + **partial pressure** | $P_i = X_i P_{\text{total}}$, $X_i = \dfrac{n_i}{n_{\text{total}}}$ |
-| 7 | Gas **volumes** at **same T,P** | volume ratio = mole ratio |
-| 8 | **effusion**, **diffusion**, **rate** | $\dfrac{\text{rate}_1}{\text{rate}_2} = \sqrt{\dfrac{M_2}{M_1}}$ |
-| 9 | **over water**, **collected over** | $P_{\text{dry}} = P_{\text{total}} - P_{\ce{H2O}}$ then $PV=nRT$ |
-| 10 | **van der Waals**, **real gas** | $\left( P + \dfrac{an^2}{V^2} \right)(V - nb) = nRT$ |
+> 15 problems, interleaved. No scrolling up.
 
 ---
 
-## CONSTANT REFERENCE
+**1.** Gas at $2.00 \ \text{atm}$, $3.00 \ \text{L} \to 6.00 \ \text{atm}$ at constant $T$. $V_2$?
 
-| Constant | Value |
-|---|---|
-| $R$ (gas, L·atm) | $0.08206 \ \dfrac{\text{L} \cdot \text{atm}}{\text{mol} \cdot \text{K}}$ |
-| STP | $0^\circ\text{C}$ (273 K), $1 \ \text{atm}$ |
-| Molar volume at STP | $22.4 \ \text{L/mol}$ |
-| $1 \ \text{atm}$ | $760 \ \text{mmHg} = 760 \ \text{torr}$ |
-| $T(\text{K})$ | $T(^\circ\text{C}) + 273$ |
+**2.** Gas at $127^\circ\text{C}$, $3.00 \ \text{L} \to 27^\circ\text{C}$ at constant $P$. $V_2$?
+
+**3.** Sealed at $-73^\circ\text{C}$, $1.50 \ \text{atm} \to 127^\circ\text{C}$. $P_2$?
+
+**4.** $1.50 \ \text{atm}$, $27^\circ\text{C}$, $6.00 \ \text{L} \to 3.00 \ \text{atm}$, $127^\circ\text{C}$. $V_2$?
+
+**5.** $0.800 \ \text{mol}$ at $2.50 \ \text{atm}$, $27^\circ\text{C}$. $V$?
+
+**6.** $d = 2.50 \ \text{g/L}$ at $30^\circ\text{C}$, $1.20 \ \text{atm}$. $M$?
+
+**7.** $0.400 \ \ce{N2} + 0.600 \ \ce{O2}$ in $8.00 \ \text{L}$ at $27^\circ\text{C}$. $P_{\text{total}}$? $P_{\ce{N2}}$?
+
+**8.** $\ce{N2 + 3H2 -> 2NH3}$ all same $T,P$. $12.0 \ \text{L} \ \ce{H2}$. $V_{\ce{NH3}}$?
+
+**9.** Unknown effuses at $0.707\times$ rate of $\ce{O2}$ ($M=32$). $M$?
+
+**10.** $\ce{H2}$ over water at $22^\circ\text{C}$ ($P_{\ce{H2O}}=19.8$), $P_{\text{bar}}=745 \ \text{mmHg}$, $V=200 \ \text{mL}$. Mass dry $\ce{H2}$?
+
+**11.** How many moles in $10.0 \ \text{L}$ at $2.00 \ \text{atm}$, $27^\circ\text{C}$?
+
+**12.** $d = 1.96 \ \text{g/L}$ at STP. Identify ($\ce{CO2}=44$, $\ce{SO2}=64$, $\ce{Cl2}=71$).
+
+**13.** $\ce{2Mg + O2 -> 2MgO}$. $5.00 \ \text{g} \ \ce{Mg}$ at $22^\circ\text{C}$, $755 \ \text{mmHg}$. $V_{\ce{O2}}$?
+
+**14.** $\ce{NH4HS(s) <=> NH3(g) + H2S(g)}$. $P_{\text{total}} = 0.660 \ \text{atm}$. $K_p$?
+
+**15.** $2.00 \ \text{mol} \ \ce{NH3}$ ($a=4.17$, $b=0.0371$) in $5.00 \ \text{L}$ at $27^\circ\text{C}$. $P$ via ideal? via van der Waals?
 
 ---
 
-## ANSWERS
+### PHASE 3 ANSWERS
 
-> Solve everything first. Check after.
+**1:** $1.00 \ \text{L}$ &nbsp; **2:** $2.25 \ \text{L}$ &nbsp; **3:** $3.00 \ \text{atm}$ &nbsp; **4:** $4.00 \ \text{L}$ &nbsp; **5:** $7.87 \ \text{L}$ &nbsp; **6:** $51.8 \ \text{g/mol}$ &nbsp; **7:** $P_{\text{total}}=3.08$, $P_{\ce{N2}}=1.23$ &nbsp; **8:** $8.00 \ \text{L}$ &nbsp; **9:** $64.0 \ (\ce{SO2})$ &nbsp; **10:** $0.0158 \ \text{g}$ &nbsp; **11:** $0.813 \ \text{mol}$ &nbsp; **12:** $43.9 \ (\ce{CO2})$ &nbsp; **13:** $2.51 \ \text{L}$ &nbsp; **14:** $0.109$ &nbsp; **15:** ideal $9.85 \ \text{atm}$, vdW $9.33 \ \text{atm}$
 
-**Beginner**
-- B1: $1.33 \ \text{L}$ &nbsp;&nbsp;|&nbsp;&nbsp; B2: $333 \ \text{mmHg}$
-- B3: $2.25 \ \text{L}$ &nbsp;&nbsp;|&nbsp;&nbsp; B4: $2.25 \ \text{L}$ &nbsp;&nbsp;|&nbsp;&nbsp; B5: $6.00 \ \text{atm}$
+---
 
-**Intermediate**
-- I1: $5.84 \ \text{L}$ &nbsp;&nbsp;|&nbsp;&nbsp; I2: $2.73 \ \text{atm}$
-- I3: $0.813 \ \text{mol}$ &nbsp;&nbsp;|&nbsp;&nbsp; I4: $4.10 \ \text{atm}$ &nbsp;&nbsp;|&nbsp;&nbsp; I5: $92.5^\circ\text{C}$
-- I6: $28.0 \ \text{g/mol} \ (\ce{N2})$ &nbsp;&nbsp;|&nbsp;&nbsp; I7: $81.4 \ \text{g/mol}$
-- I8: $P_{\text{total}} = 3.91 \ \text{atm}$, $P(\ce{H2}) = 2.44 \ \text{atm}$, $P(\ce{N2}) = 1.47 \ \text{atm}$
-- I9: $10.0 \ \text{L} \ \ce{NH3}$, $5.00 \ \text{L} \ \ce{N2}$
-- I10: $M = 16.0 \ \text{g/mol} \ (\ce{CH4})$
-
-**Advanced**
-- A1: $0.304 \ \text{g} \ \ce{O2}$
-- A2: (a) $9.19 \ \text{atm}$ &nbsp;&nbsp;(b) $8.89 \ \text{atm}$
+> **3-hour session complete.**
